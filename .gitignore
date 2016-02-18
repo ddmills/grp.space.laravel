@@ -4,6 +4,8 @@
 .env
 .vagrant
 .DS_Store
+
+.rocketeer/logs
 npm-debug.log
 
 Homestead.yaml

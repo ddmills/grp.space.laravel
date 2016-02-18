@@ -1,7 +1,13 @@
 /vendor
 /node_modules
-/public/storage
-/public/build
+
+.env
+.vagrant
+.DS_Store
+npm-debug.log
+
 Homestead.yaml
 Homestead.json
-.env
+
+/public/storage
+/public/build

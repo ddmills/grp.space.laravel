@@ -1,12 +1,6 @@
 <?php
 
 return [
-
-    // Remote server
-    //////////////////////////////////////////////////////////////////////
-
-    // Variables about the servers. Those can be guessed but in
-    // case of problem it's best to input those manually
     'variables'      => [
         'directory_separator' => '/',
         'line_endings'        => "\n",

@@ -13,13 +13,6 @@ use Rocketeer\Binaries\PackageManagers\Composer;
 use Rocketeer\Tasks\Subtasks\Primer;
 
 return [
-
-    // Task strategies
-    //
-    // Here you can configure in a modular way which tasks to use to
-    // execute various core parts of your deployment's flow
-    //////////////////////////////////////////////////////////////////////
-
     // Which strategy to use to check the server
     'check'        => 'Php',
 

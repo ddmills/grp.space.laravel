@@ -11,4 +11,3 @@ class DBSeed extends \Rocketeer\Abstracts\AbstractTask
         $this->runForCurrentRelease('php artisan db:seed --force');
     }
 }
-?>

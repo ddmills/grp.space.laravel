@@ -1,0 +1,67 @@
+html {
+    font-family : $body-fonts;
+    font-size   : 15px;
+    line-height : 1.4;
+    height      : 100%;
+
+    -ms-text-size-adjust     : 100%;
+    -webkit-text-size-adjust : 100%;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+}
+
+body {
+    line-height: 1.42857143;
+}
+
+a {
+    text-decoration : none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-family : $header-fonts;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 2.4em;
+    margin: 0.67em 0;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 1.8em;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+h5 {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+h5 {
+    font-weight: 600;
+    font-size: 1.0em;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0 0 1.5em 0;
+}
+
+ul, ol {
+    margin: 0 0 1.5em 0;
+}

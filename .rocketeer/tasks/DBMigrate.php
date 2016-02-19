@@ -11,4 +11,3 @@ class DBMigrate extends \Rocketeer\Abstracts\AbstractTask
         $this->runForCurrentRelease('php artisan migrate --force');
     }
 }
-?>

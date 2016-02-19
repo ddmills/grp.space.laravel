@@ -17,4 +17,3 @@ class CopyEnvironment extends \Rocketeer\Abstracts\AbstractTask
         $this->copy($source, $target);
     }
 }
-?>

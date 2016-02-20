@@ -8,6 +8,7 @@ class Gulp extends \Rocketeer\Abstracts\AbstractTask
 
     public function execute()
     {
+        $this->runForCurrentRelease('npm rebuild node-sass');
         $this->runForCurrentRelease('./node_modules/.bin/gulp');
     }
 }

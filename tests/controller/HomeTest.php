@@ -10,8 +10,16 @@ class HomeTest extends TestCase
 
     public function testHomeShowsSiteName()
     {
-        $this->visit(route('home'))
+        $this
+            ->visit(route('home'))
             ->see('grp.space');
+    }
+
+    public function testHomePageLinksToRoomCreate()
+    {
+        $this
+            ->visit(route('home'))
+            ->seeElementHasAttribute('a', 'href', route('room.create'));
     }
 
 }

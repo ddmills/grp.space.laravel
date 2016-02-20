@@ -11,6 +11,7 @@ class HomeTest extends TestCase
     public function testHomeShowsSiteName()
     {
         $this->visit(route('home'))
-             ->see('grp.space');
+            ->see('grp.space');
     }
+
 }

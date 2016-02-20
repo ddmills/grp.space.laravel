@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "test": "./vendor/bin/phpunit"
+  },
   "devDependencies": {
     "gulp": "^3.8.8"
   },

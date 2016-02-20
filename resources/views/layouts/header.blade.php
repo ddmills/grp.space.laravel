@@ -1,6 +1,6 @@
 <div class='app-stripe'></div>
 <header class='app-header'>
     <div class='container'>
-        page-header
+        <h4>grp.space</h4>
     </div>
 </header>

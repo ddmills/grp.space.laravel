@@ -15,6 +15,6 @@ class RoomTest extends TestCase
             ->type($roomName, 'name')
             ->select('public', 'privilege')
             ->click('create')
-            ->seeRouteIs(route('room.show'));
+            ->seeRouteIs(route('room.show', ['room' => $roomName]));
     }
 }

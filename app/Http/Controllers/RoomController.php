@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Room;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
@@ -20,12 +20,12 @@ class RoomController extends Controller
             'name' => 'required',
         ]);
 
-        $roomName = $request->get('name');
-        return redirect(route('room.show', ['room' => $roomName]));
+        $room = Room::create($request->except('_token'));
+        return redirect(route('room.show', ['room' => $room->name]));
     }
 
     public function show(Request $request, $roomName)
     {
-        return $roomName;
+        return Room::where('name', $roomName)->first();
     }
 }

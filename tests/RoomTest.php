@@ -17,7 +17,7 @@ class RoomTest extends TestCase
         $this
             ->visit(route('room.create'))
             ->type($roomName, 'name')
-            ->select('public', 'privilege')
+            ->select('public', 'access')
             ->press(Lang::get('room.create.finalize'))
             ->seePageIs(route('room.show', ['room' => $roomName]));
     }

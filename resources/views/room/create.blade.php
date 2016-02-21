@@ -20,12 +20,12 @@
     <input type="text" id="input-description" name="description">
 
     <label>
-        <input type="radio" name="privilege" value="public">
+        <input type="radio" name="access" value="public">
         Public
     </label>
 
     <label>
-        <input type="radio" name="privilege" value="private">
+        <input type="radio" name="access" value="private">
         Private
     </label>
 

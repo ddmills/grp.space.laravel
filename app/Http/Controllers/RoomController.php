@@ -17,7 +17,7 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|roomname',
         ]);
 
         $room = Room::create($request->except('_token'));

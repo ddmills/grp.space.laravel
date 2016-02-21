@@ -16,6 +16,10 @@ class RoomController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
+
         $roomName = $request->get('name');
         return redirect(route('room.show', ['room' => $roomName]));
     }

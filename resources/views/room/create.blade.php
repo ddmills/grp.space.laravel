@@ -16,6 +16,9 @@
     <label for="input-name">Room Name<label>
     <input type="text" id="input-name" name="name">
 
+    <label for="input-description">Description<label>
+    <input type="text" id="input-description" name="description">
+
     <label>
         <input type="radio" name="privilege" value="public">
         Public

@@ -89,8 +89,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'roomname' => 'Roomname can only contain hyphens (-), tildes (~), and alphanumeric characters (a-z, 0-9).',
         ],
     ],
 

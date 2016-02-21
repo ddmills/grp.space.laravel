@@ -51,7 +51,7 @@ class RoomTest extends TestCase
             ->visit(route('room.create'))
             ->type($roomName, 'name')
             ->press(Lang::get('room.create.finalize'))
-            ->see(Lang::get('validation.roomname', ['attribute' => 'name']));
+            ->see(Lang::get('validation.custom.name.roomname'));
     }
 
     public function testNameFieldCannotBeEmpty()
@@ -70,6 +70,15 @@ class RoomTest extends TestCase
             ->type(' ', 'name')
             ->press(Lang::get('room.create.finalize'))
             ->see(Lang::get('validation.required', ['attribute' => 'name']));
+    }
+
+    public function testNameFieldCannotBeQuestionMark()
+    {
+        $this
+            ->visit(route('room.create'))
+            ->type('?', 'name')
+            ->press(Lang::get('room.create.finalize'))
+            ->see(Lang::get('validation.custom.name.roomname'));
     }
 
     public function testRoomShowPageContainsRoomInfo()

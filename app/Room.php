@@ -8,5 +8,5 @@ class Room extends Model
 {
     protected $attributes = ['access' => 'public'];
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'description'];
 }

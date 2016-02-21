@@ -1,5 +1,6 @@
 <?php
 
+use App\Room;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -40,5 +41,16 @@ class RoomTest extends TestCase
             ->visit(route('room.create'))
             ->press(Lang::get('room.create.finalize'))
             ->see(Lang::get('validation.required', ['attribute' => 'name']));
+    }
+
+    public function testRoomShowPageContainsRoomInfo()
+    {
+        $room = factory(Room::class)->make();
+
+        $this
+            ->visit(route('room.show', ['room' => $room->name]))
+            ->see($room->name)
+            ->see($room->access)
+            ->see($room->description);
     }
 }

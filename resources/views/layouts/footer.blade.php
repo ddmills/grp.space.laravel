@@ -5,5 +5,7 @@
         ddmills
         &middot;
         {{ date('Y') }}
+        &middot;
+        {{ env('RELEASE') }}
     </footer>
 </footer>

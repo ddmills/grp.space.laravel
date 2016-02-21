@@ -15,5 +15,8 @@ class CopyEnvironment extends \Rocketeer\Abstracts\AbstractTask
         $target  = $destination . '/.env';
 
         $this->copy($source, $target);
+
+        $currentRelease = $this->releasesManager->getCurrentRelease();
+        $this->runForCurrentRelease('echo "RELEASE=' . $currentRelease . '" >> .env');
     }
 }

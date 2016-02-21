@@ -46,6 +46,7 @@ class RoomTest extends TestCase
     public function testRoomShowPageContainsRoomInfo()
     {
         $room = factory(Room::class)->make();
+        $room->save();
 
         $this
             ->visit(route('room.show', ['room' => $room->name]))

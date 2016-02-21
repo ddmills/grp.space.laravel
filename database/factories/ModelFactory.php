@@ -24,5 +24,6 @@ $factory->define(App\Room::class, function(Faker\Generator $faker) {
     return [
         'name' => str_slug($faker->company),
         'access' => 'public',
+        'description' => $faker->realText(80),
     ];
 });

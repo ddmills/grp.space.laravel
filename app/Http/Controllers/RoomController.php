@@ -26,6 +26,7 @@ class RoomController extends Controller
 
     public function show(Request $request, $roomName)
     {
-        return Room::where('name', $roomName)->first();
+        $room = Room::where('name', $roomName)->firstOrFail();
+        return view('room.show', compact('room'));
     }
 }

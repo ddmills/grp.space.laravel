@@ -8,7 +8,8 @@ class RoomTest extends TestCase
 {
     public function testCanCreateNewPublicRoom()
     {
-        $roomName = 'test-room-' . microtime();
+        $date = new DateTime();
+        $roomName = 'test-room-' . $date->getTimestamp();
 
         $this
             ->visit(route('room.create'))

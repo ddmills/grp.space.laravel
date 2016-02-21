@@ -16,6 +16,12 @@ class RoomController extends Controller
 
     public function store(Request $request)
     {
-        return 'store...';
+        $roomName = $request->get('name');
+        return redirect(route('room.show', ['room' => $roomName]));
+    }
+
+    public function show(Request $request, $roomName)
+    {
+        return $roomName;
     }
 }

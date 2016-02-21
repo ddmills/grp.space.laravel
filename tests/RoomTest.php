@@ -6,6 +6,9 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class RoomTest extends TestCase
 {
+
+    use DatabaseTransactions;
+
     public function testCanCreatingANewRoomWillRedirectToNewRoomPage()
     {
         $date = new DateTime();
@@ -17,6 +20,18 @@ class RoomTest extends TestCase
             ->select('public', 'privilege')
             ->press(Lang::get('room.create.finalize'))
             ->seePageIs(route('room.show', ['room' => $roomName]));
+    }
+
+    public function testRoomCreationAddsRoomToDatabaseCorrectly()
+    {
+        $date = new DateTime();
+        $roomName = 'test-room-' . $date->getTimestamp();
+
+        $this
+            ->visit(route('room.create'))
+            ->type($roomName, 'name')
+            ->press(Lang::get('room.create.finalize'))
+            ->seeInDatabase('rooms', ['name' => $roomName]);
     }
 
     public function testNameFieldIsRequired()

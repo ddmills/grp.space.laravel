@@ -35,8 +35,11 @@ html {
     color       : $app-footer-col;
     font-size   : 13px;
     margin-top  : 40px;
+}
+
+.app-footer > .container {
+    border-top  : $app-footer-border;
     padding     : 40px 0px;
-    border-top  : 1px dashed #ccc;
 }
 
 .app-footer > a {
@@ -44,10 +47,10 @@ html {
 }
 
 .clearfix:after {
-  content : " ";
-  display : table;
+    content : " ";
+    display : table;
 }
 
 .clearfix:after {
-  clear : both;
+    clear : both;
 }

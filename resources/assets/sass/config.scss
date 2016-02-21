@@ -5,12 +5,32 @@ $app-col-tertiary: #91C8E2;
 
 $app-font-col: #333;
 
-$app-footer-col: #ccc;
-
-$nav-border: #e0e0e0;
-$nav-border-style: solid;
-$nav-background: #F5F5F5;
-$nav-radius: 4px;
+$app-footer-col: #888;
+$app-footer-border : 1px dashed #ccc;
 
 $body-fonts: 'Lato', sans-serif;
 $header-fonts: 'Lato', Georgia, serif;
+
+$alert-default-icon: "\f085";
+$alert-default-primary: #D3D3D3;
+$alert-default-secondary: #808080;
+$alert-default-text: #505050;
+$alert-default-shadow: #DADADA;
+
+$alert-danger-icon: "\f06a";
+$alert-danger-primary: #E88686;
+$alert-danger-secondary: #B32E2E;
+$alert-danger-text: #521111;
+$alert-danger-shadow: #EAC1D0;
+
+$alert-info-icon: "\f05a";
+$alert-info-primary: #ADD8E6;
+$alert-info-secondary: #5082CE;
+$alert-info-text: #1E1E6B;
+$alert-info-shadow: #C6C2DA;
+
+$alert-warning-icon: "\f071";
+$alert-warning-primary: #FFEBA4;
+$alert-warning-secondary: #FBB942;
+$alert-warning-text: #614018;
+$alert-warning-shadow: #F5DDB0;

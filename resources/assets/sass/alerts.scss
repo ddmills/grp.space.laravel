@@ -1,0 +1,72 @@
+.alert {
+    display : block;
+    position : relative;
+    margin  : 16px 0;
+    padding : 16px 0px 16px 70px;
+    border-radius : 2px;
+    overflow : hidden;
+    background-color: $alert-default-primary;
+    color : $alert-default-text;
+    box-shadow: 1px 1px 1px $alert-default-shadow;
+    border: 1px solid $alert-default-secondary;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.48);
+}
+
+.alert:before {
+    content: $alert-default-icon;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    text-shadow    : 0px 0px 1px #838088;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    line-height: 53px;
+    font-size: 1.7em;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 53px;
+    width: 53px;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $alert-default-secondary;
+}
+
+.alert.alert-danger:before {
+    content: $alert-danger-icon;
+    background-color: $alert-danger-secondary;
+    color: #fff;
+}
+
+.alert.alert-danger {
+    background-color : $alert-danger-primary;
+    border: 1px solid $alert-danger-secondary;
+    color : $alert-danger-text;
+    box-shadow: 1px 1px 1px $alert-danger-shadow;
+}
+
+.alert.alert-info:before {
+    content: $alert-info-icon;
+    background-color: $alert-info-secondary;
+    color: #fff;
+}
+
+.alert.alert-info {
+    background-color : $alert-info-primary;
+    border: 1px solid $alert-info-secondary;
+    color : $alert-info-text;
+    box-shadow: 1px 1px 1px $alert-info-shadow;
+}
+
+.alert.alert-warning:before {
+    content: $alert-warning-icon;
+    background-color: $alert-warning-secondary;
+    color: #fff;
+}
+
+.alert.alert-warning {
+    background-color : $alert-warning-primary;
+    border: 1px solid $alert-warning-secondary;
+    color : $alert-warning-text;
+    box-shadow: 1px 1px 1px $alert-warning-shadow;
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -407,6 +408,18 @@ p {
 ul, ol {
   margin: 0 0 1.5em 0; }
 
+.app-subheader {
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  margin-top: 40px; }
+
+.app-subheader-title {
+  margin: 0; }
+
+.app-subheader-tagline {
+  margin: 0;
+  color: #767676; }
+
 * {
   box-sizing: border-box; }
 
@@ -436,14 +449,16 @@ html {
   min-height: 240px; }
 
 .app-footer {
-  color: #ccc;
+  color: #888;
   font-size: 13px;
-  margin-top: 40px;
-  padding: 40px 0px;
-  border-top: 1px dashed #ccc; }
+  margin-top: 40px; }
+
+.app-footer > .container {
+  border-top: 1px dashed #ccc;
+  padding: 40px 0px; }
 
 .app-footer > a {
-  color: #ccc; }
+  color: #888; }
 
 .clearfix:after {
   content: " ";
@@ -451,5 +466,124 @@ html {
 
 .clearfix:after {
   clear: both; }
+
+.form-group {
+  display: block;
+  margin-bottom: 16px; }
+
+.form-group > label {
+  display: block;
+  font-weight: 700;
+  max-width: 100%;
+  margin-bottom: 5px; }
+
+.form-group > label > small,
+.form-group > label > .small {
+  font-weight: 500; }
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+
+.form-control:focus {
+  border-color: #E689CA;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(189, 102, 233, 0.6); }
+
+.form-group > .note {
+  display: block;
+  font-size: 13px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373; }
+
+.form-group input[type='radio'] {
+  float: left;
+  margin: 2px 0 0 -20px;
+  vertical-align: middle; }
+
+.radio-group {
+  padding-left: 20px; }
+
+.alert {
+  display: block;
+  position: relative;
+  margin: 16px 0;
+  padding: 16px 0px 16px 70px;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #D3D3D3;
+  color: #505050;
+  box-shadow: 1px 1px 1px #DADADA;
+  border: 1px solid #808080;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.48); }
+
+.alert:before {
+  content: "";
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  text-shadow: 0px 0px 1px #838088;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  line-height: 53px;
+  font-size: 1.7em;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 53px;
+  width: 53px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #808080; }
+
+.alert.alert-danger:before {
+  content: "";
+  background-color: #B32E2E;
+  color: #fff; }
+
+.alert.alert-danger {
+  background-color: #E88686;
+  border: 1px solid #B32E2E;
+  color: #521111;
+  box-shadow: 1px 1px 1px #EAC1D0; }
+
+.alert.alert-info:before {
+  content: "";
+  background-color: #5082CE;
+  color: #fff; }
+
+.alert.alert-info {
+  background-color: #ADD8E6;
+  border: 1px solid #5082CE;
+  color: #1E1E6B;
+  box-shadow: 1px 1px 1px #C6C2DA; }
+
+.alert.alert-warning:before {
+  content: "";
+  background-color: #FBB942;
+  color: #fff; }
+
+.alert.alert-warning {
+  background-color: #FFEBA4;
+  border: 1px solid #FBB942;
+  color: #614018;
+  box-shadow: 1px 1px 1px #F5DDB0; }
+
+.room-access-icon {
+  float: left;
+  color: #6196B1;
+  margin-right: 5px; }
 
 /*# sourceMappingURL=app.css.map */

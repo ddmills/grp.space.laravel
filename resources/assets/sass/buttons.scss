@@ -1,4 +1,6 @@
 .btn {
+    display : inline-block;
+
     font-family : $btn-font;
     font-size   : $btn-font-size;
     font-weight : $btn-font-weight;
@@ -11,9 +13,19 @@
     cursor : pointer;
 
     text-decoration : none;
+    text-align      : center;
+    white-space     : nowrap;
+    vertical-align  : middle;
+
+    touch-action : manipulation;
 }
 
-.btn:focus {
+.btn:focus,
+.btn.btn-default:focus,
+.btn.btn-primary:focus,
+.btn.btn-info:focus,
+.btn.btn-danger:focus,
+.btn.btn-warning:focus {
     border-color : $focus-border-col;
     outline      : 0;
     box-shadow   : $focus-box-shadow;
@@ -22,6 +34,11 @@
 .btn:active {
     top      : 1px;
     position : relative;
+}
+
+.btn.btn-block {
+    display: block;
+    width: 100%;
 }
 
 .btn.btn-default {

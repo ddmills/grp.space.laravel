@@ -24,7 +24,7 @@ class RoomTest extends TestCase
             ->seePageIs(route('room.show', ['room' => $roomName]));
     }
 
-    public function testRoomCreationAddsRoomToDatabaseCorrectly()
+    public function testRoomCreationAddsRoomToDatabase()
     {
         $date = new DateTime();
         $roomName = 'test-room-' . $date->getTimestamp();

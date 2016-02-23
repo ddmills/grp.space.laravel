@@ -420,6 +420,60 @@ ul, ol {
   margin: 0;
   color: #767676; }
 
+.row {
+  margin-right: -10px;
+  margin-left: -10px; }
+  .row:before {
+    display: table;
+    content: ""; }
+  .row:after {
+    display: table;
+    clear: both;
+    content: ""; }
+
+.column {
+  float: left;
+  padding-right: 10px;
+  padding-left: 10px; }
+
+.one-third {
+  width: 33.333333%; }
+
+.two-thirds {
+  width: 66.666667%; }
+
+.one-fourth {
+  width: 25%; }
+
+.one-half {
+  width: 50%; }
+
+.three-fourths {
+  width: 75%; }
+
+.one-fifth {
+  width: 20%; }
+
+.four-fifths {
+  width: 80%; }
+
+.one-twelfth {
+  width: 8.33333%; }
+
+.five-twelfths {
+  width: 41.66666666%; }
+
+.single-column {
+  padding-right: 10px;
+  padding-left: 10px; }
+
+.table-column {
+  display: table-cell;
+  width: 1%;
+  padding-right: 10px;
+  padding-left: 10px;
+  vertical-align: top; }
+
 * {
   box-sizing: border-box; }
 
@@ -469,7 +523,7 @@ html {
 
 .form-group {
   display: block;
-  margin-bottom: 16px; }
+  margin-bottom: 24px; }
 
 .form-group > label {
   display: block;
@@ -488,7 +542,7 @@ html {
   padding: 6px 12px;
   font-size: 14px;
   color: #555;
-  background-color: #fff;
+  background-color: #fafafa;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -496,6 +550,7 @@ html {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
 
 .form-control:focus {
+  background-color: #fff;
   border-color: #E689CA;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(189, 102, 233, 0.6); }
@@ -598,6 +653,7 @@ html {
   background: linear-gradient(to bottom, #b9e356 5%, #a5cc52 100%); }
 
 .btn {
+  display: inline-block;
   font-family: "Lato";
   font-size: 15px;
   font-weight: 700;
@@ -605,9 +661,19 @@ html {
   display: inline-block;
   padding: 6px 24px;
   cursor: pointer;
-  text-decoration: none; }
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
 
-.btn:focus {
+.btn:focus,
+.btn.btn-default:focus,
+.btn.btn-primary:focus,
+.btn.btn-info:focus,
+.btn.btn-danger:focus,
+.btn.btn-warning:focus {
   border-color: #E689CA;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(189, 102, 233, 0.6); }
@@ -615,6 +681,10 @@ html {
 .btn:active {
   top: 1px;
   position: relative; }
+
+.btn.btn-block {
+  display: block;
+  width: 100%; }
 
 .btn.btn-default {
   color: #858585;

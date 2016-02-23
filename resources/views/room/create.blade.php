@@ -38,7 +38,9 @@
         <span class='note'>You choose who can see this room.</span>
     </div>
 
-    <button type="submit">{{ Lang::get('room.create.finalize') }}</button>
+    <button type="submit" class="btn btn-primary">
+        {{ Lang::get('room.create.finalize') }}
+    </button>
 
 </form>
 

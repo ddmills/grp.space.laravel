@@ -1,5 +1,5 @@
-
 <?php
+
 trait Crawler
 {
     public function seeElement($selector)

@@ -11,26 +11,93 @@ $app-footer-border : 1px dashed #ccc;
 $body-fonts: 'Lato', sans-serif;
 $header-fonts: 'Lato', Georgia, serif;
 
+$focus-border-col : #E689CA;
+$focus-box-shadow : inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(189, 102, 233, 0.6);
+
 $alert-default-icon: "\f085";
-$alert-default-primary: #D3D3D3;
-$alert-default-secondary: #808080;
+$alert-default-primary: #f6f6f6 ;
+$alert-default-secondary: #dcdcdc;
 $alert-default-text: #505050;
-$alert-default-shadow: #DADADA;
+$alert-default-shadow: #F5F5F5;
+$alert-default-gradient-top    : #ffffff;
+$alert-default-gradient-bottom : #f6f6f6;
 
 $alert-danger-icon: "\f06a";
 $alert-danger-primary: #E88686;
 $alert-danger-secondary: #B32E2E;
-$alert-danger-text: #521111;
+$alert-danger-text: #542114;
+$alert-danger-text-shadow: #FFD3D3;
 $alert-danger-shadow: #EAC1D0;
+$alert-danger-gradient-top    : #fc8d83;
+$alert-danger-gradient-bottom : #e4685d;
 
 $alert-info-icon: "\f05a";
 $alert-info-primary: #ADD8E6;
 $alert-info-secondary: #5082CE;
-$alert-info-text: #1E1E6B;
+$alert-info-text: #2D6292;
 $alert-info-shadow: #C6C2DA;
+$alert-info-gradient-top    : #bddbfa;
+$alert-info-gradient-bottom : #80b5ea;
 
 $alert-warning-icon: "\f071";
 $alert-warning-primary: #FFEBA4;
 $alert-warning-secondary: #FBB942;
 $alert-warning-text: #614018;
 $alert-warning-shadow: #F5DDB0;
+$alert-warning-gradient-top    : #ffed64;
+$alert-warning-gradient-bottom : #F1C856;
+
+$alert-success-icon: "\f058";
+$alert-success-primary: #b9e356;
+$alert-success-secondary: #83c41a;
+$alert-success-text: #517319;
+$alert-success-shadow: #F5FFE6;
+$alert-success-gradient-top    : #b9e356;
+$alert-success-gradient-bottom : #a5cc52;
+
+
+$btn-font          : 'Lato';
+$btn-font-weight   : 700;
+$btn-font-size     : 15px;
+$btn-padding       : 6px 24px;
+$btn-border-radius : 6px;
+
+$btn-default-background-col  : #ffffff;
+$btn-default-border-col      : #dcdcdc;
+$btn-default-font-col        : #858585;
+$btn-default-text-shadow     : #ffffff;
+$btn-default-box-shadow      : #ffffff;
+$btn-default-gradient-top    : #ffffff;
+$btn-default-gradient-bottom : #f6f6f6;
+
+$btn-info-background-col  : #bddbfa;
+$btn-info-border-col      : #84bbf3;
+$btn-info-font-col        : #2D6292;
+$btn-info-text-shadow     : #D4EAFF;
+$btn-info-box-shadow      : #dcecfb;
+$btn-info-gradient-top    : #bddbfa;
+$btn-info-gradient-bottom : #80b5ea;
+
+$btn-primary-background-col  : #b9e356;
+$btn-primary-border-col      : #83c41a;
+$btn-primary-font-col        : #517319;
+$btn-primary-text-shadow     : #F5FFE6;
+$btn-primary-box-shadow      : #d9fbbe;
+$btn-primary-gradient-top    : #b9e356;
+$btn-primary-gradient-bottom : #a5cc52;
+
+$btn-danger-background-col  : #bddbfa;
+$btn-danger-border-col      : #d83526;
+$btn-danger-font-col        : #8A2B13;
+$btn-danger-text-shadow     : #F1BDBA;
+$btn-danger-box-shadow      : #f7c4c0;
+$btn-danger-gradient-top    : #fc8d83;
+$btn-danger-gradient-bottom : #e4685d;
+
+$btn-warning-background-col  : #ffed64;
+$btn-warning-border-col      : #ffaa22;
+$btn-warning-font-col        : #9E6335;
+$btn-warning-text-shadow     : #F9F1B7;
+$btn-warning-box-shadow      : #fff6af;
+$btn-warning-gradient-top    : #ffed64;
+$btn-warning-gradient-bottom : #F1C856;

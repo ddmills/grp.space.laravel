@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class RoomTest extends TestCase
 {
 
+    use RoomCreator;
     use DatabaseTransactions;
 
     public function testCanCreatingANewRoomWillRedirectToNewRoomPage()
@@ -83,13 +84,23 @@ class RoomTest extends TestCase
 
     public function testRoomShowPageContainsRoomInfo()
     {
-        $room = factory(Room::class)->make();
-        $room->save();
+        $room = $this->createRoom();
 
         $this
             ->visit(route('room.show', ['room' => $room->name]))
             ->see($room->name)
             ->see($room->access)
             ->see($room->description);
+    }
+
+    public function testCannotCreateRoomWithTakenName()
+    {
+        $room = $this->createRoom();
+
+        $this
+            ->visit(route('room.create'))
+            ->type($room->name, 'name')
+            ->press(Lang::get('room.create.finalize'))
+            ->see(Lang::get('validation.unique', ['attribute' => 'name']));
     }
 }

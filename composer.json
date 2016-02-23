@@ -29,7 +29,8 @@
             "tests/TestCase.php"
         ],
         "files": [
-            "tests/traits/Crawler.php"
+            "tests/traits/Crawler.php",
+            "tests/traits/RoomCreator.php"
         ]
     },
     "scripts": {

@@ -28,24 +28,23 @@
     background-image : none;
     border : 1px solid #ccc;
     border-radius : 3px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    box-shadow    : inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition    : border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
 .form-control:focus {
-    border-color: #E689CA;
-    outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(189, 102, 233, 0.6)
+    border-color : $focus-border-col;
+    outline      : 0;
+    box-shadow   : $focus-box-shadow;
 }
 
 .form-group > .note {
-    display : block;
+    display   : block;
     font-size : 13px;
+    color     : #737373;
 
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    color: #737373;
+    margin-top    : 5px;
+    margin-bottom : 10px;
 }
 
 .form-group input[type='radio'] {

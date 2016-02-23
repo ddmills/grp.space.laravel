@@ -10,6 +10,11 @@
     box-shadow: 1px 1px 1px $alert-default-shadow;
     border: 1px solid $alert-default-secondary;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.48);
+    background : linear-gradient(
+        to bottom,
+        $alert-default-gradient-top 5%,
+        $alert-default-gradient-bottom 100%
+    );
 }
 
 .alert:before {
@@ -43,6 +48,13 @@
     border: 1px solid $alert-danger-secondary;
     color : $alert-danger-text;
     box-shadow: 1px 1px 1px $alert-danger-shadow;
+    text-shadow: 1px 0px 1px $alert-danger-text-shadow;
+
+    background : linear-gradient(
+        to bottom,
+        $alert-danger-gradient-top 5%,
+        $alert-danger-gradient-bottom 100%
+    );
 }
 
 .alert.alert-info:before {
@@ -56,6 +68,12 @@
     border: 1px solid $alert-info-secondary;
     color : $alert-info-text;
     box-shadow: 1px 1px 1px $alert-info-shadow;
+
+    background : linear-gradient(
+        to bottom,
+        $alert-info-gradient-top 5%,
+        $alert-info-gradient-bottom 100%
+    );
 }
 
 .alert.alert-warning:before {
@@ -69,4 +87,29 @@
     border: 1px solid $alert-warning-secondary;
     color : $alert-warning-text;
     box-shadow: 1px 1px 1px $alert-warning-shadow;
+
+    background : linear-gradient(
+        to bottom,
+        $alert-warning-gradient-top 5%,
+        $alert-warning-gradient-bottom 100%
+    );
+}
+
+.alert.alert-success:before {
+    content: $alert-success-icon;
+    background-color: $alert-success-secondary;
+    color: #fff;
+}
+
+.alert.alert-success {
+    background-color : $alert-success-primary;
+    border: 1px solid $alert-success-secondary;
+    color : $alert-success-text;
+    box-shadow: 1px 1px 1px $alert-success-shadow;
+
+    background : linear-gradient(
+        to bottom,
+        $alert-success-gradient-top 5%,
+        $alert-success-gradient-bottom 100%
+    );
 }

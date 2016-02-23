@@ -15,13 +15,6 @@ class HomeTest extends TestCase
             ->see('grp.space');
     }
 
-    public function testHomePageLinksToRoomCreate()
-    {
-        $this
-            ->visit(route('home'))
-            ->seeElementHasAttribute('a', 'href', route('room.create'));
-    }
-
     public function testThatCurrentEnvReleaseIsDisplayedInFooter()
     {
         $this

@@ -8,6 +8,6 @@ class DBMigrate extends \Rocketeer\Abstracts\AbstractTask
 
     public function execute()
     {
-        $this->runForCurrentRelease('php artisan migrate --force');
+        $this->runForCurrentRelease('php artisan migrate --force -n');
     }
 }

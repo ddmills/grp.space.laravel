@@ -8,6 +8,6 @@ class DBSeed extends \Rocketeer\Abstracts\AbstractTask
 
     public function execute()
     {
-        $this->runForCurrentRelease('php artisan db:seed --force');
+        $this->runForCurrentRelease('php artisan db:seed --force -n');
     }
 }

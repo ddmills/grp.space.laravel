@@ -22,4 +22,11 @@ class HomeTest extends TestCase
             ->seeElementHasAttribute('a', 'href', route('room.create'));
     }
 
+    public function testThatCurrentEnvReleaseIsDisplayedInFooter()
+    {
+        $this
+            ->visit(route('home'))
+            ->seeInElement('.app-footer', env('RELEASE'));
+    }
+
 }

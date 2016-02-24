@@ -521,6 +521,9 @@ html {
 .clearfix:after {
   clear: both; }
 
+.center {
+  text-align: center; }
+
 .form-group {
   display: block;
   margin-bottom: 24px; }
@@ -743,8 +746,15 @@ html {
   background: linear-gradient(to bottom, #b9e356 5%, #a5cc52 100%); }
 
 .btn.btn-primary:hover {
-  background-color: #a5cc52;
   background: linear-gradient(to bottom, #a5cc52 5%, #b9e356 100%); }
+
+.login-body {
+  width: 350px;
+  margin: 0 auto; }
+
+.login-new {
+  font-size: 13px;
+  margin-top: 24px; }
 
 .room-access-icon {
   float: left;

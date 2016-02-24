@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Room;
+use Validator;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,12 +15,22 @@ class RoomController extends Controller
         return view('room.create');
     }
 
-    public function store(Request $request)
+    protected function validator(array $data)
     {
-        $this->validate($request, [
+        return Validator::make($data, [
             'name' => 'required|unique:rooms|roomname',
         ]);
+    }
 
+    public function store(Request $request)
+    {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            return redirect(route('room.create'))
+                ->withErrors($validator)
+                ->withInput();
+        }
         $room = Room::create($request->except('_token'));
         return redirect(route('room.show', ['room' => $room->name]));
     }

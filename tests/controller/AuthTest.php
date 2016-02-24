@@ -12,19 +12,17 @@ class AuthTest extends TestCase
     {
         $faker = Faker::create();
 
-        $userData = [
-            'username' => $faker->unique()->userName,
-            'password' => $faker->password,
-            'email' => $faker->unique()->email,
-        ];
+        $username = $faker->unique()->userName;
+        $password = $faker->password;
+        $email = $faker->unique()->email;
 
         $this
             ->visit(route('auth.register'))
-            ->type($userData['username'], 'username')
-            ->type($userData['password'], 'password')
-            ->type($userData['email'], 'email')
-            ->press(Lang::get('user.create.finalize'))
-            ->seeInDatabase('users', $userData);
+            ->type($username, 'username')
+            ->type($password, 'password')
+            ->type($email, 'email')
+            ->press(Lang::get('user.register.finalize'))
+            ->seeInDatabase('users', compact('username', 'email'));
     }
 
 }

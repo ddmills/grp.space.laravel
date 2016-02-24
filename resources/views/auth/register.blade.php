@@ -1,14 +1,12 @@
 @extends('layouts.master')
 
 @section('subheader')
-    <h2 class='app-subheader-title'>Join grp.space</h2>
-    <p class='app-subheader-tagline'>The best way to hang out with ur frans</p>
+    <h2 class='app-subheader-title'>{!! Lang::get('user.register.header') !!}</h2>
+    <p class='app-subheader-tagline'>{!! Lang::get('user.register.tagline') !!}</p>
 @endsection
 
 @section('content')
 
-<h4>Create your personal account <i class="fa fa-fw fa-male"></i></h4>
-<br>
 <form action="{{ route('auth.store') }}" method="post" accept-charset="utf-8">
 
     {{ csrf_field() }}
@@ -32,7 +30,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary pull-right">
-        Create account
+        {{ Lang::get('user.register.finalize') }}
     </button>
 
 </form>

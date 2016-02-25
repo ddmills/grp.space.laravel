@@ -1,8 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.error')
 
 @section('subheader')
     <h2 class='app-subheader-title'>404</h2>
-    <p class='app-subheader-tagline'>All those who wander are not lost.</p>
+    <p class='app-subheader-tagline'>All those who wander are not lost</p>
 @endsection
-
-@section('content')

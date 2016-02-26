@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Room;
 use Validator;
 use App\Http\Requests;
@@ -10,6 +11,12 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
+    public function index()
+    {
+        $rooms = Room::where('access', 'public')->simplePaginate(15);
+        return view('room.index', compact('rooms'));
+    }
+
     public function create()
     {
         return view('room.create');

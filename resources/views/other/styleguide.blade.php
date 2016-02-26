@@ -75,11 +75,84 @@
 <div class='styleguide-section'>
     <h1 class='styleguide-header'>Buttons</h1>
 
+    <h3>Large</h3>
+    <button type='button' class="btn btn-lg btn-default">btn-default</button>
+    <button type='button' class="btn btn-lg btn-info">btn-info</button>
+    <button type='button' class="btn btn-lg btn-primary">btn-primary</button>
+    <button type='button' class="btn btn-lg btn-warning">btn-warning</button>
+    <button type='button' class="btn btn-lg btn-danger">btn-danger</button>
+
+    <h3>Default</h3>
     <button type='button' class="btn btn-default">btn-default</button>
     <button type='button' class="btn btn-info">btn-info</button>
     <button type='button' class="btn btn-primary">btn-primary</button>
     <button type='button' class="btn btn-warning">btn-warning</button>
     <button type='button' class="btn btn-danger">btn-danger</button>
+
+    <h3>Small</h3>
+    <button type='button' class="btn btn-sm btn-default">btn-default</button>
+    <button type='button' class="btn btn-sm btn-info">btn-info</button>
+    <button type='button' class="btn btn-sm btn-primary">btn-primary</button>
+    <button type='button' class="btn btn-sm btn-warning">btn-warning</button>
+    <button type='button' class="btn btn-sm btn-danger">btn-danger</button>
+
+    <h3>Extra Small</h3>
+    <button type='button' class="btn btn-xs btn-default">btn-default</button>
+    <button type='button' class="btn btn-xs btn-info">btn-info</button>
+    <button type='button' class="btn btn-xs btn-primary">btn-primary</button>
+    <button type='button' class="btn btn-xs btn-warning">btn-warning</button>
+    <button type='button' class="btn btn-xs btn-danger">btn-danger</button>
+
+    <h2>Button Groups</h2>
+
+    <div class='btn-group btn-group-lg'>
+        <button type='button' class="btn btn-default">btn-default</button>
+        <button type='button' class="btn btn-info">btn-info</button>
+        <button type='button' class="btn btn-primary">btn-primary</button>
+        <button type='button' class="btn btn-warning">btn-warning</button>
+        <button type='button' class="btn btn-danger">btn-danger</button>
+    </div>
+
+    <br>
+
+    <div class='btn-group'>
+        <button type='button' class="btn btn-default">btn-default</button>
+        <button type='button' class="btn btn-info">btn-info</button>
+        <button type='button' class="btn btn-primary">btn-primary</button>
+        <button type='button' class="btn btn-warning">btn-warning</button>
+        <button type='button' class="btn btn-danger">btn-danger</button>
+    </div>
+
+    <br>
+
+    <div class='btn-group btn-group-sm'>
+        <button type='button' class="btn btn-default">btn-default</button>
+        <button type='button' class="btn btn-info">btn-info</button>
+        <button type='button' class="btn btn-primary">btn-primary</button>
+        <button type='button' class="btn btn-warning">btn-warning</button>
+        <button type='button' class="btn btn-danger">btn-danger</button>
+    </div>
+
+    <br>
+
+    <div class='btn-group btn-group-xs'>
+        <button type='button' class="btn btn-default">btn-default</button>
+        <button type='button' class="btn btn-info">btn-info</button>
+        <button type='button' class="btn btn-primary">btn-primary</button>
+        <button type='button' class="btn btn-warning">btn-warning</button>
+        <button type='button' class="btn btn-danger">btn-danger</button>
+    </div>
+
+    <h3>Button Group Justified</h3>
+
+    <div class='btn-group btn-group-justified'>
+        <a href='#' class="btn btn-default">btn-default</a>
+        <a href='#' class="btn btn-info">btn-info</a>
+        <a href='#' class="btn btn-primary">btn-primary</a>
+        <a href='#' class="btn btn-warning">btn-warning</a>
+        <a href='#' class="btn btn-danger">btn-danger</a>
+    </div>
+
 </div>
 
 <div class='styleguide-section'>

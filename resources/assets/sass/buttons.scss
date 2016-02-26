@@ -4,6 +4,7 @@
     font-family : $btn-font;
     font-size   : $btn-font-size;
     font-weight : $btn-font-weight;
+    line-height : 1.42857143;
 
     border-radius : $btn-border-radius;
 
@@ -18,6 +19,30 @@
     vertical-align  : middle;
 
     touch-action : manipulation;
+}
+
+.btn-group.btn-group-xs > .btn,
+.btn-xs {
+    padding       : $btn-xs-padding;
+    font-size     : $btn-xs-font-size;
+    border-radius : $btn-xs-border-radius;
+    line-height   : 1.5;
+}
+
+.btn-group.btn-group-sm > .btn,
+.btn-sm {
+    padding       : $btn-sm-padding;
+    font-size     : $btn-sm-font-size;
+    border-radius : $btn-sm-border-radius;
+    line-height   : 1.5;
+}
+
+.btn-group.btn-group-lg > .btn,
+.btn-lg {
+    padding       : $btn-lg-padding;
+    font-size     : $btn-lg-font-size;
+    border-radius : $btn-lg-border-radius;
+    line-height   : 1.333333;
 }
 
 .btn:focus,
@@ -154,4 +179,55 @@
         $btn-primary-gradient-bottom 5%,
         $btn-primary-gradient-top 100%
     );
+}
+
+.btn-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn-group > .btn {
+    position: relative;
+    float: left;
+}
+
+.btn-group.btn-group-justified {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    position: relative;
+    vertical-align: middle;
+}
+
+.btn-group.btn-group-justified > .btn {
+    display: table-cell;
+    float: none;
+    width: 1%;
+}
+
+.btn-group > .btn:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+.btn-group > .btn:first-child:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-group > .btn:first-child {
+    margin-left: 0;
+}
+
+.btn-group > .btn:last-child:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.btn-group .btn+.btn,
+.btn-group .btn+.btn-group,
+.btn-group .btn-group+.btn,
+.btn-group .btn-group+.btn-group {
+    margin-left: -1px;
 }

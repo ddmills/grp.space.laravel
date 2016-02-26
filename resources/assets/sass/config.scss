@@ -60,9 +60,22 @@ $alert-success-gradient-bottom : #a5cc52;
 
 $btn-font          : 'Lato';
 $btn-font-weight   : 700;
-$btn-font-size     : 15px;
-$btn-padding       : 6px 24px;
-$btn-border-radius : 6px;
+
+$btn-font-size     : 14px;
+$btn-padding       : 6px 12px;
+$btn-border-radius : 4px;
+
+$btn-xs-font-size     : 12px;
+$btn-xs-padding       : 2px 5px;
+$btn-xs-border-radius : 3px;
+
+$btn-sm-font-size     : 12px;
+$btn-sm-padding       : 5px 10px;
+$btn-sm-border-radius : 3px;
+
+$btn-lg-font-size     : 18px;
+$btn-lg-padding       : 10px 16px;
+$btn-lg-border-radius : 6px;
 
 $btn-default-background-col  : #ffffff;
 $btn-default-border-col      : #dcdcdc;

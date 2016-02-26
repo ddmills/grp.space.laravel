@@ -13,5 +13,5 @@
 @endsection
 
 @section('content')
-{{ $room->access }}
+    {{ $room->access }}
 @endsection

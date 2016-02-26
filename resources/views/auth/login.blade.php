@@ -5,7 +5,7 @@
         <i class="fa fa-fw fa-shield fa-3x"></i>
     </div>
     <br>
-    <h2 class='app-subheader-title center'>Sign in to grp.space</h2>
+    <h2 class='app-subheader-title center'>{{ Lang::get('auth.login.header') }}</h2>
 @endsection
 
 @section('content')
@@ -25,7 +25,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary btn-block">
-            {{ Lang::get('user.login.finalize') }}
+            {{ Lang::get('auth.login.finalize') }}
         </button>
 
     </form>

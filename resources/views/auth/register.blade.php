@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('subheader')
-    <h2 class='app-subheader-title'>{!! Lang::get('user.register.header') !!}</h2>
-    <p class='app-subheader-tagline'>{!! Lang::get('user.register.tagline') !!}</p>
+    <h2 class='app-subheader-title'>{!! Lang::get('auth.register.header') !!}</h2>
+    <p class='app-subheader-tagline'>{!! Lang::get('auth.register.tagline') !!}</p>
 @endsection
 
 @section('content')
@@ -30,7 +30,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary pull-right">
-        {{ Lang::get('user.register.finalize') }}
+        {{ Lang::get('auth.register.finalize') }}
     </button>
 
 </form>

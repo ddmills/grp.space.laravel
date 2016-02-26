@@ -13,13 +13,13 @@
 
     <div class='form-group'>
         <label for="input-name">Room Name</label>
-        <span class='note'>Name can only contain hyphens (-), tildes (~), and alphanumeric characters (a-z, 0-9).</span>
-        <input type="text" class="form-control" id="input-name" name="name">
+        <span class='note'>Name can only contain hyphens (-), tildes (~), and lowercase alphanumeric characters (a-z, 0-9).</span>
+        <input type="text" class="form-control" id="input-name" name="name" value="{{ old('name') }}">
     </div>
 
     <div class='form-group'>
         <label for="input-description">Description <small>(optional)</small></label>
-        <input type="text" class="form-control" id="input-description" name="description">
+        <input type="text" class="form-control" id="input-description" name="description" value="{{ old('description') }}">
     </div>
 
     <div class='form-group radio-group'>

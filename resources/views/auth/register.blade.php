@@ -13,13 +13,13 @@
 
     <div class='form-group'>
         <label for="input-username">Username</label>
-        <input type="text" class="form-control" id="input-username" name="username">
+        <input type="text" class="form-control" id="input-username" name="username" value="{{ old('username') }}">
         <span class='note'>Username can only contain hyphens (-), tildes (~), and alphanumeric characters (a-z, 0-9).</span>
     </div>
 
     <div class='form-group'>
-        <label for="input-description">Email Address</label>
-        <input type="email" class="form-control" id="input-email" name="email">
+        <label for="input-email">Email Address</label>
+        <input type="email" class="form-control" id="input-email" name="email" value="{{ old('email') }}">
         <span class="note">You will occasionally receive account related emails. We promise not to share your email with anyone.</span>
     </div>
 

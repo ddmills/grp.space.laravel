@@ -10,13 +10,14 @@
 
 @section('content')
 <div class="login-body">
-    <form action="{{ route('auth.verify') }}" method="post" accept-charset="utf-8">
+
+    <form action="{{ route('auth.authenticate') }}" method="post" accept-charset="utf-8">
 
         {{ csrf_field() }}
 
         <div class='form-group'>
-            <label for="input-username">Username</label>
-            <input type="text" class="form-control" id="input-username" name="username">
+            <label for="input-identifier">Username or email</label>
+            <input type="text" class="form-control" id="input-identifier" name="identifier">
         </div>
 
         <div class='form-group'>

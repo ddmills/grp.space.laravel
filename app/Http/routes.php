@@ -10,11 +10,11 @@ Route::group(['middleware' => ['web']], function () {
         return view('other.styleguide', compact('faker'));
     }]);
 
-    Route::get('login',  ['as' => 'auth.login',  'uses' => 'Auth\AuthController@login']);
-    Route::post('login', ['as' => 'auth.verify', 'uses' => 'Auth\AuthController@authenticate']);
+    Route::get('login',  ['as' => 'auth.login', 'uses' => 'Auth\AuthController@login']);
+    Route::post('login', ['as' => 'auth.authenticate', 'uses' => 'Auth\AuthController@authenticate']);
     Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@logout']);
 
-    Route::get('join',  ['as' => 'auth.register',   'uses' => 'Auth\AuthController@register']);
+    Route::get('join',  ['as' => 'auth.register', 'uses' => 'Auth\AuthController@register']);
     Route::post('join', ['as' => 'auth.store', 'uses' => 'Auth\AuthController@store']);
 
 });

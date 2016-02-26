@@ -93,6 +93,7 @@ return [
             'roomname' => 'Roomname can only contain hyphens (-), tildes (~), and alphanumeric characters (a-z, 0-9).',
         ],
     ],
+    'username' => 'Username can only contain hyphens (-), tildes (~), and alphanumeric characters (a-z, 0-9).',
 
     /*
     |--------------------------------------------------------------------------

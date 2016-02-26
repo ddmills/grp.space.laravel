@@ -9,21 +9,21 @@ class AuthTest extends TestCase
 {
 
     use UserCreator;
+    use AuthChecker;
     use DatabaseTransactions;
 
     public function testVisitorCanRegisterAccount()
     {
         $faker = Faker::create();
 
-        $username = $faker->unique()->userName;
-        $email = $faker->unique()->email;
         $password = $faker->password;
+        $user = $this->makeUser();
 
         $this
             ->visit(route('auth.register'))
-            ->type($username, 'username')
+            ->type($user->username, 'username')
             ->type($password, 'password')
-            ->type($email, 'email')
+            ->type($user->email, 'email')
             ->press(Lang::get('auth.register.finalize'))
             ->seeInDatabase('users', compact('username', 'email'));
     }
@@ -44,17 +44,33 @@ class AuthTest extends TestCase
             ->see('The email field is required');
     }
 
-    public function testUserCanLogin()
+    public function testCanLoginWithUsername()
     {
         $password = 'password';
         $user = $this->createUserWithPassword($password);
 
         $this
             ->visit(route('auth.login'))
-            ->type($user->username, 'username')
+            ->type($user->username, 'identifier')
             ->type($password, 'password')
             ->press(Lang::get('auth.login.finalize'))
-            ->seeAuthenticated($user);
+            ->seeAuthenticated($user)
+            ->seeInElement('.app-footer', 'logout');
+    }
+
+    public function testCanLoginWithEmail()
+    {
+        $password = 'password';
+        $user = $this->createUserWithPassword($password);
+
+        $this
+            ->visit(route('auth.login'))
+            ->type($user->email, 'identifier')
+            ->type($password, 'password')
+            ->press(Lang::get('auth.login.finalize'))
+            ->seeAuthenticated($user)
+            ->dontSeeInElement('.app-footer', 'Sign in')
+            ->seeInElement('.app-footer', 'Sign out');
     }
 
 }

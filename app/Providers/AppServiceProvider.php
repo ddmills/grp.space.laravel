@@ -17,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('roomname', function($attriute, $value, $parameters, $validator) {
             return !preg_match('/[^a-z~\-0-9]/', $value) && !empty($value);
         });
+
+        Validator::extend('username', function($attriute, $value, $parameters, $validator) {
+            return !preg_match('/[^a-z~\-0-9]/', $value) && !empty($value);
+        });
     }
 
     /**

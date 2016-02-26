@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Lang;
+use Auth;
 use App\User;
 use Validator;
 use Illuminate\Http\Request;
@@ -11,17 +13,6 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Registration & Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
-
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
@@ -31,28 +22,17 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/';
 
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => 'max:255',
             'email' => 'required|email|max:255|unique:users',
-            'username' => 'required|max:255|unique:users',
+            'username' => 'required|max:255|username|unique:users',
             'password' => 'required|min:6',
         ]);
     }
@@ -83,7 +63,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return redirect(route('auth.register'))
                 ->withErrors($validator)
-                ->withInput();
+                ->withInput($request->except('password'));
         }
         $this->create($data);
 
@@ -98,5 +78,31 @@ class AuthController extends Controller
     public function login()
     {
         return view('auth.login');
+    }
+
+    public function authenticate(Request $request)
+    {
+        $identifier = $request->input('identifier');
+        $password = $request->input('password');
+
+        $data = ['identifier' => $identifier];
+        $rules = ['identifier' => 'email'];
+
+        $isEmail = Validator::make($data, $rules)->passes();
+
+        if ($isEmail) {
+            if (Auth::attempt(['email' => $identifier, 'password' => $password])) {
+                return redirect()->intended(route('home'));
+            }
+        } else {
+            if (Auth::attempt(['username' => $identifier, 'password' => $password])) {
+                return redirect()->intended(route('home'));
+            }
+        }
+
+        return redirect()
+            ->back()
+            ->withErrors(Lang::get('auth.failed'))
+            ->withInput(['identifier' => $identifier]);
     }
 }

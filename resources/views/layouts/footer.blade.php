@@ -13,8 +13,12 @@
                 <a href="{{ route('room.create') }}">create room</a><br>
             </div>
             <div class="column one-third">
-                <a href="{{ route('auth.register') }}">register</a><br>
-                <a href="{{ route('auth.login') }}">login</a>
+                @if (Auth::check())
+                    <a href="{{ route('auth.logout') }}">Sign out</a><br>
+                @else
+                    <a href="{{ route('auth.register') }}">Sign up</a><br>
+                    <a href="{{ route('auth.login') }}">Sign in</a>
+                @endif
             </div>
         </div>
     </footer>

@@ -813,6 +813,13 @@ html {
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
 
+.app-header > .container {
+  padding: 8px 0; }
+
+.app-header {
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa; }
+
 .login-body {
   width: 350px;
   margin: 0 auto; }

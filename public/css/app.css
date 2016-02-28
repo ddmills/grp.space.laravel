@@ -740,7 +740,7 @@ html {
   border: 1px solid #d83526;
   box-shadow: inset 0px 1px 0px 0px #f7c4c0;
   text-shadow: 0px 1px 0px #F1BDBA;
-  background-color: #bddbfa;
+  background-color: #fc8d83;
   background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%); }
 
 .btn.btn-danger:hover {
@@ -813,6 +813,48 @@ html {
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
 
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  box-shadow: none;
+  opacity: .65; }
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none; }
+
+.btn.btn-primary.disabled,
+.btn.btn-primary[disabled],
+fieldset[disabled] .btn.btn-primary {
+  background-image: none;
+  background-color: #b9e356; }
+
+.btn.btn-default.disabled,
+.btn.btn-default[disabled],
+fieldset[disabled] .btn.btn-default {
+  background-image: none;
+  background-color: #ffffff; }
+
+.btn.btn-warning.disabled,
+.btn.btn-warning[disabled],
+fieldset[disabled] .btn.btn-warning {
+  background-image: none;
+  background-color: #ffed64; }
+
+.btn.btn-danger.disabled,
+.btn.btn-danger[disabled],
+fieldset[disabled] .btn.btn-danger {
+  background-image: none;
+  background-color: #fc8d83; }
+
+.btn.btn-info.disabled,
+.btn.btn-info[disabled],
+fieldset[disabled] .btn.btn-info {
+  background-image: none;
+  background-color: #bddbfa; }
+
 .app-header > .container {
   padding: 8px 0; }
 
@@ -823,6 +865,48 @@ html {
   color: #F3F0EB;
   font-size: 18px;
   line-height: 1.5em; }
+
+.starting-steps {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  position: relative;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  border-left: none;
+  margin-bottom: 40px; }
+
+.step {
+  display: table-cell;
+  float: none;
+  width: 1%;
+  background-color: #fafafa;
+  padding: 10px 15px;
+  border-left: 1px solid #ccc;
+  color: #ccc;
+  cursor: default;
+  box-shadow: -4px -4px 8px rgba(243, 238, 238, 0.68) inset; }
+
+.step-num {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 13px; }
+
+.step-desc {
+  font-size: 13px; }
+
+.step-icon {
+  float: left;
+  margin-right: 5px; }
+
+.step.active {
+  background-color: #fff;
+  color: #333; }
+
+.step-action {
+  margin-top: 8px; }
 
 .login-body {
   width: 350px;

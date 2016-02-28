@@ -1,0 +1,48 @@
+.starting-steps {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    position: relative;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    border-left: none;
+    margin-bottom: 40px;
+}
+
+.step {
+    display: table-cell;
+    float: none;
+    width: 1%;
+    background-color: #fafafa;
+    padding: 10px 15px;
+    border-left: 1px solid #ccc;
+    color: #ccc;
+    cursor: default;
+    box-shadow: -4px -4px 8px rgba(243, 238, 238, 0.68) inset;
+}
+
+.step-num {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.step-desc {
+    font-size: 13px;
+}
+
+.step-icon {
+    float: left;
+    margin-right: 5px;
+}
+
+.step.active {
+    background-color: #fff;
+    color: #333;
+}
+
+.step-action {
+    margin-top: 8px;
+}

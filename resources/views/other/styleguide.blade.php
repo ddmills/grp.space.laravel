@@ -153,6 +153,20 @@
         <a href='#' class="btn btn-danger">btn-danger</a>
     </div>
 
+    <h2>Button States</h2>
+    <a href='#' class="btn btn-default disabled">btn-default</a>
+    <a href='#' class="btn btn-info disabled">btn-info</a>
+    <a href='#' class="btn btn-primary disabled">btn-primary</a>
+    <a href='#' class="btn btn-warning disabled">btn-warning</a>
+    <a href='#' class="btn btn-danger disabled">btn-danger</a>
+
+    <br>
+
+    <button type="button" class="btn btn-default " disabled>btn-default</button>
+    <button type="button" class="btn btn-info " disabled>btn-info</button>
+    <button type="button" class="btn btn-primary " disabled>btn-primary</button>
+    <button type="button" class="btn btn-warning " disabled>btn-warning</button>
+    <button type="button" class="btn btn-danger " disabled>btn-danger</button>
 </div>
 
 <div class='styleguide-section'>

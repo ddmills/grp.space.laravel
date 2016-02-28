@@ -45,26 +45,34 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'username' => $data['username'],
             'password' => bcrypt($data['password']),
         ]);
+
+        $user->assignRole('user');
+
+        return $user;
     }
 
     public function store(Request $request)
     {
         $data = $request->except('_token');
+
         if (!isset($data['name'])) {
             $data['name'] = $data['username'];
         }
+
         $validator = $this->validator($data);
+
         if ($validator->fails()) {
             return redirect(route('auth.register'))
                 ->withErrors($validator)
                 ->withInput($request->except('password'));
         }
+
         $this->create($data);
 
         return redirect(route('auth.login'));

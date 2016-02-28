@@ -19,6 +19,8 @@ class RoomController extends Controller
 
     public function create()
     {
+        $this->authorize('room-create');
+
         return view('room.create');
     }
 
@@ -31,6 +33,8 @@ class RoomController extends Controller
 
     public function store(Request $request)
     {
+        $this->authorize('room-create');
+
         $validator = $this->validator($request->all());
 
         if ($validator->fails()) {

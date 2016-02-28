@@ -3,6 +3,11 @@
 }
 
 .app-header {
-    border-bottom: 1px solid #eee;
-    background-color: #fafafa;
+    background-color: $app-header-col;
+}
+
+.app-header-logo {
+    color: $app-header-font-col;
+    font-size: 18px;
+    line-height: 1.5em;
 }

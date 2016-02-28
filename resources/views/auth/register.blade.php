@@ -26,7 +26,7 @@
     <div class='form-group'>
         <label for="input-password">Password</label>
         <input type="password" class="form-control" id="input-password" name="password">
-        <span class="note">Make your p4ssword as insecure as u want</span>
+        <span class="note">Password must be at least six characters long.</span>
     </div>
 
     <button type="submit" class="btn btn-primary pull-right">

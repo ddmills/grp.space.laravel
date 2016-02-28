@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -8,7 +9,7 @@ use Faker\Factory as Faker;
 class AuthTest extends TestCase
 {
 
-    use UserCreator;
+    use ActorCreator;
     use AuthChecker;
     use DatabaseTransactions;
 
@@ -17,15 +18,18 @@ class AuthTest extends TestCase
         $faker = Faker::create();
 
         $password = $faker->password;
-        $user = $this->makeUser();
+        $actor = $this->makeActor();
 
         $this
             ->visit(route('auth.register'))
-            ->type($user->username, 'username')
+            ->type($actor->username, 'username')
             ->type($password, 'password')
-            ->type($user->email, 'email')
+            ->type($actor->email, 'email')
             ->press(Lang::get('auth.register.finalize'))
             ->seeInDatabase('users', compact('username', 'email'));
+
+        $user = User::where('username', $actor->username)->first();
+        $this->assertTrue($user->hasRole('user'));
     }
 
     public function testRegisterAccountFieldsAreRequired()
@@ -47,7 +51,7 @@ class AuthTest extends TestCase
     public function testCanLoginWithUsername()
     {
         $password = 'password';
-        $user = $this->createUserWithPassword($password);
+        $user = $this->createActorWithPassword($password);
 
         $this
             ->visit(route('auth.login'))
@@ -55,13 +59,13 @@ class AuthTest extends TestCase
             ->type($password, 'password')
             ->press(Lang::get('auth.login.finalize'))
             ->seeAuthenticated($user)
-            ->seeInElement('.app-footer', 'logout');
+            ->seeInElement('.app-header', 'Sign out');
     }
 
     public function testCanLoginWithEmail()
     {
         $password = 'password';
-        $user = $this->createUserWithPassword($password);
+        $user = $this->createActorWithPassword($password);
 
         $this
             ->visit(route('auth.login'))
@@ -69,8 +73,8 @@ class AuthTest extends TestCase
             ->type($password, 'password')
             ->press(Lang::get('auth.login.finalize'))
             ->seeAuthenticated($user)
-            ->dontSeeInElement('.app-footer', 'Sign in')
-            ->seeInElement('.app-footer', 'Sign out');
+            ->dontSeeInElement('.app-header', 'Sign in')
+            ->seeInElement('.app-header', 'Sign out');
     }
 
 }

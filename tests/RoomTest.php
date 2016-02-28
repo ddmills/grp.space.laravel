@@ -9,6 +9,7 @@ class RoomTest extends TestCase
 {
 
     use RoomCreator;
+    use ActorCreator;
     use DatabaseTransactions;
 
     public function testCanCreatingANewRoomWillRedirectToNewRoomPage()
@@ -17,6 +18,7 @@ class RoomTest extends TestCase
         $roomName = 'test-room-' . $date->getTimestamp();
 
         $this
+            ->actingAs($this->createUser())
             ->visit(route('room.create'))
             ->type($roomName, 'name')
             ->select('public', 'access')
@@ -30,6 +32,7 @@ class RoomTest extends TestCase
         $roomName = 'test-room-' . $date->getTimestamp();
 
         $this
+            ->actingAs($this->createUser())
             ->visit(route('room.create'))
             ->type($roomName, 'name')
             ->press(Lang::get('room.create.finalize'))
@@ -39,6 +42,7 @@ class RoomTest extends TestCase
     public function testNameFieldIsRequired()
     {
         $this
+            ->actingAs($this->createUser())
             ->visit(route('room.create'))
             ->press(Lang::get('room.create.finalize'))
             ->see(Lang::get('validation.required', ['attribute' => 'name']));
@@ -49,6 +53,7 @@ class RoomTest extends TestCase
         $roomName = "Cannot have spaces";
 
         $this
+            ->actingAs($this->createUser())
             ->visit(route('room.create'))
             ->type($roomName, 'name')
             ->press(Lang::get('room.create.finalize'))
@@ -58,6 +63,7 @@ class RoomTest extends TestCase
     public function testNameFieldCannotBeEmpty()
     {
         $this
+            ->actingAs($this->createUser())
             ->visit(route('room.create'))
             ->type('', 'name')
             ->press(Lang::get('room.create.finalize'))
@@ -67,6 +73,7 @@ class RoomTest extends TestCase
     public function testNameFieldCannotBeJustWhitespace()
     {
         $this
+            ->actingAs($this->createUser())
             ->visit(route('room.create'))
             ->type(' ', 'name')
             ->press(Lang::get('room.create.finalize'))
@@ -76,6 +83,7 @@ class RoomTest extends TestCase
     public function testNameFieldCannotBeQuestionMark()
     {
         $this
+            ->actingAs($this->createUser())
             ->visit(route('room.create'))
             ->type('?', 'name')
             ->press(Lang::get('room.create.finalize'))
@@ -98,6 +106,7 @@ class RoomTest extends TestCase
         $room = $this->createRoom();
 
         $this
+            ->actingAs($this->createUser())
             ->visit(route('room.create'))
             ->type($room->name, 'name')
             ->press(Lang::get('room.create.finalize'))

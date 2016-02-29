@@ -2,7 +2,7 @@
 
 @section('subheader')
     <h2 class='app-subheader-title'>
-        {{ $room->name }}
+        grp.space/at/{{ $room->name }}
         @if($room->access == 'public')
             <i class='fa fa-fw fa-eye pull-right' title='This room is public'></i>
         @elseif($room->access == 'private')

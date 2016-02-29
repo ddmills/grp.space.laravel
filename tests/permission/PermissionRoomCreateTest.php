@@ -12,13 +12,13 @@ class PermissionRoomCreateTest extends TestCase
 
     public function testUserRoleHasCreateRoomPermission()
     {
-        $user = $this->createActorWithRole('user');
+        $user = $this->createUser();
         $this->assertTrue($user->can('room-create'));
     }
 
     public function testActorWithRoomCreatePermissionCanCreateRoom()
     {
-        $user = $this->createActorWithRole('user');
+        $user = $this->createUser();
         $date = new DateTime();
         $roomName = 'test-room-' . $date->getTimestamp();
 

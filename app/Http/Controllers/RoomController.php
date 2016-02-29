@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Auth;
 use App\Room;
 use Validator;
 use App\Http\Requests;
@@ -45,7 +46,10 @@ class RoomController extends Controller
         }
 
         $room = Room::create($request->except('_token'));
-        return redirect(route('room.show', ['room' => $room->name]))->with('success', 'Welcome to your new room!');
+        $room->setOwner(Auth::user());
+
+        return redirect(route('room.show', ['room' => $room->name]))
+            ->with('success', 'Welcome to your new room!');
     }
 
     public function show(Request $request, $roomName)

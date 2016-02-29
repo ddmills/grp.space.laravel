@@ -67,118 +67,23 @@
 }
 
 .btn.btn-default {
-    color       : $btn-default-font-col;
-    border      : 1px solid $btn-default-border-col;
-    box-shadow  : inset 0px 1px 0px 0px $btn-default-box-shadow;
-    text-shadow : 0px 1px 0px $btn-default-text-shadow;
-
-    background-color : $btn-default-background-col;
-    background       : linear-gradient(
-        to bottom,
-        $btn-default-gradient-top 5%,
-        $btn-default-gradient-bottom 100%
-    );
-}
-
-.btn.btn-default:hover {
-    background-color : $btn-default-gradient-bottom;
-    background       : linear-gradient(
-        to bottom,
-        $btn-default-gradient-bottom 5%,
-        $btn-default-gradient-top 100%
-    );
+    @include button-variant($btn-default-font-col, $btn-default-background-col, $btn-default-border-col);
 }
 
 .btn.btn-info {
-    color       : $btn-info-font-col;
-    border      : 1px solid $btn-info-border-col;
-    box-shadow  : inset 0px 1px 0px 0px $btn-info-box-shadow;
-    text-shadow : 0px 1px 0px $btn-info-text-shadow;
-
-    background-color : $btn-info-background-col;
-    background       : linear-gradient(
-        to bottom,
-        $btn-info-gradient-top 5%,
-        $btn-info-gradient-bottom 100%
-    );
-}
-
-.btn.btn-info:hover {
-    background-color : $btn-info-gradient-bottom;
-    background       : linear-gradient(
-        to bottom,
-        $btn-info-gradient-bottom 5%,
-        $btn-info-gradient-top 100%
-    );
+    @include button-variant($btn-info-font-col, $btn-info-background-col, $btn-info-border-col);
 }
 
 .btn.btn-danger {
-    color       : $btn-danger-font-col;
-    border      : 1px solid $btn-danger-border-col;
-    box-shadow  : inset 0px 1px 0px 0px $btn-danger-box-shadow;
-    text-shadow : 0px 1px 0px $btn-danger-text-shadow;
-
-    background-color : $btn-danger-background-col;
-    background       : linear-gradient(
-        to bottom,
-        $btn-danger-gradient-top 5%,
-        $btn-danger-gradient-bottom 100%
-    );
-}
-
-.btn.btn-danger:hover {
-    background-color : $btn-danger-gradient-bottom;
-    background       : linear-gradient(
-        to bottom,
-        $btn-danger-gradient-bottom 5%,
-        $btn-danger-gradient-top 100%
-    );
+    @include button-variant($btn-danger-font-col, $btn-danger-background-col, $btn-danger-border-col);
 }
 
 .btn.btn-warning {
-    color       : $btn-warning-font-col;
-    border      : 1px solid $btn-warning-border-col;
-    box-shadow  : inset 0px 1px 0px 0px $btn-warning-box-shadow;
-    text-shadow : 0px 1px 0px $btn-warning-text-shadow;
-
-    background-color : $btn-warning-background-col;
-    background       : linear-gradient(
-        to bottom,
-        $btn-warning-gradient-top 5%,
-        $btn-warning-gradient-bottom 100%
-    );
-}
-
-.btn.btn-warning:hover {
-    background-color : $btn-warning-gradient-bottom;
-    background       : linear-gradient(
-        to bottom,
-        $btn-warning-gradient-bottom 5%,
-        $btn-warning-gradient-top 100%
-    );
+    @include button-variant($btn-warning-font-col, $btn-warning-background-col, $btn-warning-border-col);
 }
 
 .btn.btn-primary {
-    color       : $btn-primary-font-col;
-    border      : 1px solid $btn-primary-border-col;
-    box-shadow  : inset 0px 1px 0px 0px $btn-primary-box-shadow;
-    text-shadow : 0px 1px 0px $btn-primary-text-shadow;
-
-    background-color : $btn-primary-background-col;
-    background       : linear-gradient(
-        to bottom,
-        $btn-primary-gradient-top 5%,
-        $btn-primary-gradient-bottom 100%
-    );
-}
-
-.btn.btn-primary:hover {
-    background-color : $btn-primary-gradient-bottom;
-    background       : linear-gradient(
-        to bottom,
-        $btn-primary-gradient-bottom 5%,
-        $btn-primary-gradient-top 100%
-    );
+    @include button-variant($btn-primary-font-col, $btn-primary-background-col, $btn-primary-border-col);
 }
 
 .btn-group {

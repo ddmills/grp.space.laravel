@@ -10,3 +10,29 @@
         content: "";
     }
 }
+
+@mixin button-variant($color, $background, $border) {
+    color: $color;
+    background-color: $background;
+    border: 1px solid $border;
+
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.75);
+
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.8);
+
+    background: linear-gradient(
+        lighten($background, 15%),
+        darken($background, 6%)
+    );
+
+    &:hover {
+        color: $color;
+        background-color: darken($background, 4%);
+        border-color: darken($border, 8%);
+
+        background: linear-gradient(
+            lighten($background, 18%),
+            darken($background, 16%)
+        );
+    }
+}

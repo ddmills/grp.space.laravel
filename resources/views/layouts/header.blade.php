@@ -2,10 +2,11 @@
 <header class="app-header">
     <div class="container">
         <a href="{{ route('home') }}" class="app-header-logo pull-left">
-            grp.space
+            <i class="fa fa-fw fa-cube"></i> grp.space
         </a>
         <div class="btn-group btn-group-sm pull-right">
         @if (Auth::check())
+            <a class="btn btn-sm btn-default" href="{{ route('dashboard.index', ['user' => Auth::user()->username]) }}">Profile</a>
             <a class="btn btn-sm btn-default" href="{{ route('auth.logout') }}">Sign out</a>
         @else
             <a class="btn btn-primary" href="{{ route('auth.register') }}">Sign up</a>

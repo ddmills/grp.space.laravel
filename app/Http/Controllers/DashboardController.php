@@ -12,8 +12,11 @@ class DashboardController extends Controller
 {
     public function index(Request $request, $username)
     {
+        $this->authorize('room-view-owned');
+
         $user = User::where('username', $username)->firstOrFail();
         $rooms = $user->rooms;
-        return $rooms;
+
+        return view('dashboard.index', compact('user', 'rooms'));
     }
 }

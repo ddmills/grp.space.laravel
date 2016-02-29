@@ -1,0 +1,36 @@
+.user-image {
+    width: 155px;
+    height: 155px;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+}
+
+.user-image > img {
+    float: left;
+}
+
+.user-name {
+    margin-top: 8px;
+}
+
+.panel {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px #FCE6FF;
+}
+
+.panel-header {
+    background-color: #333;
+    color: #eee;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 16px;
+    height: 46px;
+}
+
+.panel-body {
+    padding: 16px;
+    background-color: #fefefe;
+}

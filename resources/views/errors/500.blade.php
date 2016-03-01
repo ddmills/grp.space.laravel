@@ -1,6 +1,6 @@
 @extends('layouts.error')
 
-@section('subheader')
-    <h2 class='app-subheader-title'>500</h2>
-    <p class='app-subheader-tagline'>What did you do</p>
+@section('content')
+    <h2 class="page-title">500</h2>
+    <p class="page-lead">What did you do</p>
 @endsection

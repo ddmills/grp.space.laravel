@@ -1,13 +1,31 @@
-.app-header > .container {
-    padding: 8px 0;
+.app-navigation > .container {
+    padding: 6px 0;
 }
 
-.app-header {
+.app-navigation {
     background-color: $app-header-col;
 }
 
-.app-header-logo {
+.app-nav-logo {
     color: $app-header-font-col;
     font-size: 18px;
+    line-height: 1.25em;
+    padding: 8px 12px;
+    margin-left: -12px;
+}
+
+.nav-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -12px;
+}
+
+.nav-item {
+    padding: 8px 12px;
     line-height: 1.5em;
+    font-size: 15px;
+    color: $app-header-font-col;;
+    position: relative;
+    float: left;
 }

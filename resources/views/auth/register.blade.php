@@ -1,11 +1,10 @@
 @extends('layouts.master')
 
-@section('subheader')
-    <h2 class='app-subheader-title'>{!! Lang::get('auth.register.header') !!}</h2>
-    <p class='app-subheader-tagline'>{!! Lang::get('auth.register.tagline') !!}</p>
-@endsection
-
 @section('content')
+    <div class="page-header">
+        <h2 class="page-title">{!! Lang::get('auth.register.header') !!}</h2>
+        <p class="page-lead">{!! Lang::get('auth.register.tagline') !!}</p>
+    </div>
 
     @include('other.steps', ['actions' => false])
 

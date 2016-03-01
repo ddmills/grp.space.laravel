@@ -1,12 +1,14 @@
 @extends('layouts.master')
 
-@section('subheader')
-    <h2 class='app-subheader-title'>
-        Room Index
-    </h2>
-@endsection
 
 @section('content')
+
+    <header class="page-header">
+        <h2 class='page-title'>
+            Room Index
+        </h2>
+    </header>
+
     @foreach ($rooms as $room)
         <p>
             {{ $room->id }} &middot;

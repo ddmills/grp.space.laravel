@@ -1,11 +1,10 @@
 @extends('layouts.master')
 
-@section('subheader')
-    <h2 class='app-subheader-title'>{{ Lang::get('room.create.header') }}</h2>
-    <p class='app-subheader-tagline'>{{ Lang::get('room.create.tagline') }}</p>
-@endsection
-
 @section('content')
+    <header class="page-header">
+        <h2 class="page-title">{{ Lang::get('room.create.header') }}</h2>
+        <p class="page-lead">{{ Lang::get('room.create.tagline') }}</p>
+    </header>
 
     @include('other.steps', ['actions' => false])
 
@@ -15,7 +14,7 @@
 
         <div class='form-group'>
             <label for="input-name">Room Name</label>
-            <span class='note'>Name can only contain hyphens (-), tildes (~), and lowercase alphanumeric characters (a-z, 0-9).</span>
+            <span class="note">Name can only contain hyphens (-), tildes (~), and lowercase alphanumeric characters (a-z, 0-9).</span>
             <input type="text" class="form-control" id="input-name" name="name" value="{{ old('name') }}">
         </div>
 

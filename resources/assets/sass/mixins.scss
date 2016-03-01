@@ -35,4 +35,17 @@
             darken($background, 16%)
         );
     }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        background-image: none;
+        background-color: lighten($background, 15%);
+        pointer-events: none;
+        cursor: not-allowed;
+        filter: alpha(opacity=65);
+        box-shadow: none;
+        opacity: .65;
+    }
+
 }

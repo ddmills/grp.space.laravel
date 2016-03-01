@@ -7,7 +7,7 @@
 
 @section('content')
 
-    @include('other.starting-steps', ['actions' => false])
+    @include('other.steps', ['actions' => false])
 
     <form action="{{ route('auth.store') }}" method="post" accept-charset="utf-8">
 

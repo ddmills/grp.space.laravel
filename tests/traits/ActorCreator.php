@@ -28,10 +28,21 @@ trait ActorCreator
     {
         $user = $this->createUser($attributes);
         $rooms = $this->createRooms($roomCount);
-        $user->rooms()->saveMany($rooms);
+
+        if ($roomCount > 1) {
+            $user->rooms()->saveMany($rooms);
+        } else {
+            $user->rooms()->save($rooms);
+        }
+
         $user->save();
 
         return $user;
+    }
+
+    public function createUserWithRoom($attributes = [])
+    {
+        return $this->createUserWithRooms(1, $attributes);
     }
 
     public function createAdmin($attributes = [])

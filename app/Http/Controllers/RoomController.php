@@ -7,8 +7,10 @@ use Auth;
 use App\Room;
 use Validator;
 use App\Http\Requests;
+use App\Events\ChatMessage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class RoomController extends Controller
 {
@@ -56,5 +58,11 @@ class RoomController extends Controller
     {
         $room = Room::where('name', $roomName)->firstOrFail();
         return view('room.show', compact('room'));
+    }
+
+    public function emit(Request $request, $roomName)
+    {
+        $room = Room::where('name', $roomName)->firstOrFail();
+        event(new ChatMessage($room, 'hello world'));
     }
 }

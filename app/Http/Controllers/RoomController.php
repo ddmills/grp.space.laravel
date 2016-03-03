@@ -65,4 +65,10 @@ class RoomController extends Controller
         $room = Room::where('name', $roomName)->firstOrFail();
         event(new ChatMessage($room, 'hello world'));
     }
+
+    public function invite(Request $request, $roomName)
+    {
+        $room = Room::where('name', $roomName)->firstOrFail();
+        // event(new ChatMessage($room, 'hello world'));
+    }
 }

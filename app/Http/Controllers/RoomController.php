@@ -82,4 +82,9 @@ class RoomController extends Controller
 
         return redirect()->back()->with('warning', 'User could not be invited');
     }
+
+    public function join(Request $request, $token)
+    {
+        return 'Join with ' . $token;
+    }
 }

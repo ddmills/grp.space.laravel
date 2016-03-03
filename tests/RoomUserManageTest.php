@@ -51,6 +51,6 @@ class RoomUserManageTest extends TestCase
             ->visit(route('room.show', $owner->rooms->first()->name))
             ->type($owner->username, 'identifier')
             ->press('Invite user')
-            ->see('User could not be invited');
+            ->see($owner->name . ' invited you to join ' . $room->name);
     }
 }

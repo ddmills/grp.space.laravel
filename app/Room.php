@@ -41,7 +41,7 @@ class Room extends Model
         $data = [
             'room' => $this->name,
             'roomid' => $this->id,
-            'invitedby' => $currentUser->id,
+            'invitedby' => $currentUser->name,
             'token' => bin2hex(random_bytes(64)),
         ];
 

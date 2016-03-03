@@ -8,6 +8,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/at/{room}',  ['as' => 'room.show',   'uses' => 'RoomController@show']);
     Route::get('/at/{room}/emit',  ['as' => 'room.emit',   'uses' => 'RoomController@emit']);
     Route::post('/at/{room}/invite',  ['as' => 'room.invite',   'uses' => 'RoomController@invite']);
+    Route::get('/at/join/{token}',  ['as' => 'room.join',   'uses' => 'RoomController@join']);
     Route::get('/at',         ['as' => 'room.index',  'uses' => 'RoomController@index']);
     Route::get('/styleguide', ['as' => 'styleguide',  'uses' => function(Faker\Generator $faker) {
         return view('other.styleguide', compact('faker'));

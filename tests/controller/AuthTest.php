@@ -59,7 +59,7 @@ class AuthTest extends TestCase
             ->type($password, 'password')
             ->press(Lang::get('auth.login.finalize'))
             ->seeAuthenticated($user)
-            ->seeInElement('.app-header', 'Sign out');
+            ->seeInElement('.app-navigation', 'Sign out');
     }
 
     public function testCanLoginWithEmail()
@@ -73,8 +73,8 @@ class AuthTest extends TestCase
             ->type($password, 'password')
             ->press(Lang::get('auth.login.finalize'))
             ->seeAuthenticated($user)
-            ->dontSeeInElement('.app-header', 'Sign in')
-            ->seeInElement('.app-header', 'Sign out');
+            ->dontSeeInElement('.app-navigation', 'Sign in')
+            ->seeInElement('.app-navigation', 'Sign out');
     }
 
 }

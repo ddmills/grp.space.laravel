@@ -40,7 +40,7 @@
                     <ul>
                     @foreach ($roomInvites as $invite)
                         <li>
-                            {{ $invite['data']['invitedby'] }} you to join {{ $invite['data']['room'] }}.
+                            {{ $invite['data']['invitedby'] }} invited you to join {{ $invite['data']['room'] }}.
                             <a href="{{ route('room.join', ['token' => $invite['data']['token']]) }}">Join</a>.
                         </li>
                     @endforeach

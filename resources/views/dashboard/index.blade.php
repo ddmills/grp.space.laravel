@@ -31,6 +31,26 @@
                 </ul>
                 </div>
             </div>
+            <br>
+            <div class="panel">
+                <div class="panel-header">
+                    Room Invitations
+                </div>
+                <div class="panel-body">
+                    <ul>
+                    @foreach ($roomInvites as $invite)
+                        <li>
+                            You've been invited to {{ $invite['data']['room'] }}
+                            <button class="btn btn-xs btn-default">join</button>
+                        </li>
+                             {{-- &middot;
+                            {{ $invite['data']['invitedby'] }} &middot;
+                            {{ $invite['data']['token'] }}
+                        </li> --}}
+                    @endforeach
+                </ul>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

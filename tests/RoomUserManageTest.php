@@ -15,12 +15,42 @@ class RoomUserManageTest extends TestCase
     {
         $owner = $this->createUserWithRoom();
         $user  = $this->createUser();
+        $room  = $owner->rooms->first();
+
+        $this
+            ->actingAs($owner)
+            ->visit(route('room.show', $room->name))
+            ->type($user->username, 'identifier')
+            ->press('Invite user')
+            ->see('User has been invited');
+
+        $this
+            ->actingAs($user)
+            ->visit(route('dashboard.index', ['user' => $user->username]))
+            ->see('You\'ve been invited to ' . $room->name);
+    }
+
+    public function testRoomOwnerCannotInviteNonExistingUsers()
+    {
+        $owner = $this->createUserWithRoom();
 
         $this
             ->actingAs($owner)
             ->visit(route('room.show', $owner->rooms->first()->name))
-            ->type($user->username, 'identifier')
+            ->type('doesnotexist', 'identifier')
             ->press('Invite user')
-            ->see('User has been invited');
+            ->see('User not found');
+    }
+
+    public function testRoomOwnerCannotInviteSelf()
+    {
+        $owner = $this->createUserWithRoom();
+
+        $this
+            ->actingAs($owner)
+            ->visit(route('room.show', $owner->rooms->first()->name))
+            ->type($owner->username, 'identifier')
+            ->press('Invite user')
+            ->see('User could not be invited');
     }
 }

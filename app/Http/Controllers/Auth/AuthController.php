@@ -93,19 +93,10 @@ class AuthController extends Controller
         $identifier = $request->input('identifier');
         $password = $request->input('password');
 
-        $data = ['identifier' => $identifier];
-        $rules = ['identifier' => 'email'];
+        $user = User::findByIdentifier($identifier);
 
-        $isEmail = Validator::make($data, $rules)->passes();
-
-        if ($isEmail) {
-            if (Auth::attempt(['email' => $identifier, 'password' => $password])) {
-                return redirect()->intended(route('home'));
-            }
-        } else {
-            if (Auth::attempt(['username' => $identifier, 'password' => $password])) {
-                return redirect()->intended(route('home'));
-            }
+        if (Auth::attempt(['email' => $user->email, 'password' => $password])) {
+            return redirect()->intended(route('home'));
         }
 
         return redirect()

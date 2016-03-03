@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use Auth;
+use App\User;
 use App\Room;
 use Validator;
 use App\Http\Requests;
@@ -69,6 +70,16 @@ class RoomController extends Controller
     public function invite(Request $request, $roomName)
     {
         $room = Room::where('name', $roomName)->firstOrFail();
-        // event(new ChatMessage($room, 'hello world'));
+        $user = User::findByIdentifier($request->input('identifier'));
+
+        if (is_null($user)) {
+            return redirect()->back()->with('warning', 'User not found');
+        }
+
+        if ($room->inviteUser($user)) {
+            return redirect()->back()->with('success', 'User has been invited');
+        }
+
+        return redirect()->back()->with('warning', 'User could not be invited');
     }
 }

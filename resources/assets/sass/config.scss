@@ -11,8 +11,9 @@ $app-header-font-col: #F3F0EB;
 $app-footer-col: #888;
 $app-footer-border : 1px dashed #ccc;
 
-$body-fonts: 'Lora', 'Georgia', sans-serif;
-$header-fonts: 'Lora', 'Georgia', sans-serif;
+$body-fonts: 'Work Sans', 'Helvetica', sans-serif;
+$header-fonts: 'Lora', 'Work Sans', 'Georgia', sans-serif;
+$navigation-fonts: $header-fonts;
 
 $grid-gutter: 10px;
 
@@ -62,7 +63,7 @@ $alert-success-gradient-bottom : #a5cc52;
 
 
 $btn-font          : $body-fonts;
-$btn-font-weight   : 700;
+$btn-font-weight   : 600;
 
 $btn-font-size     : 14px;
 $btn-padding       : 6px 12px;

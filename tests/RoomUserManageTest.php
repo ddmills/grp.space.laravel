@@ -22,7 +22,7 @@ class RoomUserManageTest extends TestCase
             ->visit(route('room.show', $room->name))
             ->type($user->username, 'identifier')
             ->press('Invite user')
-            ->see('User has been invited');
+            ->see(Lang::get('room.invite.success', ['username' => $user->username]));
 
         $this
             ->actingAs($user)
@@ -43,11 +43,15 @@ class RoomUserManageTest extends TestCase
             ->actingAs($user)
             ->visit(route('dashboard.index', $user->username))
             ->see($owner->name . ' invited you to join ' . $room->name)
-            ->click('Join');
+            ->click('Join')
+            ->seePageIs(route('room.show', $room->name))
+            ->see(Lang::get('room.joined.success', ['room' => $room->name]));
 
         $room->fresh();
+        $user->fresh();
 
         $this->assertTrue($room->members->contains($user));
+        $this->assertTrue($user->following->contains($room));
     }
 
     public function testRoomOwnerCannotInviteNonExistingUsers()
@@ -72,6 +76,6 @@ class RoomUserManageTest extends TestCase
             ->visit(route('room.show', $room->name))
             ->type($owner->username, 'identifier')
             ->press('Invite user')
-            ->see('User could not be invited');
+            ->see(Lang::get('room.invite.failure', ['username' => $owner->username]));
     }
 }

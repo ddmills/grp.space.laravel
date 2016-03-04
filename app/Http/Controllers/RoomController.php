@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use Auth;
+use Lang;
 use App\User;
 use App\Room;
 use Validator;
@@ -73,14 +74,20 @@ class RoomController extends Controller
         $user = User::findByIdentifier($request->input('identifier'));
 
         if (is_null($user)) {
-            return redirect()->back()->with('warning', 'User not found');
+            return redirect()
+                ->back()
+                ->with('warning', 'User not found');
         }
 
         if ($room->inviteUser($user)) {
-            return redirect()->back()->with('success', 'User has been invited');
+            return redirect()
+                ->back()
+                ->with('success', Lang::get('room.invite.success', ['username' => $user->username]));
         }
 
-        return redirect()->back()->with('warning', 'User could not be invited');
+        return redirect()
+            ->back()
+            ->with('warning', Lang::get('room.invite.failure', ['username' => $user->username]));
     }
 
     public function join(Request $request, $token)
@@ -92,11 +99,18 @@ class RoomController extends Controller
         foreach ($notifications as $notification) {
             if (strcmp($notification['data']['token'], $token) == 0) {
                 $room = Room::findOrFail($notification['data']['roomid']);
-                $room->members()->attach($user);
-                return redirect(route('room.show', $room->name))->with('success', 'welcom 2 room');
+
+                $room
+                    ->members()
+                    ->attach($user);
+
+                return redirect(route('room.show', $room->name))
+                    ->with('success', Lang::get('room.joined.success', ['room' => $room->name]));
             }
         }
 
-        return redirect()->back()->with('danger', 'Invalid token. Get a new invite!');
+        return redirect()
+            ->back()
+            ->with('danger', Lang::get('room.join.failure'));
     }
 }

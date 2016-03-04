@@ -9,6 +9,16 @@ return [
         'err' => [
             'name' => 'A room name must be entered',
         ]
+    ],
+
+    'joined' => [
+        'success' => 'Welcome to :roomname!',
+        'failure' => 'Could not join room. Expired/Invalid token. Get a new invite!',
+    ],
+
+    'invite' => [
+        'success' => '":username" has been invited to join',
+        'failure' => '":username" could not be invited.',
     ]
 
 ];

@@ -85,6 +85,18 @@ class RoomController extends Controller
 
     public function join(Request $request, $token)
     {
-        return 'Join with ' . $token;
+        $user = Auth::user();
+
+        $notifications = $user->getNotifications('room.invite');
+
+        foreach ($notifications as $notification) {
+            if (strcmp($notification['data']['token'], $token) == 0) {
+                $room = Room::findOrFail($notification['data']['roomid']);
+                $room->members()->attach($user);
+                return redirect(route('room.show', $room->name))->with('success', 'welcom 2 room');
+            }
+        }
+
+        return redirect()->back()->with('danger', 'Invalid token. Get a new invite!');
     }
 }

@@ -1,7 +1,9 @@
 <div class="app-navigation">
     <nav class="container">
+        {{-- <img src="/images/crest-white.png" height="24px" class="pull-left" /> --}}
         <a href="{{ route('home') }}" class="app-nav-logo pull-left">
-            <i class="fa fa-fw fa-cube"></i> grp.space
+            <i class="fa fa-fw fa-shield"></i>
+            grp.space
         </a>
         <div class="nav-group pull-right">
             @if ($userLoggedIn)

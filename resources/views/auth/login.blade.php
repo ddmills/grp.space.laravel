@@ -5,7 +5,7 @@
 
     <div class="page-header">
         <div class="center">
-            <i class="fa fa-fw fa-shield fa-3x"></i>
+            <img src="/images/crest.png" width="45px">
         </div>
         <br>
         <h3 class='page-title center'>

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class ChatTest extends TestCase
 {
     use RoomCreator;
+    use VisitsRooms;
     use ActorCreator;
     use DatabaseTransactions;
 
@@ -17,7 +18,7 @@ class ChatTest extends TestCase
 
         $this
             ->actingAs($user)
-            ->visit(route('room.show', ['room' => $room->name]))
+            ->visitRoom($room)
             ->see('Chat');
     }
 }

@@ -8,6 +8,7 @@ class RoomUserManageTest extends TestCase
 {
 
     use ActorCreator;
+    use VisitsRooms;
     use RoomCreator;
     use DatabaseTransactions;
 
@@ -19,7 +20,7 @@ class RoomUserManageTest extends TestCase
 
         $this
             ->actingAs($owner)
-            ->visit(route('room.show', $room->name))
+            ->visitRoom($room)
             ->type($user->username, 'identifier')
             ->press('Invite user')
             ->see(Lang::get('room.invite.success', ['username' => $user->username]));
@@ -60,7 +61,7 @@ class RoomUserManageTest extends TestCase
 
         $this
             ->actingAs($owner)
-            ->visit(route('room.show', $owner->rooms->first()->name))
+            ->visitRoom($owner->rooms->first())
             ->type('doesnotexist', 'identifier')
             ->press('Invite user')
             ->see('User not found');
@@ -73,7 +74,7 @@ class RoomUserManageTest extends TestCase
 
         $this
             ->actingAs($owner)
-            ->visit(route('room.show', $room->name))
+            ->visitRoom($room)
             ->type($owner->username, 'identifier')
             ->press('Invite user')
             ->see(Lang::get('room.invite.failure', ['username' => $owner->username]));

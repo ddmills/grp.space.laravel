@@ -9,6 +9,7 @@ class RoomTest extends TestCase
 {
 
     use RoomCreator;
+    use VisitsRooms;
     use ActorCreator;
     use DatabaseTransactions;
 
@@ -95,7 +96,7 @@ class RoomTest extends TestCase
         $room = $this->createRoom();
 
         $this
-            ->visit(route('room.show', ['room' => $room->name]))
+            ->visitRoom($room)
             ->see($room->name)
             ->see($room->access)
             ->see($room->description);

@@ -27,7 +27,7 @@ class Room extends Model
 
     public function members()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsToMany('App\User');
     }
 
     public function inviteUser($user)

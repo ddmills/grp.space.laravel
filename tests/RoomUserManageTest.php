@@ -30,6 +30,26 @@ class RoomUserManageTest extends TestCase
             ->see($owner->name . ' invited you to join ' . $room->name);
     }
 
+    public function testAcceptingRoomInvitationWillAddUserToRoom()
+    {
+        $owner = $this->createUserWithRoom();
+        $user  = $this->createUser();
+        $room  = $owner->rooms->first();
+
+        $this->actingAs($owner);
+        $room->inviteUser($user);
+
+        $this
+            ->actingAs($user)
+            ->visit(route('dashboard.index', $user->username))
+            ->see($owner->name . ' invited you to join ' . $room->name)
+            ->click('Join');
+
+        $room->fresh();
+
+        $this->assertTrue($room->members->contains($user));
+    }
+
     public function testRoomOwnerCannotInviteNonExistingUsers()
     {
         $owner = $this->createUserWithRoom();

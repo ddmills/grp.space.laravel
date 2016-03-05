@@ -64,7 +64,7 @@ class RoomUserManageTest extends TestCase
             ->visitRoom($owner->rooms->first())
             ->type('doesnotexist', 'identifier')
             ->press('Invite user')
-            ->see('User not found');
+            ->see(Lang::get('room.invite.notfound', ['identifier' => 'doesnotexist']));
     }
 
     public function testRoomOwnerCannotInviteSelf()
@@ -78,5 +78,21 @@ class RoomUserManageTest extends TestCase
             ->type($owner->username, 'identifier')
             ->press('Invite user')
             ->see(Lang::get('room.invite.failure', ['username' => $owner->username]));
+    }
+
+    public function testRoomOwnerCannotInviteMemberOfRoom()
+    {
+        $owner = $this->createUserWithRoom();
+        $user  = $this->createUser();
+        $room  = $owner->rooms->first();
+
+        $room->members()->attach($user);
+
+        $this
+            ->actingAs($owner)
+            ->visitRoom($room)
+            ->type($user->username, 'identifier')
+            ->press('Invite user')
+            ->see(Lang::get('room.invite.failure', ['username' => $user->username]));
     }
 }

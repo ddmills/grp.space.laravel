@@ -70,13 +70,20 @@ class RoomController extends Controller
 
     public function invite(Request $request, $roomName)
     {
+        $identifier = $request->input('identifier');
         $room = Room::where('name', $roomName)->firstOrFail();
-        $user = User::findByIdentifier($request->input('identifier'));
+        $user = User::findByIdentifier($identifier);
+
+        if ($room->members->contains($user)) {
+            return redirect()
+                ->back()
+                ->with('warning', Lang::get('room.invite.failure', ['username' => $user->username]));
+        }
 
         if (is_null($user)) {
             return redirect()
                 ->back()
-                ->with('warning', 'User not found');
+                ->with('warning', Lang::get('room.invite.notfound', ['identifier' => $identifier]));
         }
 
         if ($room->inviteUser($user)) {

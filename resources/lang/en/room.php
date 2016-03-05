@@ -7,7 +7,7 @@ return [
         'header' => 'Create a new room',
         'tagline' => 'A room is a stellar hangout space for you and your friends.',
         'err' => [
-            'name' => 'A room name must be entered',
+            'name' => 'A room name must be entered.',
         ]
     ],
 
@@ -17,8 +17,9 @@ return [
     ],
 
     'invite' => [
-        'success' => '":username" has been invited to join',
+        'success' => '":username" has been invited to join.',
         'failure' => '":username" could not be invited.',
+        'notfound' => 'User with email or username ":identifier" could not be found.'
     ]
 
 ];

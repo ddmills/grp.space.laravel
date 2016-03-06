@@ -58,6 +58,7 @@ class RoomController extends Controller
 
     public function show(Request $request, $roomName)
     {
+        $this->authorize('room-invite');
         $room = Room::where('name', $roomName)->firstOrFail();
         return view('room.show', compact('room'));
     }

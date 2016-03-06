@@ -5,12 +5,17 @@ use App\User;
 
 trait RoomCreator
 {
-    public function createRoom()
+    public function createRoomWithOwner($owner)
     {
         $room = factory(Room::class)->create();
-        $user = factory(User::class)->create();
-        $room->setOwner($user);
+        $room->setOwner($owner);
         return $room;
+    }
+
+    public function createRoom()
+    {
+        $user = factory(User::class)->create();
+        return $this->createRoomWithOwner($user);
     }
 
     public function createRooms($count = 3)

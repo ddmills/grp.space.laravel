@@ -1,5 +1,6 @@
 <?php
 
+use App\Room;
 use App\User;
 
 trait ActorCreator
@@ -27,15 +28,11 @@ trait ActorCreator
     public function createUserWithRooms($roomCount = 4, $attributes = [])
     {
         $user = $this->createUser($attributes);
-        $rooms = $this->createRooms($roomCount);
 
-        if ($roomCount > 1) {
-            $user->rooms()->saveMany($rooms);
-        } else {
-            $user->rooms()->save($rooms);
+        for ($i = 0; $i < $roomCount; $i++) {
+            $room = factory(Room::class)->create();
+            $room->setOwner($user);
         }
-
-        $user->save();
 
         return $user;
     }

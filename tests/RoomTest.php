@@ -93,9 +93,11 @@ class RoomTest extends TestCase
 
     public function testRoomShowPageContainsRoomInfo()
     {
-        $room = $this->createRoom();
+        $user = $this->createUserWithRoom();
+        $room = $user->rooms->first();
 
         $this
+            ->actingAs($user)
             ->visitRoom($room)
             ->see($room->name)
             ->see($room->access)

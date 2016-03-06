@@ -37,6 +37,10 @@ class Room extends Model
 
     public function inviteUser($user)
     {
+        if (!Auth::check()) {
+            return false;
+        }
+
         $currentUser = Auth::user();
 
         if ($user->id == $currentUser->id) {

@@ -47,6 +47,10 @@ class Room extends Model
             return false;
         }
 
+        if ($this->owner->id != $currentUser->id) {
+            return false;
+        }
+
         $data = [
             'room' => $this->name,
             'roomid' => $this->id,

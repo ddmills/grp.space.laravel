@@ -30,6 +30,11 @@ class Room extends Model
         return $this->belongsToMany('App\User');
     }
 
+    public function addMember($user)
+    {
+        return $this->members()->attach($user);
+    }
+
     public function inviteUser($user)
     {
         $currentUser = Auth::user();

@@ -12,25 +12,6 @@ class RoomUserManageTest extends TestCase
     use RoomCreator;
     use DatabaseTransactions;
 
-    public function testRoomOwnerCanInviteExistingUsers()
-    {
-        $owner = $this->createUserWithRoom();
-        $user  = $this->createUser();
-        $room  = $owner->rooms->first();
-
-        $this
-            ->actingAs($owner)
-            ->visitRoom($room)
-            ->type($user->username, 'identifier')
-            ->press('Invite user')
-            ->see(Lang::get('room.invite.success', ['username' => $user->username]));
-
-        $this
-            ->actingAs($user)
-            ->visit(route('dashboard.index', ['user' => $user->username]))
-            ->see($owner->name . ' invited you to join ' . $room->name);
-    }
-
     public function testAcceptingRoomInvitationWillAddUserToRoom()
     {
         $owner = $this->createUserWithRoom();

@@ -105,14 +105,15 @@ class RoomController extends Controller
 
         foreach ($notifications as $notification) {
             if (strcmp($notification['data']['token'], $token) == 0) {
-                $room = Room::findOrFail($notification['data']['roomid']);
+                $roomId = $notification['data']['roomid'];
 
-                $room
-                    ->members()
-                    ->attach($user);
+                $room = Room::findOrFail($roomId);
+                $room->addMember($user);
 
                 return redirect(route('room.show', $room->name))
-                    ->with('success', Lang::get('room.joined.success', ['room' => $room->name]));
+                    ->with('success', Lang::get('room.joined.success', [
+                        'room' => $room->name
+                    ]));
             }
         }
 

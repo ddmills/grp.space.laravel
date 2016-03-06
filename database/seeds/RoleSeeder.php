@@ -15,9 +15,19 @@ class RoleSeeder extends Seeder
     {
         $this->createPermission('room-create', 'Create Room');
         $this->createPermission('room-view-owned', 'View list of owned rooms');
+        $this->createPermission('room-invite', 'Invite users to owned rooms');
 
-        $this->createRole('admin', 'Administrator', ['room-create', 'room-view-owned']);
-        $this->createRole('user', 'User', ['room-create', 'room-view-owned']);
+        $this->createRole('admin', 'Administrator', [
+            'room-create',
+            'room-view-owned',
+            'room-invite',
+        ]);
+
+        $this->createRole('user', 'User', [
+            'room-create',
+            'room-view-owned',
+            'room-invite',
+        ]);
     }
 
     private function createPermission($name, $label)

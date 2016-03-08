@@ -1,18 +1,31 @@
 @extends('layouts.master')
 
+@section('page.header')
+    <header class='page-header'>
+        <div class='container'>
+            <h2 class="page-title">
+                @if($room->access == 'public')
+                    <i class="fa fa-fw fa-eye" title="This room is public"></i>
+                @elseif($room->access == 'private')
+                    <i class="fa fa-fw fa-lock" title="This room is private"></i>
+                @endif
+                {{ $room->name }}
+            </h2>
+            <div class="page-actions btn-group btn-group-sm">
+                <a href="#" class="btn btn-default">
+                    <i class="fa fa-fw fa-gears"></i> Room Settings
+                </a>
+            </div>
+        </div>
+        <div class='container'>
+            <p class='page-lead'>
+                {{ $room->description }}
+            </p>
+        </div>
+    </header>
+@endsection
 
 @section('content')
-    <header class="page-header">
-        <h2 class="page-title">
-            {{ $room->name }}
-            @if($room->access == 'public')
-                <i class="fa fa-fw fa-eye pull-right" title="This room is public"></i>
-            @elseif($room->access == 'private')
-                <i class="fa fa-fw fa-lock pull-right" title="This room is private"></i>
-            @endif
-        </h2>
-        <p class='page-lead'>{{ $room->description }}</p>
-    </header>
 
     <p>Welcome 2 the {{ $room->access }} dank room</p>
 

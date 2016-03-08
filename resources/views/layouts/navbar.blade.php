@@ -7,11 +7,15 @@
         </a>
         <div class="nav-group pull-right">
             @if ($userLoggedIn)
-                <a class="nav-item" href="{{ route('dashboard.index', ['user' => $user->username]) }}">Profile</a>
-                <a class="nav-item" href="{{ route('auth.logout') }}">Sign out</a>
+                <a class="nav-item" href="{{ route('dashboard.index', ['user' => $user->username]) }}">
+                    <i class="fa fa-fw fa-user"></i>
+                    {{ $user->username }}
+                </a>
             @else
-                <a class="nav-item" href="{{ route('auth.register') }}">Sign up</a>
-                <a class="nav-item" href="{{ route('auth.login') }}">Sign in</a>
+                <a class="nav-item" href="{{ route('auth.login') }}">
+                    <i class="fa fa-fw fa-sign-in"></i>
+                    Sign in
+                </a>
             @endif
         </div>
         <span class="clearfix"></span>

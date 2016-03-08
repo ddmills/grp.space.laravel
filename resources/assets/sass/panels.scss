@@ -1,0 +1,44 @@
+// $panel-border-col: #DEDBDE;
+$panel-border-col: #BDB5B5;
+// $panel-header-col: #3D393E;
+$panel-header-col: #DEDAD6;
+$panel-body-col: #fefefe;
+// $panel-title-font-col: #F3F0EB;
+$panel-title-font-col: #48374C;
+
+.panel {
+    border: 1px solid $panel-border-col;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 1px 1px 0px rgba(253, 250, 250, 0.7);
+}
+
+.panel-header {
+    background-color: $panel-header-col;
+    border-bottom: 1px solid $panel-border-col;
+    padding: 10px 15px;
+}
+
+.panel-header:after {
+    content : "";
+    display : table;
+    clear   : both;
+}
+
+.panel-title {
+    display : inline-block;
+    padding : 3px 0;
+
+    color  : $panel-title-font-col;
+    margin : 0;
+    float  : left;
+
+    font-weight : 500;
+    font-size   : 1em;
+    line-height : 17px;
+}
+
+.panel-body {
+    padding: 16px;
+    background-color: $panel-body-col;
+}

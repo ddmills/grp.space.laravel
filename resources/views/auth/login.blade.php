@@ -3,12 +3,11 @@
 @section('body')
     @include('common.notifications')
 
-    <div class="page-header">
-        <div class="center">
+    <div class="login-header">
+        <div class="logo">
             <img src="/images/crest.png" width="45px">
         </div>
-        <br>
-        <h3 class='page-title center'>
+        <h3 class='login-title'>
             {{ Lang::get('auth.login.header') }}
         </h3>
     </div>

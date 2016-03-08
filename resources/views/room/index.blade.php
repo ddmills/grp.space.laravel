@@ -1,13 +1,16 @@
 @extends('layouts.master')
 
+@section('page.header')
+    <header class="page-header">
+        <div class="container">
+            <h2 class='page-title'>
+                Room Index
+            </h2>
+        </div>
+    </header>
+@endsection
 
 @section('content')
-
-    <header class="page-header">
-        <h2 class='page-title'>
-            Room Index
-        </h2>
-    </header>
 
     @foreach ($rooms as $room)
         <p>

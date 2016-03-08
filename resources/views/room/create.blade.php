@@ -1,10 +1,21 @@
 @extends('layouts.master')
 
-@section('content')
-    <header class="page-header">
-        <h2 class="page-title">{{ Lang::get('room.create.header') }}</h2>
-        <p class="page-lead">{{ Lang::get('room.create.tagline') }}</p>
+@section('page.header')
+    <header class='page-header'>
+        <div class='container'>
+            <h2 class="page-title">
+                {{ Lang::get('room.create.header') }}
+            </h2>
+        </div>
+        <div class="container">
+            <p class="page-lead">
+                {{ Lang::get('room.create.tagline') }}
+            </p>
+        </div>
     </header>
+@endsection
+
+@section('content')
 
     @include('other.steps', ['actions' => false])
 

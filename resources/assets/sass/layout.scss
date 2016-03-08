@@ -26,6 +26,17 @@ html {
     margin-right : auto;
 }
 
+.container:before {
+    display: table;
+    content: "";
+}
+
+.container:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
 .app-content {
     padding    : 20px 0px;
     min-height : 240px;

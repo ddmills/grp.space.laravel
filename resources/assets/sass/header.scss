@@ -30,3 +30,41 @@
     position: relative;
     float: left;
 }
+
+.page-header {
+    padding: 20px 0;
+    background-color: #DEDAD6;
+    border-bottom: 1px solid #BDB5B5;
+    // text-shadow: 0px 1px 0px rgba(255, 255, 255, .25);
+    // box-shadow: 0px -5px 60px #D0D0D0 inset;
+    // background: url('/images/patterns/green_gobbler.png');
+    // background: url('/images/patterns/light_grey_floral_motif.png');
+    // background: url('/images/patterns/washi.png');
+    // background: url('/images/patterns/xv.png');
+}
+
+.page-header:after {
+    content : "";
+    display : table;
+    clear   : both;
+}
+
+.page-title {
+    margin: 0px;
+    float: left;
+    font-size: 18px;
+    padding: 6px 0;
+    line-height: 1em;
+    font-weight: 600;
+    color: #48374C;
+}
+
+.page-actions {
+    float: right;
+}
+
+.page-lead {
+    margin: 0;
+    font-weight: 300;
+    color: #555;
+}

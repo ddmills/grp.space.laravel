@@ -1,5 +1,23 @@
 @extends('layouts.master')
 
+@section('page.header')
+    <header class='page-header'>
+        <div class='container'>
+            <h2 class="page-title">
+                <i class="fa fa-fw fa-user"></i> {{ $user->username}}
+            </h2>
+            <div class="page-actions btn-group btn-group-sm">
+                <a href="#" class="btn btn-default">
+                    <i class="fa fa-fw fa-gears"></i> Settings
+                </a>
+                <a href="{{ route('auth.logout') }}" class="btn btn-default">
+                    <i class="fa fa-fw fa-sign-out"></i> Sign out
+                </a>
+            </div>
+        </div>
+    </header>
+@endsection
+
 @section('content')
     <div class="row">
         <div class="column one-fourth">
@@ -13,10 +31,10 @@
         <div class="column three-fourths">
             <div class="panel">
                 <div class="panel-header">
-                    Rooms
-                    <a href="{{ route('room.create') }}" class="btn btn-sm btn-primary pull-right">
-                        Create new room
-                    </a>
+                    <h4 class="panel-title">
+                        <i class="fa fa-fw fa-tree"></i>
+                        Rooms
+                    </h4>
                 </div>
                 <div class="panel-body">
                     <ul>
@@ -28,13 +46,20 @@
                             </a>
                         </li>
                     @endforeach
-                </ul>
+                    </ul>
+                    <a href="{{ route('room.create') }}" class="btn btn-sm btn-primary">
+                        <i class="fa fa-fw fa-plus"></i>
+                        Create new room
+                    </a>
                 </div>
             </div>
             <br>
             <div class="panel">
                 <div class="panel-header">
-                    Room Invitations
+                    <h4 class="panel-title">
+                        <i class="fa fa-fw fa-leaf"></i>
+                        Room Invitations
+                    </h4>
                 </div>
                 <div class="panel-body">
                     <ul>
@@ -45,6 +70,10 @@
                         </li>
                     @endforeach
                     </ul>
+                    <a href="#" class="btn btn-sm btn-danger">
+                        <i class="fa fa-fw fa-minus-circle"></i>
+                        Decline all invitations
+                    </a>
                 </div>
             </div>
         </div>

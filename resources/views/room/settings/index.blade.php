@@ -4,13 +4,18 @@
     <header class='page-header'>
         <div class='container'>
             <h2 class="page-title">
-                {{ $room->name }} &middot; settings
+                {{ $room->name }}
             </h2>
             <div class="page-actions btn-group btn-group-sm">
                 <a href="{{ route('room.show', $room->name) }}" class="btn btn-default">
                     <i class="fa fa-fw fa-home"></i> View room
                 </a>
             </div>
+        </div>
+        <div class='container'>
+            <p class='page-lead'>
+                Settings
+            </p>
         </div>
     </header>
 @endsection

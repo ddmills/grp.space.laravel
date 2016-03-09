@@ -12,7 +12,7 @@ return [
     ],
 
     'joined' => [
-        'success' => 'Welcome to :roomname!',
+        'success' => 'Welcome to :room!',
         'failure' => 'Could not join room. Expired/Invalid token. Get a new invite!',
     ],
 

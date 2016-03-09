@@ -4,18 +4,13 @@
     <header class='page-header'>
         <div class='container'>
             <h2 class="page-title">
-                {{ $room->name }}
+                {{ $room->name }} &middot; settings
             </h2>
             <div class="page-actions btn-group btn-group-sm">
                 <a href="{{ route('room.show', $room->name) }}" class="btn btn-default">
                     <i class="fa fa-fw fa-home"></i> View room
                 </a>
             </div>
-        </div>
-        <div class='container'>
-            <p class='page-lead'>
-                Settings
-            </p>
         </div>
     </header>
 @endsection
@@ -25,7 +20,9 @@
     @can('invite', $room)
         <div class="panel">
             <div class="panel-header">
-                <h4 class="panel-title">Members</h4>
+                <h4 class="panel-title">
+                    <i class="fa fa-fw fa-users"></i> Members
+                </h4>
             </div>
             <div class="panel-body">
                 <ul>
@@ -39,15 +36,12 @@
                     {{ csrf_field() }}
 
                     <div class="row">
-                        <div class='column four-fifths'>
-                            <div class='form-group'>
-                                <input type="text" class="form-control" id="input-identifier" name="identifier" value="{{ old('identifier') }}" placeholder="Username or email">
-                            </div>
+                        <div class='column three-fourths'>
+                            <input type="text" class="form-control" id="input-identifier" name="identifier" value="{{ old('identifier') }}" placeholder="Username or email">
                         </div>
-
-                        <div class='column one-fifth'>
+                        <div class='column one-fourth'>
                             <button type="submit" class="btn btn-block btn-primary">
-                                Invite user
+                                <i class="fa fa-fw fa-user-plus"></i> Invite user
                             </button>
                         </div>
                     </div>

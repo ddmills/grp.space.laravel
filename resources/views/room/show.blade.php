@@ -4,11 +4,6 @@
     <header class='page-header'>
         <div class='container'>
             <h2 class="page-title">
-                @if($room->access == 'public')
-                    <i class="fa fa-fw fa-eye" title="This room is public"></i>
-                @elseif($room->access == 'private')
-                    <i class="fa fa-fw fa-lock" title="This room is private"></i>
-                @endif
                 {{ $room->name }}
             </h2>
             <div class="page-actions btn-group btn-group-sm">
@@ -36,15 +31,21 @@
         </a>.
     </p>
 
-    <div>
-        <h3>Chat</h3>
-        <ul id='chat-messages'></ul>
-        <div class='row'>
-            <div class='column four-fifths'>
-                <input type='text' class='form-control' id='chat-message'>
-            </div>
-            <div class='column one-fifth'>
-                <button type='button' class='btn btn-block btn-primary'>send</button>
+    <div class="panel">
+        <div class="panel-header">
+            <h4 class="panel-title">
+                <i class="fa fa-fw fa-comments"></i> Chat
+            </h4>
+        </div>
+        <div class="panel-body">
+            <ul id='chat-messages'></ul>
+            <div class='row'>
+                <div class='column four-fifths'>
+                    <input type='text' class='form-control' id='chat-message'>
+                </div>
+                <div class='column one-fifth'>
+                    <button type='button' class='btn btn-block btn-primary'>send</button>
+                </div>
             </div>
         </div>
     </div>

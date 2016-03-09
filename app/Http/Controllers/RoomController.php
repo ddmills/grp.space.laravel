@@ -67,7 +67,7 @@ class RoomController extends Controller
     {
         $room = Room::where('name', $roomName)->firstOrFail();
         $this->authorize('administer', $room);
-        return 'SETTINGS FOR ' . $room->name;
+        return view('room.settings.index', compact('room'));
     }
 
     public function emit(Request $request, $roomName)

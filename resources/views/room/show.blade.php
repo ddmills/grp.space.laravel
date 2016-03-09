@@ -12,9 +12,11 @@
                 {{ $room->name }}
             </h2>
             <div class="page-actions btn-group btn-group-sm">
-                <a href="#" class="btn btn-default">
-                    <i class="fa fa-fw fa-gears"></i> Room Settings
-                </a>
+                @can('administer', $room)
+                    <a href="{{ route('room.settings', $room->name) }}" class="btn btn-default">
+                        <i class="fa fa-fw fa-gears"></i> Room settings
+                    </a>
+                @endcan
             </div>
         </div>
         <div class='container'>
@@ -27,7 +29,12 @@
 
 @section('content')
 
-    <p>Welcome 2 the {{ $room->access }} dank room</p>
+    <p>
+        Welcome 2 the {{ $room->access }} dank room. Owned by
+        <a href="{{ route('dashboard.index', $room->owner->username) }}">
+            {{ $room->owner->username }}
+        </a>.
+    </p>
 
     @can('invite', $room)
         <form action="{{ route('room.invite', ['room' => $room->name]) }}" method="post" accept-charset="utf-8">

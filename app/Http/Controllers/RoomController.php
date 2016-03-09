@@ -63,6 +63,13 @@ class RoomController extends Controller
         return view('room.show', compact('room'));
     }
 
+    public function settings(Request $request, $roomName)
+    {
+        $room = Room::where('name', $roomName)->firstOrFail();
+        $this->authorize('administer', $room);
+        return 'SETTINGS FOR ' . $room->name;
+    }
+
     public function emit(Request $request, $roomName)
     {
         $room = Room::where('name', $roomName)->firstOrFail();

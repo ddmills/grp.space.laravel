@@ -17,6 +17,7 @@ $panel-title-font-col: #48374C;
     background-color: $panel-header-col;
     border-bottom: 1px solid $panel-border-col;
     padding: 10px 15px;
+    box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.5);
 }
 
 .panel-header:after {

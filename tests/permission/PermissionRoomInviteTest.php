@@ -26,7 +26,7 @@ class PermissionRoomInviteTest extends TestCase
 
         $this
             ->actingAs($owner)
-            ->visitRoom($room)
+            ->visitRoomSettings($room)
             ->type($user->username, 'identifier')
             ->press('Invite user')
             ->see(Lang::get('room.invite.success', ['username' => $user->username]));

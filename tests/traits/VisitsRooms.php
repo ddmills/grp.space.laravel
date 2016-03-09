@@ -2,7 +2,7 @@
 
 trait VisitsRooms {
 
-    public function visitRoom($identifier)
+    private function getRoomName($identifier)
     {
         $roomName = null;
 
@@ -18,7 +18,19 @@ trait VisitsRooms {
             $roomName = $identifier->name;
         }
 
+        return $roomName;
+    }
+
+    public function visitRoom($identifier)
+    {
+        $roomName = $this->getRoomName($identifier);
         return $this->visit(route('room.show', $roomName));
+    }
+
+    public function visitRoomSettings($identifier)
+    {
+        $roomName = $this->getRoomName($identifier);
+        return $this->visit(route('room.settings', $roomName));
     }
 
 }

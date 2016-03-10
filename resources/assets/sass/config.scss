@@ -1,22 +1,27 @@
-$background: #F3F0EB; //#fefefe;
-$app-col-primary: #D87777;
-$app-col-secondary: #FBE8A4;
-$app-col-tertiary: #91C8E2;
+$background: #fff; //#F3F0EB;
 
-$app-font-col: #333;
+$app-font-col: #555;
 
 // $app-header-col: #3D393E;
-$app-header-col: #516271;
+$app-header-col: #465461;
 $app-header-font-col: #F3F0EB;
 
 $app-footer-col: #888;
 $app-footer-border : 1px dashed #ccc;
 
-$body-fonts: 'Work Sans', 'Helvetica', sans-serif;
-$header-fonts: 'Lora', 'Work Sans', 'Georgia', sans-serif;
+$body-fonts: 'Montserrat', 'Work Sans', 'Helvetica', sans-serif;
+$header-fonts: 'Libre Baskerville', 'Lora', 'Work Sans', 'Georgia', sans-serif;
 $navigation-fonts: $header-fonts;
 
 $grid-gutter: 10px;
+
+$page-header-col      : #F5F4F4;
+$page-title-font-col  : #444;
+
+$panel-border-col     : #DAD4D1;
+$panel-header-col     : $page-header-col;
+$panel-body-col       : #fefefe;
+$panel-title-font-col : #444;
 
 $focus-border-col : #E689CA;
 $focus-box-shadow : inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(189, 102, 233, 0.6);

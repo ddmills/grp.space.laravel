@@ -1,34 +1,20 @@
-@extends('layouts.master')
+@extends('layouts.room')
 
-@section('page.header')
-    <header class='page-header'>
-        <div class='container'>
-            <h2 class="page-title">
-                {{ $room->name }}
-            </h2>
-            <div class="page-actions btn-group btn-group-sm">
-                @can('administer', $room)
-                    <a href="{{ route('room.settings', $room->name) }}" class="btn btn-default">
-                        <i class="fa fa-fw fa-gears"></i> Room settings
-                    </a>
-                @endcan
-            </div>
-        </div>
-        <div class='container'>
-            <p class='page-lead'>
-                {{ $room->description }}
-            </p>
-        </div>
-    </header>
+@section('page.title')
+    {{ $room->name }}
+@endsection
+
+@section('page.actions')
+    @can('administer', $room)
+        <a href="{{ route('room.settings', $room->name) }}" class="btn btn-default">
+            <i class="fa fa-fw fa-gears"></i> Room settings
+        </a>
+    @endcan
 @endsection
 
 @section('content')
-
-    <p>
-        Welcome 2 the {{ $room->access }} dank room. Owned by
-        <a href="{{ route('dashboard.index', $room->owner->username) }}">
-            {{ $room->owner->username }}
-        </a>.
+    <p class='lead'>
+        {{ $room->description }}
     </p>
 
     <div class="panel">

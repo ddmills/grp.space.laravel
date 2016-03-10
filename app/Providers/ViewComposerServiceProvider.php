@@ -24,6 +24,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function register()
     {
         view()->composer('layouts.navbar', 'App\Http\Composers\NavbarComposer');
+        view()->composer('room.subnav', 'App\Http\Composers\RoomSubnavComposer');
         view()->composer('other.steps', 'App\Http\Composers\StepsComposer');
     }
 }

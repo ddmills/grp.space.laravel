@@ -1,23 +1,13 @@
-@extends('layouts.master')
+@extends('layouts.room')
 
-@section('page.header')
-    <header class='page-header'>
-        <div class='container'>
-            <h2 class="page-title">
-                {{ $room->name }}
-            </h2>
-            <div class="page-actions btn-group btn-group-sm">
-                <a href="{{ route('room.show', $room->name) }}" class="btn btn-default">
-                    <i class="fa fa-fw fa-home"></i> View room
-                </a>
-            </div>
-        </div>
-        <div class='container'>
-            <p class='page-lead'>
-                Settings
-            </p>
-        </div>
-    </header>
+@section('page.title')
+    <i class="fa fa-fw fa-gear"></i> Settings for {{ $room->name }}
+@endsection
+
+@section('page.actions')
+    <a href="{{ route('room.show', $room->name) }}" class="btn btn-default">
+        <i class="fa fa-fw fa-home"></i> View room
+    </a>
 @endsection
 
 @section('content')

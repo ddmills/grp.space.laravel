@@ -3,7 +3,7 @@
         <i class="fa fa-fw fa-comments"></i>
         Chat
     </a>
-    <a class="tab {{ $routeName == 'room.index' ? 'active' : '' }}" href="{{ route('room.index') }}">
+    <a class="tab {{ $routeName == 'room.directory' ? 'active' : '' }}" href="{{ route('room.directory', $room->name) }}">
         <i class="fa fa-fw fa-users"></i>
         Directory
     </a>

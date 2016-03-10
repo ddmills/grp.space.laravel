@@ -58,7 +58,6 @@ class RoomController extends Controller
 
     public function show(Request $request, $roomName)
     {
-        $this->authorize('room-invite');
         $room = Room::where('name', $roomName)->firstOrFail();
         return view('room.show', compact('room'));
     }
@@ -68,6 +67,12 @@ class RoomController extends Controller
         $room = Room::where('name', $roomName)->firstOrFail();
         $this->authorize('administer', $room);
         return view('room.settings.index', compact('room'));
+    }
+
+    public function directory(Request $request, $roomName)
+    {
+        $room = Room::where('name', $roomName)->firstOrFail();
+        return view('room.directory', compact('room'));
     }
 
     public function emit(Request $request, $roomName)

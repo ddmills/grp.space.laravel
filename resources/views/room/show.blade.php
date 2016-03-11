@@ -7,7 +7,7 @@
 @section('page.actions')
     @can('administer', $room)
         <a href="{{ route('room.settings', $room->name) }}" class="btn btn-default">
-            <i class="fa fa-fw fa-gears"></i> Room settings
+            <i class="icon-cogs"></i> Room settings
         </a>
     @endcan
 @endsection

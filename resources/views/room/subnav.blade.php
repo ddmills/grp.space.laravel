@@ -1,15 +1,15 @@
 <nav class="tabs room-subnav">
     <a class="tab {{ $routeName == 'room.show' ? 'active' : '' }}" href="{{ route('room.show', $room->name) }}">
-        <i class="fa fa-fw fa-comments"></i>
+        <i class="icon-comment"></i>
         Chat
     </a>
     <a class="tab {{ $routeName == 'room.directory' ? 'active' : '' }}" href="{{ route('room.directory', $room->name) }}">
-        <i class="fa fa-fw fa-users"></i>
+        <i class="icon-users"></i>
         Directory
     </a>
     @can('administer', $room)
         <a class="tab {{ $routeName == 'room.settings' ? 'active' : '' }}" href="{{ route('room.settings', $room->name) }}">
-            <i class="fa fa-fw fa-gear"></i>
+            <i class="icon-cogs"></i>
             Settings
         </a>
     @endcan

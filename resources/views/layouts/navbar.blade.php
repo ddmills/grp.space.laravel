@@ -2,18 +2,18 @@
     <nav class="container">
         {{-- <img src="/images/crest-white.png" height="24px" class="pull-left" /> --}}
         <a href="{{ route('home') }}" class="app-nav-logo pull-left">
-            <i class="fa fa-fw fa-shield"></i>
+            <i class="icon-giraffe"></i>
             grp.space
         </a>
         <div class="nav-group pull-right">
             @if ($userLoggedIn)
                 <a class="nav-item" href="{{ route('dashboard.index', ['user' => $user->username]) }}">
-                    <i class="fa fa-fw fa-user"></i>
+                    <i class="icon-user"></i>
                     {{ $user->username }}
                 </a>
             @else
                 <a class="nav-item" href="{{ route('auth.login') }}">
-                    <i class="fa fa-fw fa-sign-in"></i>
+                    <i class="icon-login"></i>
                     Sign in
                 </a>
             @endif

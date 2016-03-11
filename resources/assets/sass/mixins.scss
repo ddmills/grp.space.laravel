@@ -10,3 +10,23 @@
         content: "";
     }
 }
+
+@mixin pull-right {
+    float : right !important;
+}
+
+@mixin pull-left {
+    float : left !important;
+}
+
+.clearfix {
+    @include clearfix();
+}
+
+.pull-right {
+    @include pull-right();
+}
+
+.pull-left {
+    @include pull-left();
+}

@@ -1,24 +1,26 @@
 $background: #fff; //#F3F0EB;
 
-$app-font-col: #555;
+$app-font-col  : #555;
+$app-font-size : 12px;
 
 // $app-header-col: #3D393E;
-$app-header-col: #465461;
-$app-header-font-col: #F3F0EB;
+$app-header-col      : #465461;
+$app-header-font-col : #F3F0EB;
 
-$app-footer-col: #888;
+$app-footer-col    : #888;
 $app-footer-border : 1px dashed #ccc;
 
-$body-fonts: 'Montserrat', 'Work Sans', 'Helvetica', sans-serif;
-$header-fonts: 'Libre Baskerville', 'Lora', 'Work Sans', 'Georgia', sans-serif;
-$navigation-fonts: $header-fonts;
+$body-fonts       : 'Montserrat', 'Work Sans', 'Helvetica', sans-serif;
+$header-fonts     : 'Libre Baskerville', 'Lora', 'Work Sans', 'Georgia', sans-serif;
+$navigation-fonts : $header-fonts;
 
-$grid-gutter: 10px;
+$grid-gutter : 10px;
 
-$page-header-col      : #F5F4F4;
+$page-header-col      : #FBFBFB;
+$page-header-border   : #EAE9E8;
 $page-title-font-col  : #444;
 
-$panel-border-col     : #DAD4D1;
+$panel-border-col     : $page-header-border;
 $panel-header-col     : $page-header-col;
 $panel-body-col       : #fefefe;
 $panel-title-font-col : #444;
@@ -71,19 +73,19 @@ $alert-success-gradient-bottom : #a5cc52;
 $btn-font          : $body-fonts;
 $btn-font-weight   : 600;
 
-$btn-font-size     : 14px;
+$btn-font-size     : 1em;
 $btn-padding       : 6px 12px;
 $btn-border-radius : 4px;
 
-$btn-xs-font-size     : 12px;
+$btn-xs-font-size     : .9em;
 $btn-xs-padding       : 2px 5px;
 $btn-xs-border-radius : 3px;
 
-$btn-sm-font-size     : 12px;
+$btn-sm-font-size     : 1em;
 $btn-sm-padding       : 5px 10px;
 $btn-sm-border-radius : 3px;
 
-$btn-lg-font-size     : 18px;
+$btn-lg-font-size     : 1.3em;
 $btn-lg-padding       : 10px 16px;
 $btn-lg-border-radius : 6px;
 

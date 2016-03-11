@@ -1,7 +1,7 @@
 <div class="panel">
     <div class="panel-header">
         <h4 class="panel-title">
-            <i class="fa fa-fw fa-users"></i> Members
+            <i class="icon-users"></i> Members
         </h4>
     </div>
     <div class="panel-body">
@@ -22,7 +22,7 @@
                     </div>
                     <div class='column one-fourth'>
                         <button type="submit" class="btn btn-block btn-primary">
-                            <i class="fa fa-fw fa-user-plus"></i> Invite user
+                            <i class="icon-user-plus"></i> Invite user
                         </button>
                     </div>
                 </div>

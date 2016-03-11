@@ -1,6 +1,6 @@
 html {
     font-family : $body-fonts;
-    font-size   : 15px;
+    font-size   : $app-font-size;
     line-height : 1.4;
     height      : 100%;
 
@@ -27,33 +27,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-weight: 300;
-    font-size: 2.4em;
-    margin: 0.67em 0;
+    font-size: 2.1em;
 }
 
 h2 {
-    font-weight: 400;
-    font-size: 1.8em;
+    font-size: 2em;
 }
 
 h3 {
-    font-weight: 500;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 h4 {
-    font-weight: 600;
     font-size: 1.2em;
 }
 
 h5 {
-    font-weight: 600;
     font-size: 1.1em;
 }
 
 h5 {
-    font-weight: 600;
     font-size: 1.0em;
 }
 
@@ -67,6 +60,6 @@ ul, ol {
 }
 
 .lead {
-    font-size: 18px;
-    color: #555;
+    font-size: 1.3em;
+    color: #666;
 }

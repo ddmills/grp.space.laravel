@@ -4,14 +4,14 @@
     <header class='page-header'>
         <div class='container'>
             <h2 class="page-title">
-                <i class="fa fa-fw fa-user"></i> {{ $user->username}}
+                <i class="icon-user"></i> {{ $user->username}}
             </h2>
             <div class="page-actions btn-group btn-group-sm">
                 <a href="#" class="btn btn-default">
-                    <i class="fa fa-fw fa-gears"></i> Settings
+                    <i class="icon-cogs"></i> Settings
                 </a>
                 <a href="{{ route('auth.logout') }}" class="btn btn-default">
-                    <i class="fa fa-fw fa-sign-out"></i> Sign out
+                    <i class="icon-logout"></i> Sign out
                 </a>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <div class="panel">
                 <div class="panel-header">
                     <h4 class="panel-title">
-                        <i class="fa fa-fw fa-tree"></i>
+                        <i class="icon-bookmarks"></i>
                         Rooms
                     </h4>
                 </div>
@@ -48,7 +48,7 @@
                     @endforeach
                     </ul>
                     <a href="{{ route('room.create') }}" class="btn btn-sm btn-primary">
-                        <i class="fa fa-fw fa-plus"></i>
+                        <i class="icon-plus"></i>
                         Create new room
                     </a>
                 </div>
@@ -57,7 +57,7 @@
             <div class="panel">
                 <div class="panel-header">
                     <h4 class="panel-title">
-                        <i class="fa fa-fw fa-leaf"></i>
+                        <i class="icon-leaf"></i>
                         Room Invitations
                     </h4>
                 </div>
@@ -71,7 +71,7 @@
                     @endforeach
                     </ul>
                     <a href="#" class="btn btn-sm btn-danger">
-                        <i class="fa fa-fw fa-minus-circle"></i>
+                        <i class="icon-minus-circled"></i>
                         Decline all invitations
                     </a>
                 </div>

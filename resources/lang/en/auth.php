@@ -8,7 +8,7 @@ return [
     'register' => [
         'header' => 'Join grp.space',
         'finalize' => 'Create account',
-        'tagline' => 'Create your personal account <i class="fa fa-fw fa-male"></i>',
+        'tagline' => 'Create your personal account <i class="icon icon-user"></i> ',
     ],
 
     'login' => [

@@ -1,7 +1,7 @@
 <div class="panel">
     <div class="panel-header">
         <h4 class="panel-title">
-            <i class="fa fa-fw fa-comments"></i> Chat
+            <i class="icon-chat"></i> Chat
         </h4>
     </div>
     <div class="panel-body">

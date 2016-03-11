@@ -1,6 +1,5 @@
 .panel {
     border: 1px solid $panel-border-col;
-    border-radius: 3px;
     overflow: hidden;
     box-shadow: 1px 1px 0px rgba(253, 250, 250, 0.7);
 }
@@ -27,8 +26,8 @@
     float  : left;
 
     font-weight : 500;
-    font-size   : 1em;
-    line-height : 17px;
+    font-size   : 1.2em;
+    line-height : 1.1em;
 }
 
 .panel-body {

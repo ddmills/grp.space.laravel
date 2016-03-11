@@ -1,18 +1,16 @@
 @extends('layouts.master')
 
 @section('page.header')
-    <header class='page-header'>
-        <div class='container'>
-            <h2 class="page-title">
-                {!! Lang::get('auth.register.header') !!}
-            </h2>
-        </div>
-        <div class='container'>
-            <p class="page-lead">
-                {!! Lang::get('auth.register.tagline') !!}
-            </p>
-        </div>
-    </header>
+    <div class='container'>
+        <h1>
+            {!! Lang::get('auth.register.header') !!}
+        </h1>
+    </div>
+    <div class='container'>
+        <p class="lead">
+            {!! Lang::get('auth.register.tagline') !!}
+        </p>
+    </div>
 @endsection
 
 @section('content')

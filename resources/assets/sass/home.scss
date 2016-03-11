@@ -19,7 +19,6 @@
     border-left: 1px solid #ccc;
     color: #ccc;
     cursor: default;
-    box-shadow: -4px -4px 8px rgba(243, 238, 238, 0.68) inset;
 }
 
 .step-num {
@@ -34,7 +33,7 @@
 }
 
 .step.active .step-icon {
-    color: #517319;
+    // color: #517319;
 }
 
 .step-icon {

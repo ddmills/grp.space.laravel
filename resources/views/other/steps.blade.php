@@ -2,7 +2,7 @@
     <div class="starting-steps">
         <div class="step {{ $activeStep == 1 ? 'active' : 'disabled' }}">
             <span class="step-icon">
-                <i class="fa fa-fw fa-male"></i>
+                <i class="icon-user"></i>
             </span>
             <span class="step-num">Step 1:</span>
             <span class="step-desc">
@@ -21,7 +21,7 @@
         </div>
         <div class="step {{ $activeStep == 2 ? 'active' : 'disabled' }}">
             <span class="step-icon">
-                <i class="fa fa-fw fa-book"></i>
+                <i class="icon-book"></i>
             </span>
             <span class="step-num">Step 2:</span>
             <span class="step-desc">Create and configure a room.</span>
@@ -33,7 +33,7 @@
         </div>
         <div class="step {{ $activeStep == 3 ? 'active' : 'disabled' }}">
             <span class="step-icon">
-                <i class="fa fa-fw fa-beer"></i>
+                <i class="icon-coffee"></i>
             </span>
             <span class="step-num">Step 3:</span>
             <span class="step-desc">Invite your friends.</span>

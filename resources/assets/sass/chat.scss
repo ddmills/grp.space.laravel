@@ -1,0 +1,37 @@
+.chat-messages {
+    padding-bottom: 20px;
+    line-height: 2em;
+}
+
+.chat-author {
+    width: 60px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ccc;
+    text-align: right;
+}
+
+.chat-message {
+    display: block;
+    line-height: 2em;
+
+    @include clearfix();
+}
+
+.chat-timestamp {
+    color: #eee;
+    float: right;
+}
+
+.chat-message-text::before {
+    position: absolute;
+    content: "·";
+    left: -.1em;
+    font-size: 1em;
+}
+
+.chat-message-text {
+    display: block;
+    margin-left: 75px;
+}

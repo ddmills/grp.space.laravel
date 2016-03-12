@@ -16,8 +16,9 @@ class DashboardController extends Controller
 
         $user = User::where('username', $username)->firstOrFail();
         $rooms = $user->rooms;
+        $followingRooms = $user->following;
         $roomInvites = $user->getNotifications('room.invite');
 
-        return view('dashboard.index', compact('user', 'rooms', 'roomInvites'));
+        return view('dashboard.index', compact('user', 'rooms', 'followingRooms', 'roomInvites'));
     }
 }

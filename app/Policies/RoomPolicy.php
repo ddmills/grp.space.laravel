@@ -21,6 +21,18 @@ class RoomPolicy
     }
 
     /*
+     * Determine if the given user can chat in the given room.
+     *
+     * @param \App\User $user
+     * @param \App\Room $room
+     * @return bool
+     */
+    public function chat(User $user, Room $room)
+    {
+        return $user->following->contains($room) && $user->can('room-chat');
+    }
+
+    /*
      * Determine if the given user can administer the given room.
      *
      * @param \App\User $user

@@ -81,6 +81,18 @@ class RoomController extends Controller
         event(new ChatMessage($room, 'hello world'));
     }
 
+    public function chat(Request $request, $roomName)
+    {
+        $room = Room::where('name', $roomName)->firstOrFail();
+
+        $this->authorize('chat', $room);
+
+        $message = $request->input('message');
+        $author = Auth::user()->username;
+
+        event(new ChatMessage($room, $message, $author));
+    }
+
     public function invite(Request $request, $roomName)
     {
         $identifier = $request->input('identifier');

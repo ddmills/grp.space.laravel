@@ -16,6 +16,9 @@
     <p class='lead'>
         {{ $room->description }}
     </p>
-
-    @include('room.partials.chat')
+    @can('chat', $room)
+        @include('room.partials.chat')
+    @else
+        <p><i class="icon-lock-alt"></i> You must be a member of this room in order to see the chat</p>
+    @endcan
 @endsection

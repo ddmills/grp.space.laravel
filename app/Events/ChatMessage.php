@@ -12,16 +12,20 @@ class ChatMessage extends Event implements ShouldBroadcast
 
     public $room;
     public $message;
+    public $author;
+    public $timestamp;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($room, $message)
+    public function __construct($room, $message, $author, $timestamp=false)
     {
         $this->room = $room;
         $this->message = $message;
+        $this->author = $author;
+        $this->timestamp = $timestamp ? $timestamp : time();
     }
 
     /**

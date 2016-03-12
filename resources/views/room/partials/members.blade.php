@@ -6,7 +6,7 @@
     </div>
     <div class="panel-body">
         <ul>
-            <li>{{ $room->owner->username }} (owner)</li>
+            <li>{{ $room->owner->username }} <i class="icon-crown"></i></li>
             @foreach($room->members as $member)
                 <li>{{ $member->username }}</li>
             @endforeach

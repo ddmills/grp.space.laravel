@@ -15,5 +15,6 @@
     </head>
     <body>
         @yield('body')
+        @yield('javascript')
     </body>
 </html>

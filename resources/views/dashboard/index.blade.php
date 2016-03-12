@@ -37,15 +37,31 @@
                     </h4>
                 </div>
                 <div class="panel-body">
+                    <p><strong>Rooms you own</strong></p>
                     <ul>
-                    @foreach ($rooms as $room)
-                        <li>
-                            {{ $room->id }} &middot;
-                            <a href="{{ route('room.show', ['room' => $room->name]) }}">
-                                {{ $room->name }}
-                            </a>
-                        </li>
-                    @endforeach
+                        @forelse ($rooms as $room)
+                            <li>
+                                {{ $room->id }} &middot;
+                                <a href="{{ route('room.show', ['room' => $room->name]) }}">
+                                    {{ $room->name }}
+                                </a>
+                            </li>
+                        @empty
+                            <li>You don't own any rooms</li>
+                        @endforelse
+                    </ul>
+                    <p><strong>Rooms you're a member of</strong></p>
+                    <ul>
+                        @forelse ($followingRooms as $room)
+                            <li>
+                                {{ $room->id }} &middot;
+                                <a href="{{ route('room.show', ['room' => $room->name]) }}">
+                                    {{ $room->name }}
+                                </a>
+                            </li>
+                        @empty
+                            <li>You're not a member of any rooms</li>
+                        @endforelse
                     </ul>
                     <a href="{{ route('room.create') }}" class="btn btn-sm btn-primary">
                         <i class="icon-plus"></i>
@@ -57,18 +73,20 @@
             <div class="panel">
                 <div class="panel-header">
                     <h4 class="panel-title">
-                        <i class="icon-leaf"></i>
+                        <i class="icon-tag"></i>
                         Room Invitations
                     </h4>
                 </div>
                 <div class="panel-body">
                     <ul>
-                    @foreach ($roomInvites as $invite)
+                    @forelse ($roomInvites as $invite)
                         <li>
                             {{ $invite['data']['invitedby'] }} invited you to join {{ $invite['data']['room'] }}.
                             <a href="{{ route('room.join', ['token' => $invite['data']['token']]) }}">Join</a>.
                         </li>
-                    @endforeach
+                    @empty
+                        <li>You have no outstanding room invitations</li>
+                    @endforelse
                     </ul>
                     <a href="#" class="btn btn-sm btn-danger">
                         <i class="icon-minus-circled"></i>

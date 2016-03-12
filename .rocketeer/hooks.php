@@ -12,8 +12,5 @@ return [
         'cleanup' => [],
     ],
     'custom' => [
-        'CustomTasks\CopyEnvironment',
-        'CustomTasks\DBMigrate',
-        'CustomTasks\DBSeed',
     ],
 ];

@@ -26,5 +26,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('join',  ['as' => 'auth.register', 'uses' => 'Auth\AuthController@register']);
     Route::post('join', ['as' => 'auth.store', 'uses' => 'Auth\AuthController@store']);
 
+    Route::get('/user',  ['as' => 'user.index',   'uses' => 'UserController@index']);
     Route::get('/u/{user}',  ['as' => 'dashboard.index',   'uses' => 'DashboardController@index']);
 });

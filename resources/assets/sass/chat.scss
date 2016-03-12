@@ -31,14 +31,6 @@
     float: right;
 }
 
-.chat-message-text::before {
-    position: absolute;
-    content: "·";
-    color: #bbb;
-    left: -1em;
-    font-size: 1em;
-}
-
 .chat-message-text {
     display     : block;
     position    : relative;

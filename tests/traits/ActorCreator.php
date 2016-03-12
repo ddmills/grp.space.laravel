@@ -25,6 +25,17 @@ trait ActorCreator
         return $this->createActorWithRole('user', $attributes);
     }
 
+    public function createUsers($userCount = 4, $attributes = [])
+    {
+        $users = collect();
+
+        for ($i = 0; $i < $userCount; $i++) {
+            $users->push($this->createActorWithRole('user', $attributes));
+        }
+
+        return $users;
+    }
+
     public function createUserWithRooms($roomCount = 4, $attributes = [])
     {
         $user = $this->createUser($attributes);

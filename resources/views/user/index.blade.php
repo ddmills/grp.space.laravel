@@ -12,11 +12,42 @@
 
 @section('content')
 
-    @foreach ($users as $user)
-        <p>
-            {{ $user->id }} &middot;
-            {{ $user->username }}
-        </p>
-    @endforeach
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>role/username</th>
+                <th>email</th>
+                <th>created</th>
+                <th>rooms</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($users as $user)
+                <tr>
+                    <td>{{ $user->id }}</td>
+                    <td>
+                        @if ($user->hasRole('admin'))
+                            <i class="icon-crown"></i>
+                        @else
+                            <i class="icon-user"></i>
+                        @endif
+                        <a href="{{ route('dashboard.index', $user->username) }}">
+                            {{ $user->username }}
+                        </a>
+                    </td>
+                    <td>
+                        {{ $user->email }}
+                    </td>
+                    <td>
+                        {{ $user->created_at }}
+                    </td>
+                    <td>
+                        {{ $user->rooms->count() }}/{{ $user->following->count() }}
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 @endsection

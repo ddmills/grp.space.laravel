@@ -4,12 +4,19 @@
 }
 
 .chat-author {
-    width: 60px;
+    width: 80px;
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #ccc;
+    white-space: nowrap;
     text-align: right;
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.chat-author:hover {
+    color: #D26911;
 }
 
 .chat-message {
@@ -27,11 +34,13 @@
 .chat-message-text::before {
     position: absolute;
     content: "·";
-    left: -.1em;
+    color: #bbb;
+    left: -1em;
     font-size: 1em;
 }
 
 .chat-message-text {
-    display: block;
-    margin-left: 75px;
+    display     : block;
+    position    : relative;
+    margin-left : 100px;
 }

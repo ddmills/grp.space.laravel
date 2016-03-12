@@ -67,9 +67,9 @@
     <div class="panel-body chat">
         <div class="chat-messages">
            <div class="chat-message" v-for="message in messages">
-               <span class="chat-author">
+               <a class="chat-author" href="/u/@{{ message.author }}">
                    @{{ message.author }}
-               </span>
+               </a>
                <span class="chat-timestamp">
                    @{{ message.timestamp.calendar() }}
                </span>

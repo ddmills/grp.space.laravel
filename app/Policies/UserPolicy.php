@@ -16,9 +16,14 @@ class UserPolicy
      */
     public function view(User $user, User $otherUser)
     {
+        if ($user->can('user-view-all')) {
+            return true;
+        }
+
         if ($user->can('user-view')) {
             return !$user->accessibleRooms()->intersect($otherUser->accessibleRooms())->isEmpty();
         }
+
         return false;
     }
 

@@ -79,12 +79,13 @@ class FirstTimeStepsTest extends TestCase
     public function testStepsAreNotShownOnRoomInvitePageForRoomWithMembers()
     {
         $user = $this->createUserWithRoom();
-        $room = $user->rooms->first();
         $otherUser = $this->createUser();
+
+        $room = $user->rooms->first();
         $room->addMember($otherUser);
 
         $this
-            ->actingAs($user)
+            ->actingAs($user->fresh())
             ->visit(route('room.settings', $room->name))
             ->dontSeeElement('.starting-steps');
     }

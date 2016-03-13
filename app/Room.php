@@ -32,7 +32,9 @@ class Room extends Model
 
     public function addMember($user)
     {
-        return $this->members()->attach($user);
+        if (!$this->members->contains($user)) {
+            return $this->members()->attach($user);
+        }
     }
 
     public function inviteUser($user)

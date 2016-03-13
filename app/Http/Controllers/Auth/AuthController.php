@@ -95,7 +95,7 @@ class AuthController extends Controller
 
         $user = User::findByIdentifier($identifier);
 
-        if (Auth::attempt(['email' => $user->email, 'password' => $password])) {
+        if ($user && Auth::attempt(['email' => $user->email, 'password' => $password])) {
             $target = route('home');
             $rooms = $user->accessibleRooms();
 

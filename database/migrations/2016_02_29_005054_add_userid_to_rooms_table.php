@@ -31,6 +31,7 @@ class AddUseridToRoomsTable extends Migration
     public function down()
     {
         Schema::table('rooms', function(Blueprint $table) {
+            $table->dropForeign('rooms_user_id_foreign');
             $table->dropColumn('user_id');
         });
     }

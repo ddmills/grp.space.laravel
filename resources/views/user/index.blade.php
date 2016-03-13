@@ -32,7 +32,7 @@
                         @else
                             <i class="icon-user"></i>
                         @endif
-                        <a href="{{ route('user.dashboard', $user->username) }}">
+                        <a href="{{ route('user.show', $user->username) }}">
                             {{ $user->username }}
                         </a>
                     </td>
@@ -49,5 +49,26 @@
             @endforeach
         </tbody>
     </table>
+    <div class="btn-group">
+        @if ($users->previousPageUrl())
+            <a class="btn btn-default" href="{{ $users->previousPageUrl() }}">
+                <<
+            </a>
+        @else
+            <a class="btn btn-default disabled" href="#">
+                <<
+            </a>
+        @endif
+
+        @if ($users->hasMorePages())
+            <a class="btn btn-default" href="{{ $users->nextPageUrl() }}">
+                >>
+            </a>
+        @else
+            <a class="btn btn-default disabled" href="#">
+                >>
+            </a>
+        @endif
+    </div>
 
 @endsection

@@ -12,7 +12,7 @@ class UserController extends Controller
     public function index()
     {
         $this->authorize('user-view-all');
-        $users = User::all();
+        $users = User::simplePaginate(15);
         return view('user.index', compact('users'));
     }
 

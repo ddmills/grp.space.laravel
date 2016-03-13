@@ -1,7 +1,7 @@
 <div class="panel">
     <div class="panel-header">
         <h4 class="panel-title">
-            <i class="icon-users"></i> Members ({{ $room->members->count() }})
+            <i class="icon-users"></i> Members ({{ $room->members->count() + 1 }})
         </h4>
     </div>
     <div class="panel-body">

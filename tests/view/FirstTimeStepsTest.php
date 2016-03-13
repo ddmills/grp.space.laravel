@@ -6,10 +6,11 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class FirstTimeStepsTest extends TestCase
 {
-    use Crawler;
+
     use CreatesActors;
     use CreatesRooms;
     use VisitsRooms;
+    use DatabaseTransactions;
 
     public function testStepsAreShownOnHomepageIfNotLoggedIn()
     {

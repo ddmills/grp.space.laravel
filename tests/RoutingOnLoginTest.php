@@ -10,6 +10,19 @@ class RoutingOnLoginTest extends TestCase
     use CreatesActors;
     use DatabaseTransactions;
 
+    public function testUserIsRoutedHomeIfUserHasNoRooms()
+    {
+        $password = 'password';
+        $user = $this->createUser(['password' => bcrypt($password)]);
+
+        $this
+            ->visit(route('auth.login'))
+            ->type($user->email, 'identifier')
+            ->type($password, 'password')
+            ->press(Lang::get('auth.login.finalize'))
+            ->seePageIs(route('home'));
+    }
+
     public function testUserIsRoutedToRoomShowIfHasARoom()
     {
         $password = 'password';

@@ -15,14 +15,26 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><i class="icon-crown"></i> owner</td>
-                    <td>{{ $room->owner->username }}</td>
+                    <td>
+                        <i class="icon-crown"></i> owner
+                    </td>
+                    <td>
+                        <a href="{{ route('user.show', $room->owner->username) }}">
+                            {{ $room->owner->username }}
+                        </a>
+                    </td>
                     <td>{{ $room->owner->created_at }}</td>
                 </tr>
                 @foreach($room->members as $member)
                     <tr>
-                        <td><i class="icon-user"></i> member</td>
-                        <td>{{ $member->username }}</td>
+                        <td>
+                            <i class="icon-user"></i> member
+                        </td>
+                        <td>
+                            <a href="{{ route('user.show', $member->username) }}">
+                                {{ $member->username }}
+                            </a>
+                        </td>
                         <td>{{ $member->created_at }}</td>
                     </tr>
                 @endforeach

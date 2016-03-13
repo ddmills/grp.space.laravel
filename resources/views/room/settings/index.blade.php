@@ -14,5 +14,6 @@
 @endsection
 
 @section('content')
+    @include('other.steps', ['actions' => false])
     @include('room.partials.members')
 @endsection

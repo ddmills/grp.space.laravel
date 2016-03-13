@@ -7,9 +7,11 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class FirstTimeStepsTest extends TestCase
 {
     use Crawler;
-    use ActorCreator;
+    use CreatesActors;
+    use CreatesRooms;
+    use VisitsRooms;
 
-    public function testStepsAreShownOnHomepage()
+    public function testStepsAreShownOnHomepageIfNotLoggedIn()
     {
         $this
             ->visit(route('home'))
@@ -25,12 +27,64 @@ class FirstTimeStepsTest extends TestCase
             ->seeInElement('.starting-steps > .step.active', 'Step 1');
     }
 
-    public function testStepsAreShownOnRoomCreatePage()
+    public function testStepsAreShownOnRoomCreatePageForUserWithoutAnyRooms()
     {
+        $user = $this->createUser();
+
         $this
-            ->actingAs($this->createUser())
+            ->actingAs($user)
             ->visit(route('room.create'))
             ->seeElement('.starting-steps')
             ->seeInElement('.starting-steps > .step.active', 'Step 2');
+    }
+
+    public function testStepsAreNotShownOnRoomCreatePageForUserWithARoom()
+    {
+        $userWithRoom = $this->createUserWithRoom();
+
+        $this
+            ->actingAs($userWithRoom)
+            ->visit(route('room.create'))
+            ->dontSeeElement('.starting-steps');
+    }
+
+    public function testThatStepsAreNotShowForAUserWhoIsAMemberOfARoom()
+    {
+        $user = $this->createUser();
+        $room = $this->createRoom();
+
+        $room->addMember($user);
+
+        $this
+            ->actingAs($user)
+            ->visit(route('home'))
+            ->dontSeeElement('.starting-steps')
+            ->visit(route('room.create'))
+            ->dontSeeElement('.starting-steps');
+    }
+
+    public function testStepsAreShownOnRoomInvitePageForRoomWithNoMembers()
+    {
+        $user = $this->createUserWithRoom();
+        $room = $user->rooms->first();
+
+        $this
+            ->actingAs($user)
+            ->visit(route('room.settings', $room->name))
+            ->seeElement('.starting-steps')
+            ->seeInElement('.starting-steps > .step.active', 'Step 3');
+    }
+
+    public function testStepsAreNotShownOnRoomInvitePageForRoomWithMembers()
+    {
+        $user = $this->createUserWithRoom();
+        $room = $user->rooms->first();
+        $otherUser = $this->createUser();
+        $room->addMember($otherUser);
+
+        $this
+            ->actingAs($user)
+            ->visit(route('room.settings', $room->name))
+            ->dontSeeElement('.starting-steps');
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class PermissionRoomCreateTest extends TestCase
 {
 
-    use ActorCreator;
+    use CreatesActors;
     use DatabaseTransactions;
 
     public function testUserRoleHasCreateRoomPermission()

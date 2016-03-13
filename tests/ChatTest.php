@@ -6,9 +6,9 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ChatTest extends TestCase
 {
-    use RoomCreator;
+    use CreatesRooms;
     use VisitsRooms;
-    use ActorCreator;
+    use CreatesActors;
     use DatabaseTransactions;
 
     public function testAuthenticatedUserCanSeeChat()
@@ -20,5 +20,13 @@ class ChatTest extends TestCase
             ->actingAs($user)
             ->visitRoom($room)
             ->see('Chat');
+    }
+
+    public function testChatMessagesPersist()
+    {
+        $user = $this->createUserWithRoom();
+        $room = $user->rooms->first();
+
+        $this->markTestIncomplete();
     }
 }

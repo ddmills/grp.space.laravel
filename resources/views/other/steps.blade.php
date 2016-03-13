@@ -38,7 +38,7 @@
             <span class="step-num">Step 3:</span>
             <span class="step-desc">Invite your friends.</span>
             @if($actions)
-                <a href="{{ route('room.create') }}" class="btn step-action btn-block {{ $activeStep == 3 ? 'btn-primary' : 'btn-default disabled' }}">
+                <a href="{{ route('room.settings', $stepThreeRoom) }}" class="btn step-action btn-block {{ $activeStep == 3 ? 'btn-primary' : 'btn-default disabled' }}">
                     Invite friends
                 </a>
             @endif

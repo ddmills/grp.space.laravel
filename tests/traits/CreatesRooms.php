@@ -3,7 +3,7 @@
 use App\Room;
 use App\User;
 
-trait RoomCreator
+trait CreatesRooms
 {
     public function createRoomWithOwner($owner)
     {

@@ -12,6 +12,16 @@ trait Crawler
         return $this;
     }
 
+    public function dontSeeElement($selector)
+    {
+        $this->assertFalse(
+            $this->crawler->filter($selector)->count() > 0,
+            "Expected to not find any elements matching the selector \"{$selector}\"."
+        );
+
+        return $this;
+    }
+
     public function seeElementHasAttribute($selector, $attribute, $value = null)
     {
         $elements = $this->crawler->filter($selector);

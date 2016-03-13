@@ -31,9 +31,9 @@
         ],
         "files": [
             "tests/traits/Crawler.php",
-            "tests/traits/RoomCreator.php",
+            "tests/traits/CreatesRooms.php",
             "tests/traits/VisitsRooms.php",
-            "tests/traits/ActorCreator.php",
+            "tests/traits/CreatesActors.php",
             "tests/traits/AuthChecker.php"
         ]
     },

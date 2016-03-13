@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class PermissionUserViewAllTest extends TestCase
 {
 
-    use ActorCreator;
+    use CreatesActors;
     use DatabaseTransactions;
 
     public function testAdminRoleHasUserViewAllPermission()

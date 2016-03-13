@@ -8,8 +8,8 @@ class PermissionRoomAdministerTest extends TestCase
 {
 
     use VisitsRooms;
-    use RoomCreator;
-    use ActorCreator;
+    use CreatesRooms;
+    use CreatesActors;
     use DatabaseTransactions;
 
     public function testUserRoleHasRoomAdministerPermission()

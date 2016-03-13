@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class PermissionUserViewTest extends TestCase
 {
 
-    use ActorCreator;
+    use CreatesActors;
     use DatabaseTransactions;
 
     public function testUserRoleHasUserViewPermission()

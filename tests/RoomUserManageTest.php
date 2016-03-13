@@ -7,9 +7,9 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class RoomUserManageTest extends TestCase
 {
 
-    use ActorCreator;
+    use CreatesActors;
     use VisitsRooms;
-    use RoomCreator;
+    use CreatesRooms;
     use DatabaseTransactions;
 
     public function testAcceptingRoomInvitationWillAddUserToRoom()

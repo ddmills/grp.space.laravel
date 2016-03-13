@@ -8,9 +8,9 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class RoomTest extends TestCase
 {
 
-    use RoomCreator;
+    use CreatesRooms;
     use VisitsRooms;
-    use ActorCreator;
+    use CreatesActors;
     use DatabaseTransactions;
 
     public function testCanCreatingANewRoomWillRedirectToNewRoomPage()

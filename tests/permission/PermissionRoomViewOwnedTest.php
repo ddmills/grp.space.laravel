@@ -7,8 +7,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class PermissionRoomViewOwnedTest extends TestCase
 {
 
-    use RoomCreator;
-    use ActorCreator;
+    use CreatesRooms;
+    use CreatesActors;
     use DatabaseTransactions;
 
     public function testUserHasRoomViewOwnedPermission()

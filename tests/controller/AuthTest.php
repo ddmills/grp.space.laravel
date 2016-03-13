@@ -9,7 +9,7 @@ use Faker\Factory as Faker;
 class AuthTest extends TestCase
 {
 
-    use ActorCreator;
+    use CreatesActors;
     use AuthChecker;
     use DatabaseTransactions;
 

@@ -3,7 +3,7 @@
 use App\Room;
 use App\User;
 
-trait ActorCreator
+trait CreatesActors
 {
     public function createActor($attributes = [])
     {

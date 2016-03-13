@@ -15,6 +15,9 @@ class DashboardController extends Controller
         $this->authorize('room-view-owned');
 
         $user = User::where('username', $username)->firstOrFail();
+
+        $this->authorize('viewDashboard', $user);
+
         $rooms = $user->rooms;
         $followingRooms = $user->following;
         $roomInvites = $user->getNotifications('room.invite');

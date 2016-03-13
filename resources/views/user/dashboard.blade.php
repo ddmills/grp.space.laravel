@@ -4,15 +4,22 @@
     <header class='page-header'>
         <div class='container'>
             <h2 class="page-title">
-                <i class="icon-user"></i> {{ $user->username}}
+                @if ($user->hasRole('admin'))
+                    <i class="icon-crown"></i>
+                @else
+                    <i class="icon-user"></i>
+                @endif
+                {{ $user->username}}
             </h2>
             <div class="page-actions btn-group btn-group-sm">
-                <a href="#" class="btn btn-default">
-                    <i class="icon-cogs"></i> Settings
+                <a href="{{ route('user.show', $user->username) }}" class="btn btn-default">
+                    <i class="icon-eye"></i> Public profile
                 </a>
-                <a href="{{ route('auth.logout') }}" class="btn btn-default">
-                    <i class="icon-logout"></i> Sign out
-                </a>
+                @if (Auth::user()->id == $user->id)
+                    <a href="{{ route('auth.logout') }}" class="btn btn-default">
+                        <i class="icon-logout"></i> Sign out
+                    </a>
+                @endif
             </div>
         </div>
     </header>
@@ -73,7 +80,7 @@
             <div class="panel">
                 <div class="panel-header">
                     <h4 class="panel-title">
-                        <i class="icon-tag"></i>
+                        <i class="icon-bell"></i>
                         Room Invitations
                     </h4>
                 </div>

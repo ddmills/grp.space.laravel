@@ -25,9 +25,8 @@ class PermissionRoomAdministerTest extends TestCase
 
         $this
             ->actingAs($owner)
-            ->visitRoom($room)
-            ->click('Room settings')
-            ->seePageIs(route('room.settings', $room->name));
+            ->visit(route('room.settings', $room->name))
+            ->assertResponseStatus(200);
     }
 
     public function testActorWithRoomAdministerPermissionCantViewSettingsIfTheyDontOwnRoom()

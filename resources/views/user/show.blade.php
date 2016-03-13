@@ -4,8 +4,25 @@
     <header class="page-header">
         <div class="container">
             <h2 class='page-title'>
-                <i class="icon-user"></i> {{ $user->username}}
+                @if ($user->hasRole('admin'))
+                    <i class="icon-crown"></i>
+                @else
+                    <i class="icon-user"></i>
+                @endif
+                {{ $user->username}}
             </h2>
+            <div class="page-actions btn-group btn-group-sm">
+                    @can('viewDashboard', $user)
+                        <a href="{{ route('user.dashboard', $user->username) }}" class="btn btn-default">
+                            <i class="icon-gauge"></i> Dashboard
+                        </a>
+                    @endcan
+                    @if (Auth::user()->id == $user->id)
+                        <a href="{{ route('auth.logout') }}" class="btn btn-default">
+                            <i class="icon-logout"></i> Sign out
+                        </a>
+                    @endif
+            </div>
         </div>
     </header>
 @endsection

@@ -21,4 +21,23 @@ class UserPolicy
         }
         return false;
     }
+
+    /*
+     * Determine if the given user can view the other user's dashboard
+     *
+     * @param \App\User $user
+     * @param \App\User $otherUser
+     * @return bool
+     */
+    public function viewDashboard(User $user, User $otherUser)
+    {
+        if ($user->can('user-view-all-dashboard')) {
+            return true;
+        }
+
+        if ($user->can('user-view-dashboard')) {
+            return $user->id == $otherUser->id;
+        }
+        return false;
+    }
 }

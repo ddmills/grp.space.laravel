@@ -19,6 +19,6 @@ class DashboardController extends Controller
         $followingRooms = $user->following;
         $roomInvites = $user->getNotifications('room.invite');
 
-        return view('dashboard.index', compact('user', 'rooms', 'followingRooms', 'roomInvites'));
+        return view('user.dashboard', compact('user', 'rooms', 'followingRooms', 'roomInvites'));
     }
 }

@@ -32,7 +32,7 @@
                         @else
                             <i class="icon-user"></i>
                         @endif
-                        <a href="{{ route('dashboard.index', $user->username) }}">
+                        <a href="{{ route('user.dashboard', $user->username) }}">
                             {{ $user->username }}
                         </a>
                     </td>

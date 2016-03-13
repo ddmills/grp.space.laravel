@@ -23,7 +23,7 @@ class RoomUserManageTest extends TestCase
 
         $this
             ->actingAs($user)
-            ->visit(route('dashboard.index', $user->username))
+            ->visit(route('user.dashboard', $user->username))
             ->see($owner->name . ' invited you to join ' . $room->name)
             ->click('Join')
             ->seePageIs(route('room.show', $room->name))

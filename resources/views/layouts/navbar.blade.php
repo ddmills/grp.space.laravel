@@ -7,7 +7,7 @@
         </a>
         <div class="nav-group pull-right">
             @if ($userLoggedIn)
-                <a class="nav-item" href="{{ route('dashboard.index', ['user' => $user->username]) }}">
+                <a class="nav-item" href="{{ route('user.dashboard', ['user' => $user->username]) }}">
                     <i class="icon-user"></i>
                     {{ $user->username }}
                 </a>

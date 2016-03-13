@@ -102,7 +102,7 @@ class AuthController extends Controller
             if ($rooms->count() == 1) {
                 $target = route('room.show', $user->accessibleRooms()->first()->name);
             } elseif ($rooms->count() > 1) {
-                $target = route('dashboard.index', $user->username);
+                $target = route('user.dashboard', $user->username);
             }
 
             return redirect()->intended($target);

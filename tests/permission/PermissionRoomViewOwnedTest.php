@@ -23,7 +23,7 @@ class PermissionRoomViewOwnedTest extends TestCase
 
         $this
             ->actingAs($user)
-            ->visit(route('dashboard.index', ['user' => $user->username]));
+            ->visit(route('user.dashboard', ['user' => $user->username]));
 
         foreach ($user->rooms as $room) {
             $this->see($room->name);

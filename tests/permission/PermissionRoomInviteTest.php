@@ -33,7 +33,7 @@ class PermissionRoomInviteTest extends TestCase
 
         $this
             ->actingAs($user)
-            ->visit(route('dashboard.index', ['user' => $user->username]))
+            ->visit(route('user.dashboard', ['user' => $user->username]))
             ->see($owner->name . ' invited you to join ' . $room->name);
     }
 

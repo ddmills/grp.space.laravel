@@ -38,6 +38,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Room');
     }
 
+    public function accessibleRooms()
+    {
+        return $this->rooms->merge($this->following);
+    }
+
     public static function findByIdentifier($identifier)
     {
         $data = ['identifier' => $identifier];

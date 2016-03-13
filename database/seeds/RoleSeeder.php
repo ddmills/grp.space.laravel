@@ -19,6 +19,7 @@ class RoleSeeder extends Seeder
         $this->createPermission('room-administer', 'Administer owned rooms');
         $this->createPermission('room-chat', 'Chat in followed rooms');
         $this->createPermission('user-view-all', 'View all users');
+        $this->createPermission('user-view', 'View a user\'s profile');
 
         $this->createRole('admin', 'Administrator', [
             'room-administer',
@@ -26,6 +27,7 @@ class RoleSeeder extends Seeder
             'room-create',
             'room-invite',
             'room-chat',
+            'user-view',
             'user-view-all',
         ]);
 
@@ -34,6 +36,7 @@ class RoleSeeder extends Seeder
             'room-view-owned',
             'room-create',
             'room-invite',
+            'user-view',
             'room-chat',
         ]);
     }

@@ -5,13 +5,31 @@
         </h4>
     </div>
     <div class="panel-body">
-        <ul>
-            <li>{{ $room->owner->username }} <i class="icon-crown"></i></li>
-            @foreach($room->members as $member)
-                <li>{{ $member->username }}</li>
-            @endforeach
-        </ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>role</th>
+                    <th>username</th>
+                    <th>created</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i class="icon-crown"></i> owner</td>
+                    <td>{{ $room->owner->username }}</td>
+                    <td>{{ $room->owner->created_at }}</td>
+                </tr>
+                @foreach($room->members as $member)
+                    <tr>
+                        <td><i class="icon-user"></i> member</td>
+                        <td>{{ $member->username }}</td>
+                        <td>{{ $member->created_at }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
         @can('invite', $room)
+            <br>
             <form action="{{ route('room.invite', ['room' => $room->name]) }}" method="post" accept-charset="utf-8">
 
                 {{ csrf_field() }}

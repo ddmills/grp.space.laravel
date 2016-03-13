@@ -96,7 +96,16 @@ class AuthController extends Controller
         $user = User::findByIdentifier($identifier);
 
         if (Auth::attempt(['email' => $user->email, 'password' => $password])) {
-            return redirect()->intended(route('home'));
+            $target = route('home');
+            $rooms = $user->accessibleRooms();
+
+            if ($rooms->count() == 1) {
+                $target = route('room.show', $user->accessibleRooms()->first()->name);
+            } elseif ($rooms->count() > 1) {
+                $target = route('dashboard.index', $user->username);
+            }
+
+            return redirect()->intended($target);
         }
 
         return redirect()

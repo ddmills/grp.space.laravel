@@ -9,6 +9,7 @@
         var socket = io(window.location.host + ':' + 3000);
 
         var author = '{{ Auth::user()->username }}';
+        var raw = {!! json_encode($messages) !!}
 
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#_token').getAttribute('value');
 
@@ -42,10 +43,19 @@
             },
 
             ready: function() {
+                for (var rawMessage of raw) {
+                    console.log(rawMessage);
+                    this.messages.push({
+                        'timestamp': moment.utc(rawMessage.timestamp.date),
+                        'author': rawMessage.author.username,
+                        'message': rawMessage.message.content
+                    });
+                }
+
                 socket.on('chat:message', function(data) {
                     if (data.author.username != author) {
                         var message = {
-                            'timestamp': moment(data.timestamp.date),
+                            'timestamp': moment.utc(data.timestamp.date),
                             'author': data.author.username,
                             'message': data.message.content
                         };
@@ -70,7 +80,7 @@
                    @{{ message.author }}
                </a>
                <span class="chat-timestamp">
-                   @{{ message.timestamp.calendar() }}
+                   @{{ message.timestamp.local().calendar() }}
                </span>
                <span class="chat-message-text chat-md" v-html="message.message | marked">
                </span>

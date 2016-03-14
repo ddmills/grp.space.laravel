@@ -28,5 +28,5 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/user',  ['as' => 'user.index',   'uses' => 'UserController@index']);
     Route::get('/user/{user}',  ['as' => 'user.show',   'uses' => 'UserController@show']);
-    Route::get('/user/{user}/dashboard',  ['as' => 'user.dashboard',   'uses' => 'DashboardController@index']);
+    Route::get('/user/{user}/dashboard',  ['as' => 'user.dashboard',   'uses' => 'UserController@dashboard']);
 });

@@ -22,4 +22,19 @@ class UserController extends Controller
         $this->authorize('view', $user);
         return view('user.show', compact('user'));
     }
+
+    public function dashboard(Request $request, $username)
+    {
+        $this->authorize('room-view-owned');
+
+        $user = User::where('username', $username)->firstOrFail();
+
+        $this->authorize('viewDashboard', $user);
+
+        $rooms = $user->rooms;
+        $followingRooms = $user->following;
+        $roomInvites = $user->getNotifications('room.invite');
+
+        return view('user.dashboard', compact('user', 'rooms', 'followingRooms', 'roomInvites'));
+    }
 }

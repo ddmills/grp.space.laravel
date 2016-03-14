@@ -7,6 +7,7 @@ use Auth;
 use Lang;
 use App\User;
 use App\Room;
+use App\Message;
 use Validator;
 use App\Http\Requests;
 use App\Events\ChatMessage;
@@ -87,10 +88,15 @@ class RoomController extends Controller
 
         $this->authorize('chat', $room);
 
-        $message = $request->input('message');
-        $author = Auth::user()->username;
+        $content = $request->input('message');
+        $author = Auth::user();
 
-        event(new ChatMessage($room, $message, $author));
+        $message = Message::create(['content' => $content]);
+        $message->author()->associate($author);
+        $message->room()->associate($room);
+        $message->save();
+
+        event(new ChatMessage($message));
     }
 
     public function invite(Request $request, $roomName)

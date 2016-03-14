@@ -7,7 +7,6 @@ var redis = new Redis;
 redis.subscribe('chat:message');
 
 redis.on('message', function(channel, message) {
-    console.log('message');
     message = JSON.parse(message);
     console.log(message);
 

@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Message;
 use App\Events\Event;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
@@ -10,9 +11,9 @@ class ChatMessage extends Event implements ShouldBroadcast
 {
     use SerializesModels;
 
-    public $room;
     public $message;
     public $author;
+    public $room;
     public $timestamp;
 
     /**
@@ -20,12 +21,12 @@ class ChatMessage extends Event implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct($room, $message, $author, $timestamp=false)
+    public function __construct(Message $message)
     {
-        $this->room = $room;
         $this->message = $message;
-        $this->author = $author;
-        $this->timestamp = $timestamp ? $timestamp : time();
+        $this->author = $message->author;
+        $this->room = $message->room;
+        $this->timestamp = $message->created_at;
     }
 
     /**

@@ -42,13 +42,12 @@
             },
 
             ready: function() {
-                console.log(this.$http);
                 socket.on('chat:message', function(data) {
-                    if (data.author != author) {
+                    if (data.author.username != author) {
                         var message = {
-                            'timestamp': moment(data.timestamp * 1000),
-                            'author': data.author,
-                            'message': data.message
+                            'timestamp': moment(data.timestamp.date),
+                            'author': data.author.username,
+                            'message': data.message.content
                         };
                         this.messages.push(message);
                     }

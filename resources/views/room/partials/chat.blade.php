@@ -9,7 +9,7 @@
         var socket = io(window.location.host + ':' + 3000);
 
         var author = '{{ Auth::user()->username }}';
-        var raw = {!! json_encode($messages) !!}
+        var raw = {!! json_encode($messages) !!};
 
         Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#_token').getAttribute('value');
 
@@ -23,18 +23,26 @@
 
             methods: {
                 sendMessage: function() {
-
-                    this.messages.push({
+                    var message = {
                         'timestamp': moment(),
                         'message': this.chatInput,
-                        'author': author
-                    });
+                        'author': author,
+                        'pending': true,
+                    };
+
+                    this.messages.push(message);
 
                     this.$http.post(window.location.pathname + '/chat', {'message' : this.chatInput}, []).then(function() {
-                        console.log('posted');
+                        message.pending = false;
                     });
 
                     this.chatInput = '';
+                    Vue.nextTick(this.repositionScroll.bind(this));
+                },
+
+                repositionScroll: function() {
+                    var chatDiv = document.getElementsByClassName("chat-messages");
+                    chatDiv[0].scrollTop = chatDiv[0].scrollHeight;
                 }
             },
 
@@ -44,22 +52,25 @@
 
             ready: function() {
                 for (var rawMessage of raw) {
-                    console.log(rawMessage);
                     this.messages.push({
                         'timestamp': moment.utc(rawMessage.timestamp.date),
                         'author': rawMessage.author.username,
-                        'message': rawMessage.message.content
+                        'message': rawMessage.message.content,
+                        'pending': false
                     });
                 }
+                Vue.nextTick(this.repositionScroll.bind(this));
 
                 socket.on('chat:message', function(data) {
                     if (data.author.username != author) {
                         var message = {
                             'timestamp': moment.utc(data.timestamp.date),
                             'author': data.author.username,
-                            'message': data.message.content
+                            'message': data.message.content,
+                            'pending': false,
                         };
                         this.messages.push(message);
+                        Vue.nextTick(this.repositionScroll.bind(this));
                     }
                 }.bind(this));
             }
@@ -82,11 +93,14 @@
                <span class="chat-timestamp">
                    @{{ message.timestamp.local().calendar() }}
                </span>
+               <span class="chat-pending" v-if="message.pending">
+                   <i class="icon-dot-2 animate-spin"></i>
+               </span>
                <span class="chat-message-text chat-md" v-html="message.message | marked">
                </span>
            </div>
        </div>
-        <div class='row'>
+        <div class='row chat-input'>
             <div class='column four-fifths'>
                 <input type='text' class='form-control' id='chat-message' v-model='chatInput' v-on:keyup.enter="sendMessage">
             </div>

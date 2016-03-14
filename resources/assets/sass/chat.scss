@@ -1,6 +1,7 @@
 .chat-messages {
-    padding-bottom: 20px;
     line-height: 2em;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .chat-author {
@@ -19,6 +20,11 @@
     color: #D26911;
 }
 
+.chat-pending {
+    float: right;
+    color: #eee;
+}
+
 .chat-message {
     display: block;
     line-height: 2em;
@@ -35,4 +41,8 @@
     display     : block;
     position    : relative;
     margin-left : 100px;
+}
+
+.chat-input {
+    padding-top: 20px;
 }

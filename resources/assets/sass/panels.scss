@@ -33,4 +33,6 @@
 .panel-body {
     padding: 16px;
     background-color: $panel-body-col;
+
+    @include clearfix();
 }

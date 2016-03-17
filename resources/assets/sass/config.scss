@@ -1,110 +1,132 @@
-$background: #fff; //#F3F0EB;
-
+//
+//        Overall app background and fonts
+//
+$background    : #fff;
 $app-font-col  : #555;
 $app-font-size : 12px;
 
-// $app-header-col: #3D393E;
+//
+//        App Header
+//
 $app-header-col      : #465461;
 $app-header-font-col : #F3F0EB;
 
+//
+//        App Footer
+//
 $app-footer-col    : #888;
 $app-footer-border : 1px dashed #ccc;
 
-$body-fonts       : 'Montserrat', 'Work Sans', 'Helvetica', sans-serif;
-$header-fonts     : 'Libre Baskerville', 'Lora', 'Work Sans', 'Georgia', sans-serif;
+//
+//        Font Stacks
+//
+$body-fonts       : 'Montserrat', 'Helvetica', sans-serif;
+$header-fonts     : 'Libre Baskerville', 'Georgia', sans-serif;
 $navigation-fonts : $header-fonts;
 
-$grid-gutter : 10px;
-
+//
+//        Page headers
+//
 $page-header-col      : #FBFBFB;
 $page-header-border   : #EAE9E8;
 $page-title-font-col  : #444;
 
+//
+//        Panels
+//
 $panel-border-col     : $page-header-border;
 $panel-header-col     : $page-header-col;
 $panel-body-col       : #fefefe;
 $panel-title-font-col : #444;
 
-$focus-border-col : rgba(230, 137, 202, 0.46) !important;
-$focus-box-shadow : inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(189, 102, 233, 0.28);
+//
+//        Alerts
+//
+$alert-default-background : #efefef;
+$alert-default-border-col : #D9D3DC;
+$alert-default-font-col   : #463644;
 
-$alert-default-icon: "\f085";
-$alert-default-primary: #f6f6f6 ;
-$alert-default-secondary: #dcdcdc;
-$alert-default-text: #505050;
-$alert-default-shadow: #F5F5F5;
-$alert-default-gradient-top    : #ffffff;
-$alert-default-gradient-bottom : #f6f6f6;
+//        Info alerts
+$alert-info-background : #d6e5fc;
+$alert-info-background : #d6e5fc;
+$alert-info-border-col : #DAD3D3;
+$alert-info-font-col   : #2D6292;
 
-$alert-danger-icon: "\f06a";
-$alert-danger-primary: #E88686;
-$alert-danger-secondary: #B32E2E;
-$alert-danger-text: #542114;
-$alert-danger-text-shadow: #FFD3D3;
-$alert-danger-shadow: #EAC1D0;
-$alert-danger-gradient-top    : #fc8d83;
-$alert-danger-gradient-bottom : #e4685d;
+//        Success alerts
+$alert-success-background : #dce7c8;
+$alert-success-border-col : #CFDCCE;
+$alert-success-font-col   : #6F844E;
 
-$alert-info-icon: "\f05a";
-$alert-info-primary: #ADD8E6;
-$alert-info-secondary: #5082CE;
-$alert-info-text: #2D6292;
-$alert-info-shadow: #C6C2DA;
-$alert-info-gradient-top    : #bddbfa;
-$alert-info-gradient-bottom : #80b5ea;
+//        Danger alerts
+$alert-danger-background : #D27979;
+$alert-danger-border-col : #C79999;
+$alert-danger-font-col   : #FFE7E6;
 
-$alert-warning-icon: "\f071";
-$alert-warning-primary: #FFEBA4;
-$alert-warning-secondary: #FBB942;
-$alert-warning-text: #614018;
-$alert-warning-shadow: #F5DDB0;
-$alert-warning-gradient-top    : #ffed64;
-$alert-warning-gradient-bottom : #F1C856;
+//        Warning alerts
+$alert-warning-background : #feeec4;
+$alert-warning-border-col : #DAD3D3;
+$alert-warning-font-col   : #9E6335;
 
-$alert-success-icon: "\f058";
-$alert-success-primary: #b9e356;
-$alert-success-secondary: #83c41a;
-$alert-success-text: #517319;
-$alert-success-shadow: #F5FFE6;
-$alert-success-gradient-top    : #b9e356;
-$alert-success-gradient-bottom : #a5cc52;
-
-
+//
+//        Buttons
+//
 $btn-font          : $body-fonts;
 $btn-font-weight   : 600;
 
+//        Medium buttons
 $btn-font-size     : 1em;
 $btn-padding       : 6px 12px;
 $btn-border-radius : 4px;
 
+//        Extra-small buttons
 $btn-xs-font-size     : .9em;
 $btn-xs-padding       : 2px 5px;
 $btn-xs-border-radius : 3px;
 
+//        Small buttons
 $btn-sm-font-size     : 1em;
 $btn-sm-padding       : 5px 10px;
 $btn-sm-border-radius : 3px;
 
+//        Large buttons
 $btn-lg-font-size     : 1.3em;
 $btn-lg-padding       : 10px 16px;
 $btn-lg-border-radius : 6px;
 
-$btn-default-background-col  : #fff;
-$btn-default-border-col      : #D9D3DC;
-$btn-default-font-col        : #463644;
+//        Default buttons
+$btn-default-background-col : #fff;
+$btn-default-border-col     : #D9D3DC;
+$btn-default-font-col       : #463644;
 
-$btn-info-background-col  : #EBF2F9;
-$btn-info-border-col      : #DAD3D3;
-$btn-info-font-col        : #2D6292;
+//        Info buttons
+$btn-info-background-col : #EBF2F9;
+$btn-info-border-col     : #DAD3D3;
+$btn-info-font-col       : #2D6292;
 
-$btn-primary-background-col  : #D3F18C;
-$btn-primary-border-col      : #CFDCCE;
-$btn-primary-font-col        : #3B5A08;
+//        Primary buttons
+$btn-primary-background-col : #D3F18C;
+$btn-primary-border-col     : #CFDCCE;
+$btn-primary-font-col       : #3B5A08;
 
-$btn-danger-background-col  : #ffffff;
-$btn-danger-border-col      : #DAD3D3;
-$btn-danger-font-col        : #B92C08;
+//        Danger buttons
+$btn-danger-background-col : #ffffff;
+$btn-danger-border-col     : #DAD3D3;
+$btn-danger-font-col       : #B92C08;
 
-$btn-warning-background-col  : #F7EFD1;
-$btn-warning-border-col      : #DAD3D3;
-$btn-warning-font-col        : #9E6335;
+//        Warning buttons
+$btn-warning-background-col : #F7EFD1;
+$btn-warning-border-col     : #DAD3D3;
+$btn-warning-font-col       : #9E6335;
+
+//
+//        Input Focus
+//
+$focus-border-col : rgba(230, 137, 202, 0.46) !important;
+$focus-box-shadow :
+    inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(189, 102, 233, 0.28);
+
+//
+//        Grid settings
+//
+$grid-gutter : 10px;

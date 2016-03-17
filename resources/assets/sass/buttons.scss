@@ -106,23 +106,43 @@
 }
 
 .btn.btn-default {
-    @include button-variant($btn-default-font-col, $btn-default-background-col, $btn-default-border-col);
+    @include button-variant(
+        $btn-default-font-col,
+        $btn-default-background-col,
+        $btn-default-border-col
+    );
 }
 
 .btn.btn-info {
-    @include button-variant($btn-info-font-col, $btn-info-background-col, $btn-info-border-col);
+    @include button-variant(
+        $btn-info-font-col,
+        $btn-info-background-col,
+        $btn-info-border-col
+    );
 }
 
 .btn.btn-danger {
-    @include button-variant($btn-danger-font-col, $btn-danger-background-col, $btn-danger-border-col);
+    @include button-variant(
+        $btn-danger-font-col,
+        $btn-danger-background-col,
+        $btn-danger-border-col
+    );
 }
 
 .btn.btn-warning {
-    @include button-variant($btn-warning-font-col, $btn-warning-background-col, $btn-warning-border-col);
+    @include button-variant(
+        $btn-warning-font-col,
+        $btn-warning-background-col,
+        $btn-warning-border-col
+    );
 }
 
 .btn.btn-primary {
-    @include button-variant($btn-primary-font-col, $btn-primary-background-col, $btn-primary-border-col);
+    @include button-variant(
+        $btn-primary-font-col,
+        $btn-primary-background-col,
+        $btn-primary-border-col
+    );
 }
 
 .btn-group {

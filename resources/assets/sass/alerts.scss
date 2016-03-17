@@ -1,115 +1,74 @@
+@mixin alert-variant($color, $background, $border) {
+    border : 1px solid $border;
+    color  : $color;
+
+    background : linear-gradient(
+        to bottom,
+        lighten($background, 5%),
+        darken($background, 12%)
+    );
+}
+
 .alert {
-    display : block;
+    display  : block;
     position : relative;
-    margin  : 16px 0;
-    padding : 16px 0px 16px 70px;
-    border-radius : 2px;
+    margin   : 16px 0;
+    padding  : 12px;
     overflow : hidden;
-    background-color: $alert-default-primary;
-    color : $alert-default-text;
-    box-shadow: 1px 1px 1px $alert-default-shadow;
-    border: 1px solid $alert-default-secondary;
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.48);
-    background : linear-gradient(
+
+    color       : $alert-default-font-col;
+    box-shadow  : 1px 1px 1px $alert-default-background;
+    border      : 1px solid $alert-default-border-col;
+    text-shadow : 0px -1px 0px rgba(0, 0, 0, 0.15);
+    background  : linear-gradient(
         to bottom,
-        $alert-default-gradient-top 5%,
-        $alert-default-gradient-bottom 100%
+        $alert-default-background 5%,
+        $alert-default-background 100%
     );
+
+    background-color : $alert-default-background;
+    border-radius    : 2px;
 }
 
-.alert:before {
-    content: $alert-default-icon;
-    font: normal normal normal 14px/1 FontAwesome;
-    text-rendering: auto;
-    text-shadow    : 0px 0px 1px #838088;
-    -webkit-font-smoothing: antialiased;
-    position: absolute;
-    line-height: 53px;
-    font-size: 1.7em;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 53px;
-    width: 53px;
-    color: #fff;
-    text-align: center;
-    vertical-align: middle;
-    background-color: $alert-default-secondary;
+.alert-icon {
+    font-size : 2em;
+    float     : left;
 }
 
-.alert.alert-danger:before {
-    content: $alert-danger-icon;
-    background-color: $alert-danger-secondary;
-    color: #fff;
-}
-
-.alert.alert-danger {
-    background-color : $alert-danger-primary;
-    border: 1px solid $alert-danger-secondary;
-    color : $alert-danger-text;
-    box-shadow: 1px 1px 1px $alert-danger-shadow;
-    text-shadow: 1px 0px 1px $alert-danger-text-shadow;
-
-    background : linear-gradient(
-        to bottom,
-        $alert-danger-gradient-top 5%,
-        $alert-danger-gradient-bottom 100%
-    );
-}
-
-.alert.alert-info:before {
-    content: $alert-info-icon;
-    background-color: $alert-info-secondary;
-    color: #fff;
+.alert-body {
+    padding   : 7px;
+    float     : left;
+    font-size : 14px;
 }
 
 .alert.alert-info {
-    background-color : $alert-info-primary;
-    border: 1px solid $alert-info-secondary;
-    color : $alert-info-text;
-    box-shadow: 1px 1px 1px $alert-info-shadow;
-
-    background : linear-gradient(
-        to bottom,
-        $alert-info-gradient-top 5%,
-        $alert-info-gradient-bottom 100%
+    @include alert-variant(
+        $alert-info-font-col,
+        $alert-info-background,
+        $alert-info-border-col
     );
-}
-
-.alert.alert-warning:before {
-    content: $alert-warning-icon;
-    background-color: $alert-warning-secondary;
-    color: #fff;
-}
-
-.alert.alert-warning {
-    background-color : $alert-warning-primary;
-    border: 1px solid $alert-warning-secondary;
-    color : $alert-warning-text;
-    box-shadow: 1px 1px 1px $alert-warning-shadow;
-
-    background : linear-gradient(
-        to bottom,
-        $alert-warning-gradient-top 5%,
-        $alert-warning-gradient-bottom 100%
-    );
-}
-
-.alert.alert-success:before {
-    content: $alert-success-icon;
-    background-color: $alert-success-secondary;
-    color: #fff;
 }
 
 .alert.alert-success {
-    background-color : $alert-success-primary;
-    border: 1px solid $alert-success-secondary;
-    color : $alert-success-text;
-    box-shadow: 1px 1px 1px $alert-success-shadow;
+    @include alert-variant(
+        $alert-success-font-col,
+        $alert-success-background,
+        $alert-success-border-col
+    );
+}
 
-    background : linear-gradient(
-        to bottom,
-        $alert-success-gradient-top 5%,
-        $alert-success-gradient-bottom 100%
+.alert.alert-danger {
+    @include alert-variant(
+        $alert-danger-font-col,
+        $alert-danger-background,
+        $alert-danger-border-col
+    );
+}
+
+.alert.alert-warning {
+    @include alert-variant(
+        $alert-warning-font-col,
+        $alert-warning-background,
+        $alert-warning-border-col
     );
 }

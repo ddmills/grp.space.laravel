@@ -172,11 +172,40 @@
 <div class='styleguide-section'>
     <h1 class='styleguide-header'>Alerts</h1>
 
-    <div class='alert'><b>Hey</b>, this is some information&hellip;</div>
-    <div class='alert alert-info'><b>Okay&hellip;</b> This is some information&hellip;</div>
-    <div class='alert alert-danger'><b>Danger!</b> This is some information&hellip;</div>
-    <div class='alert alert-warning'><b>Careful!</b> This is some information&hellip;</div>
-    <div class='alert alert-success'><b>GG Eazy</b> You did something right.</div>
+    <div class='alert'>
+        <i class="alert-icon icon-puzzle"></i>
+        <span class="alert-body">
+            <b>Hey</b>, this is some information&hellip;
+        </span>
+    </div>
+
+    <div class='alert alert-info'>
+        <i class="alert-icon icon-info-circled"></i>
+        <span class="alert-body">
+            <b>Okay&hellip;</b> This is some information&hellip;
+        </span>
+    </div>
+
+    <div class='alert alert-danger'>
+        <i class="alert-icon icon-flag"></i>
+        <span class="alert-body">
+            <b>Danger!</b> This is some information&hellip;
+        </span>
+    </div>
+
+    <div class='alert alert-warning'>
+        <i class="alert-icon icon-attention"></i>
+        <span class="alert-body">
+            <b>Careful!</b> This is some information&hellip;
+        </span>
+    </div>
+
+    <div class='alert alert-success'>
+        <i class="alert-icon icon-award"></i>
+        <span class="alert-body">
+            <b>GG Eazy</b> You did something right.
+        </span>
+    </div>
 </div>
 
 @endsection

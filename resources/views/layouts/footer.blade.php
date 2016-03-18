@@ -1,5 +1,5 @@
 <footer class="app-footer">
     <footer class="container">
-        ddmills &middot; {{ env('RELEASE') }}
+        ddmills &middot; <a href="{{ route('styleguide') }}">{{ env('RELEASE') }}</a>
     </footer>
 </footer>

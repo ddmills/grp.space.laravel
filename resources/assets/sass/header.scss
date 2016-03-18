@@ -31,6 +31,10 @@
     float: left;
 }
 
+.nav-item:hover {
+    color: #FFA47F;
+}
+
 .page-header {
     padding: 20px 0;
     background-color: $page-header-col;

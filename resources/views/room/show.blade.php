@@ -18,7 +18,6 @@
     </p>
     @can('chat', $room)
         @include('room.partials.chat')
-        @include('room.partials.video')
     @else
         <p><i class="icon-lock-alt"></i> You must be a member of this room in order to see the chat</p>
     @endcan

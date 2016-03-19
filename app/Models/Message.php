@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\Room;
-use App\User;
+use App\Models\Room;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model

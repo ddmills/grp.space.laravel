@@ -3,8 +3,8 @@
 namespace App\Http\Composers;
 
 use Route;
-use App\Room;
-use App\Message;
+use App\Models\Room;
+use App\Models\Message;
 use Illuminate\Contracts\View\View;
 
 class ChatComposer {

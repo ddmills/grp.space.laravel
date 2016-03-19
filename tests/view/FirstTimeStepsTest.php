@@ -16,7 +16,6 @@ class FirstTimeStepsTest extends TestCase
     {
         $this
             ->visit(route('home'))
-            ->seeElement('.starting-steps')
             ->seeInElement('.starting-steps > .step.active', 'Step 1');
     }
 
@@ -24,7 +23,6 @@ class FirstTimeStepsTest extends TestCase
     {
         $this
             ->visit(route('auth.register'))
-            ->seeElement('.starting-steps')
             ->seeInElement('.starting-steps > .step.active', 'Step 1');
     }
 
@@ -35,7 +33,6 @@ class FirstTimeStepsTest extends TestCase
         $this
             ->actingAs($user)
             ->visit(route('room.create'))
-            ->seeElement('.starting-steps')
             ->seeInElement('.starting-steps > .step.active', 'Step 2');
     }
 
@@ -59,7 +56,9 @@ class FirstTimeStepsTest extends TestCase
         $this
             ->actingAs($user)
             ->visit(route('home'))
-            ->dontSeeElement('.starting-steps')
+            ->dontSeeElement('.starting-steps');
+
+        $this
             ->visit(route('room.create'))
             ->dontSeeElement('.starting-steps');
     }
@@ -72,7 +71,6 @@ class FirstTimeStepsTest extends TestCase
         $this
             ->actingAs($user)
             ->visit(route('room.settings', $room->name))
-            ->seeElement('.starting-steps')
             ->seeInElement('.starting-steps > .step.active', 'Step 3');
     }
 

@@ -21,12 +21,4 @@ class ChatTest extends TestCase
             ->visitRoom($room)
             ->see('Chat');
     }
-
-    public function testChatMessagesPersist()
-    {
-        $user = $this->createUserWithRoom();
-        $room = $user->rooms->first();
-
-        $this->markTestIncomplete();
-    }
 }

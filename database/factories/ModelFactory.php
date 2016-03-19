@@ -1,6 +1,6 @@
 <?php
 
-$factory->define(App\User::class, function(Faker\Generator $faker) {
+$factory->define(App\Models\User::class, function(Faker\Generator $faker) {
     return [
         'name' => $faker->unique()->name,
         'email' => $faker->unique()->email,
@@ -10,7 +10,7 @@ $factory->define(App\User::class, function(Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Room::class, function(Faker\Generator $faker) {
+$factory->define(App\Models\Room::class, function(Faker\Generator $faker) {
     return [
         'name' => str_slug($faker->unique()->company),
         'access' => 'public',

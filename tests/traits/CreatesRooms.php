@@ -1,7 +1,7 @@
 <?php
 
-use App\Room;
-use App\User;
+use App\Models\Room;
+use App\Models\User;
 
 trait CreatesRooms
 {

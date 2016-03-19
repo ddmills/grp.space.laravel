@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\User;
-use App\Room;
+use App\Models\User;
+use App\Models\Room;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class RoomPolicy

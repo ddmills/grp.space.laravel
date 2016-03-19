@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Auth;
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,7 +15,7 @@ class Room extends Model
 
     public function owner()
     {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 
     public function setOwner(User $user)
@@ -27,7 +27,7 @@ class Room extends Model
 
     public function members()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\Models\User');
     }
 
     public function addMember($user)

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Cache;
 use Validator;
@@ -30,12 +30,12 @@ class User extends Authenticatable
 
     public function rooms()
     {
-        return $this->hasMany('App\Room');
+        return $this->hasMany('App\Models\Room');
     }
 
     public function following()
     {
-        return $this->belongsToMany('App\Room');
+        return $this->belongsToMany('App\Models\Room');
     }
 
     public function accessibleRooms()

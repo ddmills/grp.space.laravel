@@ -13,7 +13,7 @@ class RoutingOnLoginTest extends TestCase
     public function testUserIsRoutedHomeIfUserHasNoRooms()
     {
         $password = 'password';
-        $user = $this->createUser(['password' => bcrypt($password)]);
+        $user = $this->createUser(['password' => Hash::make($password)]);
 
         $this
             ->visit(route('auth.login'))
@@ -26,7 +26,7 @@ class RoutingOnLoginTest extends TestCase
     public function testUserIsRoutedToRoomShowIfHasARoom()
     {
         $password = 'password';
-        $user = $this->createUserWithRoom(['password' => bcrypt($password)]);
+        $user = $this->createUserWithRoom(['password' => Hash::make($password)]);
         $room = $user->rooms->first();
 
         $this
@@ -39,7 +39,7 @@ class RoutingOnLoginTest extends TestCase
 
     public function testUserIsSeesUserRoomIndexIfHasMultipleRooms() {
         $password = 'password';
-        $user = $this->createUserWithRooms(2, ['password' => bcrypt($password)]);
+        $user = $this->createUserWithRooms(2, ['password' => Hash::make($password)]);
         $firstRoom = $user->rooms[0];
         $otherRoom = $user->rooms[1];
 

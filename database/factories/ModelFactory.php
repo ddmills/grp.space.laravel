@@ -5,7 +5,7 @@ $factory->define(App\Models\User::class, function(Faker\Generator $faker) {
         'name' => $faker->unique()->name,
         'email' => $faker->unique()->email,
         'username' => str_slug($faker->unique()->username),
-        'password' => bcrypt(str_random(10)),
+        'password' => Hash::make(str_random(10)),
         'remember_token' => str_random(10),
     ];
 });

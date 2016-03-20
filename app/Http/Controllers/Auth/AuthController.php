@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Hash;
 use Lang;
 use Auth;
 use Validator;
@@ -49,7 +50,7 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'username' => $data['username'],
-            'password' => bcrypt($data['password']),
+            'password' => Hash::make($data['password']),
         ]);
 
         $user->assignRole('user');

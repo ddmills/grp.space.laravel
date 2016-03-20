@@ -21,7 +21,7 @@ class DevSeeder extends Seeder
         $neroUser = factory(User::class)->create([
             'username' => 'nero',
             'name' => 'Nero Germanicus',
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'email' => 'nero@grp.space',
         ]);
 
@@ -30,7 +30,7 @@ class DevSeeder extends Seeder
         $user = factory(User::class)->create([
             'username' => 'user',
             'name' => 'Tiberius',
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'email' => 'user@grp.space',
         ]);
 
@@ -39,7 +39,7 @@ class DevSeeder extends Seeder
         $adminUser = factory(User::class)->create([
             'username' => 'admin',
             'name' => 'Julius Caesar',
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'email' => 'admin@grp.space',
         ]);
 

@@ -33,17 +33,10 @@ class PermissionRoomAdministerTest extends TestCase
     {
         $user = $this->createUser();
         $room = $this->createRoom();
-
-        $this
-            ->actingAs($user)
-            ->visitRoom($room)
-            ->dontSee('Room settings')
-            ->get(route('room.settings', $room->name))
-            ->assertResponseStatus(403);
-
         $room->addMember($user);
 
         $this
+            ->actingAs($user)
             ->visitRoom($room)
             ->dontSee('Room settings')
             ->get(route('room.settings', $room->name))

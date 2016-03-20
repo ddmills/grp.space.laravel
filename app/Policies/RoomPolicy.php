@@ -19,6 +19,28 @@ class RoomPolicy
     {
         return $user->rooms->contains($room) && $user->can('room-invite');
     }
+    /*
+     * Determine if the given user can view the given room.
+     *
+     * @param \App\Models\User $user
+     * @param \App\Models\Room $room
+     * @return bool
+     */
+    public function view(User $user, Room $room)
+    {
+        // TODO: this line only here to make the test past
+        $user = $user->fresh();
+
+        if ($user->can('room-view-all')) {
+            return true;
+        }
+
+        if ($user->can('room-view')) {
+            return $user->accessibleRooms()->contains($room);
+        }
+
+        return false;
+    }
 
     /*
      * Determine if the given user can chat in the given room.

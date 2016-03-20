@@ -37,6 +37,6 @@ class PermissionRoomChatAllTest extends TestCase
         $this
             ->actingAs($user)
             ->get(route('room.show', $room->name))
-            ->dontSeeElement('.chat');
+            ->assertResponseStatus(403);
     }
 }

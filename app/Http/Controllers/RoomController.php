@@ -19,7 +19,7 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $rooms = Room::where('access', 'public')->simplePaginate(15);
+        $rooms = Room::all()->simplePaginate(15);
         return view('room.index', compact('rooms'));
     }
 
@@ -60,6 +60,9 @@ class RoomController extends Controller
     public function show(Request $request, $roomName)
     {
         $room = Room::where('name', $roomName)->firstOrFail();
+
+        $this->authorize('view', $room);
+
         return view('room.show', compact('room'));
     }
 

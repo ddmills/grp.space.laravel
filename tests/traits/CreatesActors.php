@@ -60,7 +60,7 @@ trait CreatesActors
 
     public function createActorWithPassword($password, $attributes = [])
     {
-        $attributes['password'] = bcrypt($password);
+        $attributes['password'] = Hash::make($password);
         return factory(User::class)->create($attributes);
     }
 
@@ -76,7 +76,7 @@ trait CreatesActors
 
     public function makeActorWithPassword($password, $attributes = [])
     {
-        $attributes['password'] = bcrypt($password);
+        $attributes['password'] = Hash::make($password);
         return factory(User::class)->make($attributes);
     }
 

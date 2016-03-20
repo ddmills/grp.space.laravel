@@ -4,21 +4,20 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class PermissionRoomChatTest extends TestCase
+class PermissionRoomViewTest extends TestCase
 {
-
     use VisitsRooms;
-    use CreatesRooms;
     use CreatesActors;
+    use CreatesRooms;
     use DatabaseTransactions;
 
-    public function testUserRoleHasRoomChatPermission()
+    public function testUserRoleHasRoomViewPermission()
     {
         $user = $this->createUser();
-        $this->assertTrue($user->can('room-chat'));
+        $this->assertTrue($user->can('room-view'));
     }
 
-    public function testActorWithRoomChatPermissionCanViewOwnRoomChat()
+    public function testActorWithRoomViewPermissionCanViewOwnedRooms()
     {
         $user = $this->createUserWithRoom();
         $room = $user->rooms->first();
@@ -26,25 +25,23 @@ class PermissionRoomChatTest extends TestCase
         $this
             ->actingAs($user)
             ->visitRoom($room)
-            ->seeElement('.chat');
+            ->assertResponseStatus(200);
     }
 
-    public function testActorWithRoomChatPermissionCanViewFollowedRoomChat()
+    public function testActorWithRoomViewPermissionCanViewFollowedRooms()
     {
         $user = $this->createUser();
         $room = $this->createRoom();
 
         $room->addMember($user);
 
-        $user->fresh();
-
         $this
             ->actingAs($user)
             ->visitRoom($room)
-            ->seeElement('.chat');
+            ->assertResponseStatus(200);
     }
 
-    public function testActorWithoutRoomChatPermissionCantViewChats()
+    public function testActorWithoutRoomViewPermissionCantViewRooms()
     {
         $room = $this->createRoom();
 

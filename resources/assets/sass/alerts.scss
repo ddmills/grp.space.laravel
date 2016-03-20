@@ -2,6 +2,8 @@
     border : 1px solid $border;
     color  : $color;
 
+    text-shadow : 0px -1px 0px $border;
+    box-shadow : 1px 1px 1px $background;
     background : linear-gradient(
         to bottom,
         lighten($background, 5%),
@@ -16,18 +18,14 @@
     padding  : 12px;
     overflow : hidden;
 
-    color       : $alert-default-font-col;
-    box-shadow  : 1px 1px 1px $alert-default-background;
-    border      : 1px solid $alert-default-border-col;
-    text-shadow : 0px -1px 0px rgba(0, 0, 0, 0.15);
-    background  : linear-gradient(
-        to bottom,
-        $alert-default-background 5%,
-        $alert-default-background 100%
-    );
+    border-radius : 2px;
+    text-shadow   : 0px -1px 0px rgba(0, 0, 0, 0.15);
 
-    background-color : $alert-default-background;
-    border-radius    : 2px;
+    @include alert-variant(
+        $alert-default-font-col,
+        $alert-default-background,
+        $alert-default-border-col
+    );
 }
 
 .alert-icon {

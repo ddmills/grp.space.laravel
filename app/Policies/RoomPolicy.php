@@ -11,8 +11,8 @@ class RoomPolicy
     /*
      * Determine if the given user can invite users to the given room.
      *
-     * @param \App\User $user
-     * @param \App\Room $room
+     * @param \App\Models\User $user
+     * @param \App\Models\Room $room
      * @return bool
      */
     public function invite(User $user, Room $room)
@@ -23,8 +23,8 @@ class RoomPolicy
     /*
      * Determine if the given user can chat in the given room.
      *
-     * @param \App\User $user
-     * @param \App\Room $room
+     * @param \App\Models\User $user
+     * @param \App\Models\Room $room
      * @return bool
      */
     public function chat(User $user, Room $room)
@@ -43,8 +43,8 @@ class RoomPolicy
     /*
      * Determine if the given user can administer the given room.
      *
-     * @param \App\User $user
-     * @param \App\Room $room
+     * @param \App\Models\User $user
+     * @param \App\Models\Room $room
      * @return bool
      */
     public function administer(User $user, Room $room)

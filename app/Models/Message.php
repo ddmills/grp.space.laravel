@@ -12,7 +12,7 @@ class Message extends Model
 
     public function author()
     {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 
     public function setAuthor(User $user)
@@ -24,7 +24,7 @@ class Message extends Model
 
     public function room()
     {
-        return $this->belongsTo('App\Room', 'room_id');
+        return $this->belongsTo('App\Models\Room', 'room_id');
     }
 
     public function setRoom(Room $room)

@@ -10,8 +10,8 @@ class UserPolicy
     /*
      * Determine if the given user can view the other user's profile
      *
-     * @param \App\User $user
-     * @param \App\User $otherUser
+     * @param \App\Models\User $user
+     * @param \App\Models\User $otherUser
      * @return bool
      */
     public function view(User $user, User $otherUser)
@@ -30,8 +30,8 @@ class UserPolicy
     /*
      * Determine if the given user can view the other user's dashboard
      *
-     * @param \App\User $user
-     * @param \App\User $otherUser
+     * @param \App\Models\User $user
+     * @param \App\Models\User $otherUser
      * @return bool
      */
     public function viewDashboard(User $user, User $otherUser)

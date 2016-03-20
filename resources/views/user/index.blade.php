@@ -4,7 +4,7 @@
     <header class="page-header">
         <div class="container">
             <h2 class='page-title'>
-                User Index
+                Users ({{ $users->total() }})
             </h2>
         </div>
     </header>

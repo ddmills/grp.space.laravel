@@ -19,7 +19,10 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $rooms = Room::all()->simplePaginate(15);
+        $this->authorize('user-view-all');
+
+        $rooms = Room::paginate(15);
+
         return view('room.index', compact('rooms'));
     }
 
@@ -59,7 +62,7 @@ class RoomController extends Controller
 
     public function show(Request $request, $roomName)
     {
-        $room = Room::where('name', $roomName)->firstOrFail();
+        $room = Room::where('name', $roomName)->first();
 
         $this->authorize('view', $room);
 
@@ -68,21 +71,20 @@ class RoomController extends Controller
 
     public function settings(Request $request, $roomName)
     {
-        $room = Room::where('name', $roomName)->firstOrFail();
+        $room = Room::where('name', $roomName)->first();
+
         $this->authorize('administer', $room);
+
         return view('room.settings.index', compact('room'));
     }
 
     public function directory(Request $request, $roomName)
     {
-        $room = Room::where('name', $roomName)->firstOrFail();
-        return view('room.directory', compact('room'));
-    }
+        $room = Room::where('name', $roomName)->first();
 
-    public function emit(Request $request, $roomName)
-    {
-        $room = Room::where('name', $roomName)->firstOrFail();
-        event(new ChatMessage($room, 'hello world'));
+        $this->authorize('view', $room);
+
+        return view('room.directory', compact('room'));
     }
 
     public function chat(Request $request, $roomName)
@@ -105,7 +107,10 @@ class RoomController extends Controller
     public function invite(Request $request, $roomName)
     {
         $identifier = $request->input('identifier');
-        $room = Room::where('name', $roomName)->firstOrFail();
+        $room = Room::where('name', $roomName)->first();
+
+        $this->authorize('invite', $room);
+
         $user = User::findByIdentifier($identifier);
 
         if ($room->members->contains($user)) {

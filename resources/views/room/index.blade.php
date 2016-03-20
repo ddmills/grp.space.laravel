@@ -4,7 +4,7 @@
     <header class="page-header">
         <div class="container">
             <h2 class='page-title'>
-                Room Index
+                Rooms ({{ $rooms->total() }})
             </h2>
         </div>
     </header>

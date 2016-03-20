@@ -29,7 +29,15 @@ class RoomPolicy
      */
     public function chat(User $user, Room $room)
     {
-        return ($user->following->contains($room) || $user->rooms->contains($room)) && $user->can('room-chat');
+        if ($user->can('room-chat-all')) {
+            return true;
+        }
+
+        if ($user->can('room-chat')) {
+            return $user->following->contains($room) || $user->rooms->contains($room);
+        }
+
+        return false;
     }
 
     /*

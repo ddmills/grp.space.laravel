@@ -1,7 +1,7 @@
 <?php
 
-use App\Role;
-use App\Permission;
+use App\Models\Role;
+use App\Models\Permission;
 use Illuminate\Database\Seeder;
 
 class RoleSeeder extends Seeder
@@ -18,8 +18,10 @@ class RoleSeeder extends Seeder
         $this->createPermission('room-invite', 'Invite users to owned rooms');
         $this->createPermission('room-administer', 'Administer owned rooms');
         $this->createPermission('room-chat', 'Chat in followed rooms');
-        $this->createPermission('user-view-all', 'View all users');
+        $this->createPermission('room-chat-all', 'Chat in all rooms');
+
         $this->createPermission('user-view', 'View a user\'s profile');
+        $this->createPermission('user-view-all', 'View all users');
         $this->createPermission('user-view-dashboard', 'View user dashboard');
         $this->createPermission('user-view-all-dashboard', 'View all users\' dashboards');
 
@@ -29,6 +31,7 @@ class RoleSeeder extends Seeder
             'room-create',
             'room-invite',
             'room-chat',
+            'room-chat-all',
             'user-view',
             'user-view-all',
             'user-view-dashboard',

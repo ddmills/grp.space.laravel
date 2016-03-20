@@ -30,7 +30,7 @@ class PermissionUserViewAllTest extends TestCase
         }
     }
 
-    public function testActorWithoutUserViewAllPermissionCanViewAllUsers()
+    public function testActorWithoutUserViewAllPermissionCantViewAllUsers()
     {
         $user = $this->createUser();
 

@@ -1,7 +1,7 @@
 <?php
 
-use App\User;
-use App\Room;
+use App\Models\User;
+use App\Models\Room;
 use Illuminate\Database\Seeder;
 
 class DevSeeder extends Seeder

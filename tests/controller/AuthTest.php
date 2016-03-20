@@ -9,8 +9,9 @@ use Faker\Factory as Faker;
 class AuthTest extends TestCase
 {
 
-    use CreatesActors;
     use AuthChecker;
+    use CreatesRooms;
+    use CreatesActors;
     use DatabaseTransactions;
 
     public function testVisitorCanRegisterAccount()

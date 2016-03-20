@@ -50,6 +50,6 @@ class PermissionRoomChatTest extends TestCase
 
         $this
             ->get(route('room.show', $room->name))
-            ->assertResponseStatus(403);
+            ->assertResponseStatus(302);
     }
 }

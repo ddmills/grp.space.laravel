@@ -1,7 +1,6 @@
 @extends('layouts.base')
 
 @section('body')
-    @include('common.notifications')
 
     <div class="login-header">
         <div class="logo">
@@ -13,6 +12,8 @@
     </div>
 
     <div class="login-body">
+
+        @include('common.notifications')
 
         <form action="{{ route('auth.authenticate') }}" method="post" accept-charset="utf-8">
 

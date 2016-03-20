@@ -1,11 +1,9 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
 @import 'config';
 @import 'normalize';
 @import 'mixins';
+@import 'layout';
 @import 'type';
 @import 'grid';
-@import 'layout';
 @import 'forms';
 @import 'alerts';
 @import 'buttons';

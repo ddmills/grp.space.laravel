@@ -49,6 +49,6 @@ class PermissionRoomAdministerTest extends TestCase
 
         $this
             ->get(route('room.settings', $room->name))
-            ->assertResponseStatus(403);
+            ->assertResponseStatus(302);
     }
 }

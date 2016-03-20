@@ -3,7 +3,7 @@
     color  : $color;
 
     text-shadow : 0px -1px 0px $border;
-    box-shadow : 1px 1px 1px $background;
+    box-shadow : 1px 1px 1px transparentize($background, 0.5), 1px 1px 0px rgba(255, 255, 255, 0.5) inset;
     background : linear-gradient(
         to bottom,
         lighten($background, 5%),

@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Redis;
 
 class RoomController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $this->authorize('user-view-all');

@@ -19,6 +19,7 @@ class RoomPolicy
     {
         return $user->rooms->contains($room) && $user->can('room-invite');
     }
+
     /*
      * Determine if the given user can view the given room.
      *

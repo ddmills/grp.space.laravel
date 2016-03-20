@@ -34,6 +34,6 @@ class PermissionRoomCreateTest extends TestCase
     {
         $this
             ->get(route('room.create'))
-            ->assertResponseStatus(403);
+            ->assertResponseStatus(302);
     }
 }

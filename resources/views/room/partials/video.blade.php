@@ -1,7 +1,6 @@
 @section('javascript')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
     <script src="https://simplewebrtc.com/latest-v2.js"></script>
-    <script src="https://raw.githubusercontent.com/otalk/hark/master/hark.bundle.js"></script>
 
     <script>
         var webrtc = new SimpleWebRTC({
@@ -64,7 +63,7 @@
 <div class="panel">
     <div class="panel-header">
         <h4 class="panel-title">
-            Video Chat
+            <i class="icon-megaphone"></i> Video Chat
         </h4>
     </div>
     <div class="panel-body">

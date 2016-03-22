@@ -74,6 +74,15 @@ class RoomController extends Controller
         return view('room.show', compact('room'));
     }
 
+    public function video(Request $request, $roomName)
+    {
+        $room = Room::where('name', $roomName)->first();
+
+        $this->authorize('view', $room);
+
+        return view('room.video', compact('room'));
+    }
+
     public function settings(Request $request, $roomName)
     {
         $room = Room::where('name', $roomName)->first();

@@ -6,4 +6,5 @@
     @include('common.notifications')
     @include('layouts.content')
     @include('layouts.footer')
+    @include('layouts.javascript')
 @endsection

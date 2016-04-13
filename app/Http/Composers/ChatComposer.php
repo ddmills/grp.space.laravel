@@ -3,8 +3,10 @@
 namespace App\Http\Composers;
 
 use Route;
+use Auth;
 use App\Models\Room;
 use App\Models\Message;
+use App\Facades\JSGlobals;
 use Illuminate\Contracts\View\View;
 
 class ChatComposer {
@@ -24,6 +26,9 @@ class ChatComposer {
                 'timestamp' => $message->created_at,
             ]);
         }
+
+        JSGlobals::set('rawChatMessages', $transformedMessages);
+        JSGlobals::set('author', Auth::user()->username);
 
         $view->with('messages', $transformedMessages);
     }
